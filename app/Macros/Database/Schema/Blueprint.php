@@ -41,6 +41,10 @@ class Blueprint implements MacroContract
             $this->string('hashslug')->nullable()->unique();
         });
 
+        DefaultBlueprint::macro('slug', function () {
+            $this->string('slug')->nullable()->unique();
+        });
+
         DefaultBlueprint::macro('label', function () {
             $this->string('label')->nullable();
             $this->string('name')->nullable();
