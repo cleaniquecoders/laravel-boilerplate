@@ -25,6 +25,7 @@ class Kernel
         ],
         \App\Observers\HashidsObserver::class   => [
             \App\Models\User::class,
+            \Spatie\MediaLibrary\Media::class,
         ],
     ];
 
