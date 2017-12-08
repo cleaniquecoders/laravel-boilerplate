@@ -18,3 +18,10 @@ Most of the packages from Spatie.
 10. Laravel Google Calendar
 11. Laravel Html
 12. Image Optimizer
+
+# Google API
+
+Create [Google Service Account Credentials](https://console.developers.google.com/apis/dashboard?project=karnival-usahawan-desa) for:
+
+1. [Google Calendar](https://github.com/spatie/laravel-google-calendar#how-to-obtain-the-credentials-to-communicate-with-google-calendar)
+2. [Google Analytic](https://github.com/spatie/laravel-analytics#how-to-obtain-the-credentials-to-communicate-with-google-analytics)
