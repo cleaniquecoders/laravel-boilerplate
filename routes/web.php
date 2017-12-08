@@ -17,4 +17,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/logs', 'User\LogController')->name('logs');
+Route::group(['namespace' => 'User', 'prefix' => 'user'], function () {
+    Route::get('/logs', 'LogController')->name('logs');
+    Route::get('/avatar', 'AvatarController@show')->name('show.avatar');
+    Route::post('/avatar', 'AvatarController@store')->name('store.avatar');
+});
