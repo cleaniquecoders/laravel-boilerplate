@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\HasSlugExtended;
 use App\Traits\LogsActivityExtended;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -9,7 +10,13 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use Notifiable, HasRoles, LogsActivityExtended;
+    use Notifiable, HasRoles, LogsActivityExtended, HasSlugExtended;
+
+    /**
+     * Create Slug From
+     * @var array
+     */
+    protected $slug_from = ['name'];
 
     /**
      * The attributes that are mass assignable.
