@@ -30,7 +30,7 @@ class Kernel
 
     /**
      * Make this class
-     * @return \NIBM\Observers\Kernel
+     * @return \App\Observers\Kernel
      */
     public static function make()
     {

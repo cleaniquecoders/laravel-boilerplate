@@ -23,10 +23,7 @@ class ReferenceObserver
     {
         if (Schema::hasColumn($model->getTable(), 'reference') && is_null($model->reference)) {
 
-            $count = 0;
-            if (Schema::hasColumn($model->getTable(), 'created_at')) {
-                $count = $model::whereDate('created_at', date('Y-m-d'))->count();
-            }
+            $count = $model::count();
 
             $reference = isset($model->reference_prefix) ?
             generate_reference($model->reference_prefix, $count) :
