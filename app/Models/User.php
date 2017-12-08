@@ -3,15 +3,18 @@
 namespace App\Models;
 
 use App\Traits\HasSlugExtended;
+use App\Traits\HasThumb;
 use App\Traits\LogsActivityExtended;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable
+class User extends Authenticatable implements HasMediaConversions
 {
-    use Notifiable, HasRoles, LogsActivityExtended, HasSlugExtended, SoftDeletes;
+    use HasMediaTrait, HasThumb, HasRoles, HasSlugExtended, LogsActivityExtended, Notifiable, SoftDeletes;
 
     /**
      * Create Slug From
@@ -43,4 +46,5 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
 }
