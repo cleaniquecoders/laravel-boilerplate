@@ -2,7 +2,6 @@
 
 namespace App\Traits;
 
-use Illuminate\Support\Str;
 use Spatie\Activitylog\Traits\LogsActivity;
 
 /**
@@ -19,6 +18,6 @@ trait LogsActivityExtended
 
     public function getLogNameToUse(string $eventName = ''): string
     {
-        return Str::slug(get_class($this), '_');
+        return str_slug_fqcn($this);
     }
 }
