@@ -7,6 +7,7 @@
     "require": {
         "php": ">=7.0.0",
         "fideloper/proxy": "~3.3",
+        "hashids/hashids": "^2.0",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
         "nasrulhazim/artisanmakers": "^1.0",
@@ -37,7 +38,10 @@
         ],
         "psr-4": {
             "App\\": "app/"
-        }
+        }, 
+        "files": [
+            "app/Support/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
