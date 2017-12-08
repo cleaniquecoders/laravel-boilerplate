@@ -234,6 +234,7 @@ return [
         'Menu'           => Spatie\Menu\Laravel\MenuFacade::class,
         'GoogleCalendar' => Spatie\GoogleCalendar\GoogleCalendarFacade::class,
         'Html'           => Spatie\Html\Facades\Html::class,
+        'Link'           => Spatie\Menu\Laravel\Link::class,
     ],
 
 ];
