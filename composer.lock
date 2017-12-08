@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9984088966c6da6a65849a9e57cfd70a",
+    "content-hash": "945bd7824cb151175812cc99ae55e2ae",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -1446,6 +1446,43 @@
                 "schedule"
             ],
             "time": "2017-01-23T04:29:33+00:00"
+        },
+        {
+            "name": "nasrulhazim/artisanmakers",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nasrulhazim/artisanmakers.git",
+                "reference": "92cadbc1040a73274241e9f0d5e96fe7c9836a83"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nasrulhazim/artisanmakers/zipball/92cadbc1040a73274241e9f0d5e96fe7c9836a83",
+                "reference": "92cadbc1040a73274241e9f0d5e96fe7c9836a83",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "5.5.*",
+                "illuminate/support": "5.5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "NasrulHazim\\ArtisanMakers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nasrul Hazim",
+                    "email": "nasrulhazim.m@gmail.com"
+                }
+            ],
+            "description": "Laravel Artisan Makers",
+            "time": "2017-12-08T16:40:51+00:00"
         },
         {
             "name": "nesbot/carbon",
