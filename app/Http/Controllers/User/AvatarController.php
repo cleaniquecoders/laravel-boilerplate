@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class AvatarController extends Controller
 {
@@ -16,10 +17,16 @@ class AvatarController extends Controller
         return view('users.avatar');
     }
 
-    public function store()
+    public function store(Request $request)
     {
+        $this->validate($request, [
+            'avatar' => 'required|image|mimes:jpg,png',
+        ]);
+
         auth()->user()->addMediaFromRequest('avatar')
             ->preservingOriginal()
-            ->toMediaCollection();
+            ->usingFileName('avatar.png')
+            ->toMediaCollection('avatar');
+        return redirect()->route('home');
     }
 }

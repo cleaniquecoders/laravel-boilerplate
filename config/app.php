@@ -172,6 +172,7 @@ return [
         Spatie\Menu\Laravel\MenuServiceProvider::class,
         Spatie\GoogleCalendar\GoogleCalendarServiceProvider::class,
         Spatie\Html\HtmlServiceProvider::class,
+        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -237,6 +238,7 @@ return [
         'GoogleCalendar' => Spatie\GoogleCalendar\GoogleCalendarFacade::class,
         'Html'           => Spatie\Html\Facades\Html::class,
         'Link'           => Spatie\Menu\Laravel\Link::class,
+        'Alert'          => UxWeb\SweetAlert\SweetAlert::class,
     ],
 
 ];
