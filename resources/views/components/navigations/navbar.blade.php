@@ -31,10 +31,18 @@
                 @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                            @if(auth()->user()->getLastMediaUrl('avatar'))
+                                <img src="{{ auth()->user()->getLastMediaUrl('avatar') }}"
+                                    alt="avatar"
+                                    class="img-rounded">
+                            @endif
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
                         <ul class="dropdown-menu">
+                            <li>
+                                {!! Link::toRoute('show.avatar', 'Avatar') !!}
+                            </li>
                             <li>
                                 {!! Link::toRoute('logs', 'Logs') !!}
                             </li>
