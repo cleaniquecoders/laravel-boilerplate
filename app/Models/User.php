@@ -2,19 +2,19 @@
 
 namespace App\Models;
 
+use App\Traits\HasMediaExtended;
 use App\Traits\HasSlugExtended;
 use App\Traits\HasThumbmail;
 use App\Traits\LogsActivityExtended;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements HasMediaConversions
 {
-    use HasMediaTrait, HasThumbmail, HasRoles, HasSlugExtended, LogsActivityExtended, Notifiable, SoftDeletes;
+    use HasMediaExtended, HasThumbmail, HasRoles, HasSlugExtended, LogsActivityExtended, Notifiable, SoftDeletes;
 
     /**
      * Create Slug From
