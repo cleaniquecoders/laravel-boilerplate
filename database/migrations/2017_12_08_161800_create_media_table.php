@@ -14,7 +14,6 @@ class CreateMediaTable extends Migration
         Schema::create('media', function (Blueprint $table) {
             $table->increments('id');
             $table->hashslug();
-            $table->slug();
             $table->morphs('model');
             $table->string('collection_name');
             $table->string('name');
