@@ -84,3 +84,16 @@ if (!function_exists('str_slug_fqcn')) {
         return strtolower($fqcn);
     }
 }
+
+/**
+ * Log Current logged in user activities
+ */
+if (!function_exists('userlog')) {
+    function userlog($model, $message)
+    {
+        activity()
+            ->performedOn($model)
+            ->causedBy(auth()->user())
+            ->log($message);
+    }
+}
