@@ -27,6 +27,11 @@ class AvatarController extends Controller
             ->preservingOriginal()
             ->usingFileName('avatar.png')
             ->toMediaCollection('avatar');
-        return redirect()->route('home');
+
+        userlog(auth()->user(), 'Uploaded new avatar');
+
+        alert()->success('New Avatar Uploaded');
+
+        return redirect()->route('show.avatar');
     }
 }
