@@ -1,4 +1,4 @@
-@component('components.panels.small')
+@component('components.panels.small', ['panel_title' => 'User Log'])
     @slot('panel_body')
         @component('components.table')
             @slot('thead')
