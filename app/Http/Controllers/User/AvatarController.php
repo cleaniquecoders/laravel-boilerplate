@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace OSI\Http\Controllers\User;
 
-use App\Http\Controllers\Controller;
+use OSI\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class AvatarController extends Controller

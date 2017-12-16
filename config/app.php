@@ -177,13 +177,13 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
-        App\Providers\MacroServiceProvider::class,
-        App\Providers\ObserverServiceProvider::class,
+        OSI\Providers\AppServiceProvider::class,
+        OSI\Providers\AuthServiceProvider::class,
+        // OSI\Providers\BroadcastServiceProvider::class,
+        OSI\Providers\EventServiceProvider::class,
+        OSI\Providers\RouteServiceProvider::class,
+        OSI\Providers\MacroServiceProvider::class,
+        OSI\Providers\ObserverServiceProvider::class,
 
     ],
 

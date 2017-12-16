@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Traits;
+namespace OSI\Traits;
 
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 

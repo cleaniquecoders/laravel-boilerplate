@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models;
+namespace OSI\Models;
 
-use App\Traits\HasMediaExtended;
-use App\Traits\HasSlugExtended;
-use App\Traits\HasThumbmail;
-use App\Traits\LogsActivityExtended;
+use OSI\Traits\HasMediaExtended;
+use OSI\Traits\HasSlugExtended;
+use OSI\Traits\HasThumbmail;
+use OSI\Traits\LogsActivityExtended;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;

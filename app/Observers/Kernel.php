@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Observers;
+namespace OSI\Observers;
 
 /**
  *
@@ -20,18 +20,18 @@ class Kernel
      * @var array
      */
     protected $observeBy = [
-        \App\Observers\ReferenceObserver::class => [
+        \OSI\Observers\ReferenceObserver::class => [
 
         ],
-        \App\Observers\HashidsObserver::class   => [
-            \App\Models\User::class,
+        \OSI\Observers\HashidsObserver::class   => [
+            \OSI\Models\User::class,
             \Spatie\MediaLibrary\Media::class,
         ],
     ];
 
     /**
      * Make this class
-     * @return \App\Observers\Kernel
+     * @return \OSI\Observers\Kernel
      */
     public static function make()
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace OSI\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -13,7 +13,7 @@ class MacroServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        \App\Macros\Database\Schema\Blueprint::registerMacros();
+        \OSI\Macros\Database\Schema\Blueprint::registerMacros();
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace OSI\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -13,7 +13,7 @@ class ObserverServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        \App\Observers\Kernel::make()->observes();
+        \OSI\Observers\Kernel::make()->observes();
     }
 
     /**

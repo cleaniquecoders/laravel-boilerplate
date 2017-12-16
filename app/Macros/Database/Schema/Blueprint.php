@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Macros\Database\Schema;
+namespace OSI\Macros\Database\Schema;
 
-use App\Contracts\MacroContract;
+use OSI\Contracts\MacroContract;
 use Illuminate\Database\Schema\Blueprint as DefaultBlueprint;
 
 /**

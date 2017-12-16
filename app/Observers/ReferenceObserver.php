@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Observers;
+namespace OSI\Observers;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Schema;
