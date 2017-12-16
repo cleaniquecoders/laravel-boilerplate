@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace OSI\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -13,7 +13,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        if ($this->app->environment() !== 'production') {
+            $this->app->register(\NasrulHazim\ArtisanMakers\ArtisanMakersServiceProvider::class);
+        }
     }
 
     /**

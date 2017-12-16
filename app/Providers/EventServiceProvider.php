@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Providers;
+namespace OSI\Providers;
 
-use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Event;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -13,8 +13,20 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'App\Events\Event' => [
-            'App\Listeners\EventListener',
+        'Illuminate\Auth\Events\Registered'    => [
+            'OSI\Listeners\AssignDefaultRole',
+        ],
+        'Illuminate\Auth\Events\Login'         => [
+            'OSI\Listeners\LogSuccessfulLogin',
+        ],
+        'Illuminate\Auth\Events\Failed'        => [
+            'OSI\Listeners\LogFailedLogin',
+        ],
+        'Illuminate\Auth\Events\Logout'        => [
+            'OSI\Listeners\LogSuccessfulLogout',
+        ],
+        'Illuminate\Auth\Events\PasswordReset' => [
+            'OSI\Listeners\LogPasswordReset',
         ],
     ];
 
