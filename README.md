@@ -2,6 +2,12 @@
 
 A boilerplate to speed up development.
 
+# Installation
+
+```
+$ composer create-project osinitiative/web-app-boilerplate your-project-name "1.0.1"
+```
+
 # Packages
 
 Most of the packages from Spatie.
