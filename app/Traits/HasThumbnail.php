@@ -7,7 +7,7 @@ use Spatie\MediaLibrary\Media;
 /**
  * HasThumb Trait
  */
-trait HasThumbmail
+trait HasThumbnail
 {
     public function registerMediaConversions(Media $media = null)
     {
