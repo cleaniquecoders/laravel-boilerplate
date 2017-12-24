@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use OSI\Traits\HasMediaExtended;
+use OSI\Traits\HasProfile;
 use OSI\Traits\HasSlugExtended;
 use OSI\Traits\HasThumbnail;
 use OSI\Traits\LogsActivityExtended;
@@ -14,7 +15,7 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements HasMediaConversions
 {
-    use HasMediaExtended, HasThumbnail, HasRoles, HasSlugExtended, LogsActivityExtended, Notifiable, SoftDeletes;
+    use HasProfile, HasMediaExtended, HasThumbnail, HasRoles, HasSlugExtended, LogsActivityExtended, Notifiable, SoftDeletes;
 
     /**
      * Create Slug From
