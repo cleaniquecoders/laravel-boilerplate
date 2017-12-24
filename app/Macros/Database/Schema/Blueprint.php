@@ -2,8 +2,8 @@
 
 namespace OSI\Macros\Database\Schema;
 
-use OSI\Contracts\MacroContract;
 use Illuminate\Database\Schema\Blueprint as DefaultBlueprint;
+use OSI\Contracts\MacroContract;
 
 /**
  * Extended Blueprint by using Macro
@@ -23,11 +23,10 @@ class Blueprint implements MacroContract
                 ->nullable();
         });
 
-        DefaultBlueprint::macro('fkDeleteCascade', function ($key, $table) {
-            $this->foreign($key)
-                ->references('id')
-                ->on($table)
-                ->onDelete('cascade');
+        DefaultBlueprint::macro('referenceOn', function ($key, $table, $references = 'id') {
+            return $this->foreign($key)
+                ->references($references)
+                ->on($table);
         });
 
         DefaultBlueprint::macro('addAcceptance', function ($value) {
@@ -57,7 +56,7 @@ class Blueprint implements MacroContract
 
         DefaultBlueprint::macro('user', function () {
             $this->addForeign('user_id', 'users');
-            $this->fkDeleteCascade('user_id', 'users');
+            $this->referenceOn('user_id', 'users');
         });
 
         DefaultBlueprint::macro('amount', function ($label = 'amount') {
