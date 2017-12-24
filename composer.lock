@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fb1ab6e80c833d91711c33facf247246",
+    "content-hash": "786ba560a7bf785bb66a7eed372321b0",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -1515,16 +1515,16 @@
         },
         {
             "name": "nasrulhazim/artisanmakers",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nasrulhazim/artisanmakers.git",
-                "reference": "92cadbc1040a73274241e9f0d5e96fe7c9836a83"
+                "reference": "9c5f2650a91834af3848e51376f5ff20227c7192"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nasrulhazim/artisanmakers/zipball/92cadbc1040a73274241e9f0d5e96fe7c9836a83",
-                "reference": "92cadbc1040a73274241e9f0d5e96fe7c9836a83",
+                "url": "https://api.github.com/repos/nasrulhazim/artisanmakers/zipball/9c5f2650a91834af3848e51376f5ff20227c7192",
+                "reference": "9c5f2650a91834af3848e51376f5ff20227c7192",
                 "shasum": ""
             },
             "require": {
@@ -1548,7 +1548,7 @@
                 }
             ],
             "description": "Laravel Artisan Makers",
-            "time": "2017-12-08T16:40:51+00:00"
+            "time": "2017-12-24T07:56:29+00:00"
         },
         {
             "name": "nesbot/carbon",
