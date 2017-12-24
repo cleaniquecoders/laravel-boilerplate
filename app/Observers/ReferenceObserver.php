@@ -14,12 +14,12 @@ use Illuminate\Support\Facades\Schema;
 class ReferenceObserver
 {
     /**
-     * Listen to the created event.
+     * Listen to the creating event.
      *
-     * @param  Model $DummyModelVariable
+     * @param  \Illuminate\Database\Eloquent\Model $model
      * @return void
      */
-    public function created(Model $model)
+    public function creating(Model $model)
     {
         if (Schema::hasColumn($model->getTable(), 'reference') && is_null($model->reference)) {
 
