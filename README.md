@@ -13,26 +13,30 @@ $ composer create-project cleaniquecoders/laravel-boilerplate
 # Packages
 
 1. [Cleanique Coders](https://github.com/cleaniquecoders)
-- Artisan Makers
-- Blueprint Macro
-- Profile
+
+	- Artisan Makers
+	- Blueprint Macro
+	- Profile
+
 2. [Laravel Proxy Package](https://github.com/fideloper/TrustedProxy)
 3. [Spatie](https://github.com/spatie)
-- Image Optimizer
-- Laravel Activitylog
-- Laravel Analytics
-- Laravel Collection Macros
-- Laravel Google Calendar
-- Laravel Html
-- Laravel Medialibrary
-- Laravel Menu
-- Laravel Permission
-- Laravel Referer
-- Laravel Responsecache
-- Laravel Sluggable
+
+	- Image Optimizer
+	- Laravel Activitylog
+	- Laravel Analytics
+	- Laravel Collection Macros
+	- Laravel Google Calendar
+	- Laravel Html
+	- Laravel Medialibrary
+	- Laravel Menu
+	- Laravel Permission
+	- Laravel Referer
+	- Laravel Responsecache
+	- Laravel Sluggable
+
 4. [Hashids](https://github.com/ivanakimov/hashids.php)
-4. [Sweet Alert](https://github.com/uxweb/sweet-alert)
-5. [Sempro PHPUnit Pretty Printer](https://github.com/Sempro/phpunit-pretty-print)
+5. [Sweet Alert](https://github.com/uxweb/sweet-alert)
+6. [Sempro PHPUnit Pretty Printer](https://github.com/Sempro/phpunit-pretty-print)
 
 # Setup
 
