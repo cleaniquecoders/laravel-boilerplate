@@ -1,15 +1,15 @@
 <?php
 
-namespace OSI\Models;
+namespace App\Models;
 
+use App\Traits\HasMediaExtended;
+use App\Traits\HasSlugExtended;
+use App\Traits\HasThumbnail;
+use App\Traits\LogsActivityExtended;
+use CleaniqueCoders\Profile\Traits\HasProfile;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use OSI\Traits\HasMediaExtended;
-use OSI\Traits\HasProfile;
-use OSI\Traits\HasSlugExtended;
-use OSI\Traits\HasThumbnail;
-use OSI\Traits\LogsActivityExtended;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 use Spatie\Permission\Traits\HasRoles;
 

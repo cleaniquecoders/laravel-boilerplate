@@ -1,6 +1,6 @@
 <?php
 
-namespace OSI\Listeners;
+namespace App\Listeners;
 
 use Illuminate\Auth\Events\Logout;
 

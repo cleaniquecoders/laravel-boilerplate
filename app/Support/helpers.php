@@ -69,7 +69,7 @@ if (!function_exists('hashids')) {
         $length   = is_null($length) ? config('hashids.length') : $length;
         $alphabet = is_null($alphabet) ? config('hashids.alphabet') : $alphabet;
         $salt     = \Illuminate\Support\Facades\Hash::make($salt);
-        return \OSI\Services\Hashids::make($salt, $length, $alphabet);
+        return \App\Services\Hashids::make($salt, $length, $alphabet);
     }
 }
 

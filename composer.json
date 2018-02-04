@@ -40,7 +40,7 @@
             "database/factories"
         ],
         "psr-4": {
-            "OSI\\": "app/"
+            "App\\": "app/"
         }, 
         "files": [
             "app/Support/helpers.php"
@@ -48,7 +48,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "App\\Tests\\": "tests/"
         }
     },
     "extra": {
