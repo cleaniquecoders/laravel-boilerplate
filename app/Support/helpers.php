@@ -15,22 +15,27 @@ if (!function_exists('generate_sequence')) {
  * Get Abbreviation fo the given text
  */
 if (!function_exists('abbrv')) {
-    function abbrv($value)
+    function abbrv($value, $unique_characters = true)
     {
         $removeNonAlphanumeric = preg_replace("/[^A-Za-z0-9 ]/", '', $value);
         $removeVowels          = str_replace(
             ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U', ' '],
             '',
             $removeNonAlphanumeric);
-        $uppercase         = strtoupper($removeVowels);
-        $split             = str_split($uppercase);
-        $unique_characters = [];
-        foreach ($split as $character) {
-            if (!in_array($character, $unique_characters)) {
-                $unique_characters[] = $character;
+
+        $uppercase = strtoupper($removeVowels);
+
+        if ($unique_characters) {
+            $split             = str_split($uppercase);
+            $unique_characters = [];
+            foreach ($split as $character) {
+                if (!in_array($character, $unique_characters)) {
+                    $unique_characters[] = $character;
+                }
             }
+            return implode('', $unique_characters);
         }
-        return implode('', $unique_characters);
+        return $uppercase;
     }
 }
 
@@ -77,23 +82,27 @@ if (!function_exists('hashids')) {
  * Get Slug Name for Fully Qualified Class Name (FQCN)
  */
 if (!function_exists('str_slug_fqcn')) {
-    function str_slug_fqcn($value)
+    function str_slug_fqcn($object)
     {
-        $fqcn = get_class($value);
-        $fqcn = str_replace('\\', '-', $fqcn);
-        return strtolower($fqcn);
+        return strtolower(str_replace('\\', '-', get_class($object)));
     }
 }
 
 /**
- * Log Current logged in user activities
+ * Audit Trail
  */
-if (!function_exists('userlog')) {
-    function userlog($model, $message)
+if (!function_exists('audit')) {
+    function audit($model, $message, $causedBy = null)
     {
-        activity()
-            ->performedOn($model)
-            ->causedBy(auth()->user())
-            ->log($message);
+        if (is_null($causedBy)) {
+            activity()
+                ->performedOn($model)
+                ->log($message);
+        } else {
+            activity()
+                ->performedOn($model)
+                ->causedBy(auth()->user())
+                ->log($message);
+        }
     }
 }
