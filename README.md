@@ -10,6 +10,21 @@ A boilerplate to speed up web application development.
 $ composer create-project cleaniquecoders/laravel-boilerplate
 ```
 
+Configure your `.env`, then:
+
+```
+$ php artisan reload:db
+```
+
+# Usage
+
+## Commands
+
+There's some commands area ready built-in. Others, may refer to respective packages.
+
+- `reload:db` - Run `migrate:fresh --seed` with `profile:seed`. You may extend the usage.
+- `reload:cache` - Recache everything
+
 # Packages
 
 1. [Cleanique Coders](https://github.com/cleaniquecoders)
