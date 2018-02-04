@@ -1,31 +1,42 @@
-# Web Application Boilerplate
+[![Build Status](https://travis-ci.org/cleaniquecoders/laravel-boilerplate.svg?branch=master)](https://travis-ci.org/cleaniquecoders/laravel-boilerplate) [![Latest Stable Version](https://poser.pugx.org/cleaniquecoders/laravel-boilerplate/v/stable)](https://packagist.org/packages/cleaniquecoders/laravel-boilerplate) [![Total Downloads](https://poser.pugx.org/cleaniquecoders/laravel-boilerplate/downloads)](https://packagist.org/packages/cleaniquecoders/laravel-boilerplate) [![License](https://poser.pugx.org/cleaniquecoders/laravel-boilerplate/license)](https://packagist.org/packages/cleaniquecoders/laravel-boilerplate)
 
-A boilerplate to speed up development.
+# Laravel Boilerplate
+
+A boilerplate to speed up web application development.
 
 # Installation
 
 ```
-$ composer create-project osinitiative/web-app-boilerplate your-project-name "1.0.1"
+$ composer create-project cleaniquecoders/laravel-boilerplate
 ```
 
 # Packages
 
-Most of the packages from Spatie.
+1. [Cleanique Coders](https://github.com/cleaniquecoders)
+- Artisan Makers
+- Blueprint Macro
+- Profile
+2. [Laravel Proxy Package](https://github.com/fideloper/TrustedProxy)
+3. [Spatie](https://github.com/spatie)
+- Image Optimizer
+- Laravel Activitylog
+- Laravel Analytics
+- Laravel Collection Macros
+- Laravel Google Calendar
+- Laravel Html
+- Laravel Medialibrary
+- Laravel Menu
+- Laravel Permission
+- Laravel Referer
+- Laravel Responsecache
+- Laravel Sluggable
+4. [Hashids](https://github.com/ivanakimov/hashids.php)
+4. [Sweet Alert](https://github.com/uxweb/sweet-alert)
+5. [Sempro PHPUnit Pretty Printer](https://github.com/Sempro/phpunit-pretty-print)
 
-1. Laravel Permission
-2. Laravel Media Library
-3. Laravel Activity
-4. Laravel Newsletter
-5. Laravel Analytics
-6. Laravel Response Cache
-7. Laravel Sluggable
-8. Laravel Menu
-9. Laravel Collection Macros
-10. Laravel Google Calendar
-11. Laravel Html
-12. Image Optimizer
+# Setup
 
-# Google API
+## Google API
 
 Create [Google Service Account Credentials](https://console.developers.google.com/apis/dashboard?project=karnival-usahawan-desa) for:
 
