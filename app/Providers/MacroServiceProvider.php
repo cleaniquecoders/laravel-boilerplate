@@ -13,7 +13,7 @@ class MacroServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        \OSI\Macros\Database\Schema\Blueprint::registerMacros();
+
     }
 
     /**
