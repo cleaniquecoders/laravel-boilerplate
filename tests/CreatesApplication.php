@@ -13,6 +13,7 @@ trait CreatesApplication
     {
         parent::setUp();
 
+        $this->artisan('reload:cache');
         $this->artisan('reload:db');
     }
 
