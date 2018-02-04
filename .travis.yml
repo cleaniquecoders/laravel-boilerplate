@@ -10,4 +10,4 @@ before_script:
   - travis_retry composer update --prefer-source --no-interaction --dev
 
 script:
-  - vendor/bin/phpunit -v --coverage-text --colors=never --stderr
+  - vendor/bin/phpunit
