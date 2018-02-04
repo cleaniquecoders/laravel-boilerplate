@@ -60,6 +60,138 @@ There's some commands area ready built-in. Others, may refer to respective packa
 - `reload:db` - Run `migrate:fresh --seed` with `profile:seed`. You may extend the usage.
 - `reload:cache` - Recache everything
 
+### Helpers
+
+**generate_sequence($count)** 
+
+Generate sequence with leading zero like `000001`, `000002` and so on.
+
+Length for the leading zero can be configure in `.env` file - `DOCUMENT_SEQUENCE_LENGTH`.
+
+**abbrv($word, $unique_characters)**
+
+A helper to create abbreviation by removing non-alphanumeric, vowels.
+
+Passing second argument as false will return non-unique characters - means that you will see repeatative characters. 
+
+Following are the sample usage and output:
+
+```
+>>> abbrv("Cleanique Coders")
+=> "CLNQDRS"
+>>> abbrv("Cleanique Coders", false)
+=> "CLNQCDRS"
+```
+
+**generate_reference($prefix, $count)**
+
+Generate document reference string. Usually a document have their own reference on the particular date event.
+
+For instance a payslip document have a reference number / string like `CCR/PYSL/2018/01/000001`.
+
+The format generate is `abbrv/Year/Month/Date/reference_id`.
+
+You can use in two ways:
+
+```
+>>> generate_reference("Cleanique Coders Payroll")
+=> "CLNQ/CDRS/PYRL/2018/02/04/TBIPOU"
+>>> generate_reference("Cleanique Coders Payroll", 10)
+=> "CLNQ/CDRS/PYRL/2018/02/04/000010"
+```
+
+The length of the `TBIPOU` or `000010` is depends on `DOCUMENT_SEQUENCE_LENGTH` in `.env` file.
+
+**hashids($salt, $length, $alphabet)**
+
+It's essential to have important resources to use other than just incremental id. One of the option is to use [Hashids](https://github.com/ivanakimov/hashids.php).
+
+Following are an example how to use the helper.
+
+```
+>>> hashids()->encode(1)
+=> "yR5ajG4DBwlz"
+>>> hashids('random-salt')->encode(1)
+=> "WZvoOMBr19YN"
+>>> hashids('random-salt', 24)->encode(1)
+=> "GPz1W4mLavAeqAwB2XZbOgQn"
+>>> hashids('random-salt', 6)->encode(1)
+=> "5qy0lP"
+>>> hashids('random-salt', 6, 'qwertyuiopasdfghjkl')->encode(1)
+=> "orgpqe"
+>>> hashids('random-salt', 6, ',./;<>?:"{}|[]\-=`~!@#$%^&*()')->encode(1)
+=> "{&(^&-"
+>>> hashids('random-salt', 12, ',./;<>?:"{}|[]\-=`~!@#$%^&*()')->encode(1)
+=> "~-!\`-&(*[{)"
+```
+
+For `$salt`, by default it will use `APP_KEY`, but you may override it by passing the salt name at the first argument.
+
+For `$length`, you can pass any length of hashids you want to create. By default it's 12 characters.
+
+For `$alphabet`, you can put any characters as per example above. But remember, the alphabets need to be minimum of **16 characters**.
+
+**str_slug_fqcn($object)**
+
+Return slug name for given object.
+
+```
+>>> $user = \App\Models\User::first();
+=> App\Models\User {#1013
+     id: 1,
+     hashslug: "krOErpkv6EVR",
+     slug: "elza-bins",
+     name: "Elza Bins",
+     email: "kautzer.polly@example.com",
+     deleted_at: null,
+     created_at: "2018-02-04 03:11:07",
+     updated_at: "2018-02-04 03:11:07",
+   }
+>>> str_slug_fqcn($user)
+=> "app-models-user"
+```
+
+**audit($model, $message, $causedBy)**
+
+Simply record audit trail on given `$model`, with proper `$message`. You can optionally passed the third argument - `$causedBy`.
+
+```
+>>> auth()->loginUsingId(1)
+>>> $user = \App\Models\User::first();
+>>> audit($user, 'access via terminal')
+>>> auth()->user()->activity->toArray()
+=> [
+     [
+       "id" => 4,
+       "log_name" => "default",
+       "description" => "User successfully logged in.",
+       "subject_id" => 1,
+       "subject_type" => "App\Models\User",
+       "causer_id" => 1,
+       "causer_type" => "App\Models\User",
+       "properties" => Illuminate\Support\Collection {#971
+         all: [],
+       },
+       "created_at" => "2018-02-04 03:18:50",
+       "updated_at" => "2018-02-04 03:18:50",
+     ],
+     [
+       "id" => 5,
+       "log_name" => "default",
+       "description" => "access via terminal",
+       "subject_id" => 1,
+       "subject_type" => "App\Models\User",
+       "causer_id" => 1,
+       "causer_type" => "App\Models\User",
+       "properties" => Illuminate\Support\Collection {#980
+         all: [],
+       },
+       "created_at" => "2018-02-04 03:19:16",
+       "updated_at" => "2018-02-04 03:19:16",
+     ],
+   ]
+```
+
 ## Test
 
 To run the test, type `vendor/bin/phpunit` in your terminal.
