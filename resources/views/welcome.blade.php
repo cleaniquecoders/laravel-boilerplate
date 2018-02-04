@@ -58,15 +58,18 @@
 
     <div class="content">
         <div class="title m-b-md">
-            Laravel <i class="fab fa-accessible-icon"></i>
+            Laravel Boilerplate
         </div>
-
+        <hr>
+        <h4>Ready with Bootstrap 4, Font Awesome 5</h4>
+        <hr>
         <div class="links">
-            <a href="https://laravel.com/docs">Documentation</a>
-            <a href="https://laracasts.com">Laracasts</a>
-            <a href="https://laravel-news.com">News</a>
-            <a href="https://forge.laravel.com">Forge</a>
-            <a href="https://github.com/laravel/laravel">GitHub</a>
+            <a href="https://getbootstrap.com/">Bootstrap 4</a>
+            <a href="https://fontawesome.com/">Font Awesome 5</a>
+            <a href="https://github.com/spatie">Spatie</a>
+            <a href="https://github.com/cleaniquecoders">Cleanique Coders</a>
+            <a href="https://github.com/cleaniquecoders/laravel-boilerplate/blob/master/README.md">Documentation</a>
+            <a href="https://github.com/cleaniquecoders/laravel-boilerplate">GitHub</a>
         </div>
     </div>
 </div>
