@@ -24,6 +24,6 @@ class LogSuccessfulLogout
      */
     public function handle(Logout $event)
     {
-        userlog($event->user, 'User successfully logged out.');
+        audit($event->user, 'User successfully logged out.');
     }
 }
