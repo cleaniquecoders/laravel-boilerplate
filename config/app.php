@@ -173,6 +173,9 @@ return [
         Spatie\GoogleCalendar\GoogleCalendarServiceProvider::class,
         Spatie\Html\HtmlServiceProvider::class,
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
+        CleaniqueCoders\Blueprint\Macro\BlueprintMacroServiceProvider::class,
+        CleaniqueCoders\Profile\ProfileServiceProvider::class,
+        CleaniqueCoders\ArtisanMakers\ArtisanMakersServiceProvider::class,
 
         /*
          * Application Service Providers...

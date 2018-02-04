@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a566c0e7b6ffde49b88c7ee0bda547bc",
+    "content-hash": "68704b2d94c4aaf791c645071119669b",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -55,6 +55,144 @@
                 "toolkit"
             ],
             "time": "2015-05-16T19:24:58+00:00"
+        },
+        {
+            "name": "cleaniquecoders/artisan-makers",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cleaniquecoders/artisan-makers.git",
+                "reference": "4050ecc83e61464e7fc118803bfff57167308828"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cleaniquecoders/artisan-makers/zipball/4050ecc83e61464e7fc118803bfff57167308828",
+                "reference": "4050ecc83e61464e7fc118803bfff57167308828",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.5",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "codedungeon/phpunit-result-printer": "^0.4.4",
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpunit": "^6.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "CleaniqueCoders\\ArtisanMakers\\": "src/"
+                },
+                "files": [
+                    "src/Support/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nasrul Hazim",
+                    "email": "nasrulhazim.m@gmail.com"
+                }
+            ],
+            "description": "Built with Laravel Standalone Package Creator",
+            "time": "2018-01-25T23:49:53+00:00"
+        },
+        {
+            "name": "cleaniquecoders/blueprint-macro",
+            "version": "v1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cleaniquecoders/blueprint-macro.git",
+                "reference": "47d3184855f6d7328985e1e43420725b9e01be0f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cleaniquecoders/blueprint-macro/zipball/47d3184855f6d7328985e1e43420725b9e01be0f",
+                "reference": "47d3184855f6d7328985e1e43420725b9e01be0f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/auth": "^5.5",
+                "illuminate/database": "^5.5",
+                "illuminate/support": "^5.5"
+            },
+            "require-dev": {
+                "codedungeon/phpunit-result-printer": "^0.4.4",
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpunit": "^6.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "CleaniqueCoders\\Blueprint\\Macro\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nasrul Hazim",
+                    "email": "nasrulhazim.m@gmail.com"
+                }
+            ],
+            "description": "Laravel Blueprint Macro",
+            "time": "2018-01-25T04:50:19+00:00"
+        },
+        {
+            "name": "cleaniquecoders/profile",
+            "version": "v1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cleaniquecoders/profile.git",
+                "reference": "fbaf0d0ddb2f1b16f75a76929c76b3025d7f871c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cleaniquecoders/profile/zipball/fbaf0d0ddb2f1b16f75a76929c76b3025d7f871c",
+                "reference": "fbaf0d0ddb2f1b16f75a76929c76b3025d7f871c",
+                "shasum": ""
+            },
+            "require": {
+                "cleaniquecoders/blueprint-macro": "^1.0",
+                "illuminate/auth": "^5.5",
+                "illuminate/support": "^5.5"
+            },
+            "require-dev": {
+                "codedungeon/phpunit-result-printer": "^0.4.4",
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpunit": "^6.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "CleaniqueCoders\\Profile\\": "src/"
+                },
+                "classmap": [
+                    "src/database/seeds",
+                    "src/database/factories"
+                ],
+                "files": [
+                    "src/Support/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nasrul Hazim",
+                    "email": "nasrulhazim.m@gmail.com"
+                }
+            ],
+            "description": "Common Profile Information",
+            "time": "2018-01-25T05:49:48+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1469,44 +1607,6 @@
                 "schedule"
             ],
             "time": "2017-01-23T04:29:33+00:00"
-        },
-        {
-            "name": "nasrulhazim/artisanmakers",
-            "version": "v1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nasrulhazim/artisanmakers.git",
-                "reference": "9c5f2650a91834af3848e51376f5ff20227c7192"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nasrulhazim/artisanmakers/zipball/9c5f2650a91834af3848e51376f5ff20227c7192",
-                "reference": "9c5f2650a91834af3848e51376f5ff20227c7192",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/console": "5.5.*",
-                "illuminate/support": "5.5.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "NasrulHazim\\ArtisanMakers\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nasrul Hazim",
-                    "email": "nasrulhazim.m@gmail.com"
-                }
-            ],
-            "description": "Laravel Artisan Makers",
-            "abandoned": "cleaniquecoders/artisan-makers",
-            "time": "2017-12-24T07:56:29+00:00"
         },
         {
             "name": "nesbot/carbon",
