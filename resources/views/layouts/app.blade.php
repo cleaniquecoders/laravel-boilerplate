@@ -16,11 +16,10 @@
     @stack('styles')
 </head>
 <body>
-    <div id="app">
-        @include('components.navigations.navbar')
 
-        @yield('content')
-    </div>
+    @include('components.navigations.navbar')
+
+    @yield('content')
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
