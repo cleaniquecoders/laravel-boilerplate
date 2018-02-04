@@ -11,4 +11,4 @@ before_script:
 script:
   - cp .env.example .env
   - php artisan key:generate
-  - vendor/bin/phpunit -v --coverage-text --colors=never --stderr
+  - vendor/bin/phpunit
