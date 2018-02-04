@@ -1,6 +1,6 @@
 <?php
 
-namespace OSI\Listeners;
+namespace App\Listeners;
 
 use Illuminate\Auth\Events\PasswordReset;
 
@@ -24,6 +24,6 @@ class LogPasswordReset
      */
     public function handle(PasswordReset $event)
     {
-        userlog($event->user, 'User successfully logged in.');
+        audit($event->user, 'User successfully reset password.');
     }
 }

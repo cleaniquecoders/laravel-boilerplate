@@ -1,0 +1,44 @@
+<?php
+
+namespace App\Console\Commands;
+
+use Illuminate\Console\Command;
+
+class ReloadDbCommand extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'reload:db';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Reload Database';
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return mixed
+     */
+    public function handle()
+    {
+        $this->call('migrate:fresh', ['--seed' => true]);
+        $this->info('Seeding Profile Dependencies');
+        $this->call('profile:seed');
+    }
+}
