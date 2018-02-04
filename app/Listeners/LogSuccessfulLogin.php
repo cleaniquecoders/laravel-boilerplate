@@ -1,6 +1,6 @@
 <?php
 
-namespace OSI\Listeners;
+namespace App\Listeners;
 
 use Illuminate\Auth\Events\Login;
 
@@ -24,6 +24,6 @@ class LogSuccessfulLogin
      */
     public function handle(Login $event)
     {
-        userlog($event->user, 'User successfully logged in.');
+        audit($event->user, 'User successfully logged in.');
     }
 }

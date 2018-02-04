@@ -173,17 +173,20 @@ return [
         Spatie\GoogleCalendar\GoogleCalendarServiceProvider::class,
         Spatie\Html\HtmlServiceProvider::class,
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
+        CleaniqueCoders\Blueprint\Macro\BlueprintMacroServiceProvider::class,
+        CleaniqueCoders\Profile\ProfileServiceProvider::class,
+        CleaniqueCoders\ArtisanMakers\ArtisanMakersServiceProvider::class,
 
         /*
          * Application Service Providers...
          */
-        OSI\Providers\AppServiceProvider::class,
-        OSI\Providers\AuthServiceProvider::class,
-        // OSI\Providers\BroadcastServiceProvider::class,
-        OSI\Providers\EventServiceProvider::class,
-        OSI\Providers\RouteServiceProvider::class,
-        OSI\Providers\MacroServiceProvider::class,
-        OSI\Providers\ObserverServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
+        App\Providers\MacroServiceProvider::class,
+        App\Providers\ObserverServiceProvider::class,
 
     ],
 

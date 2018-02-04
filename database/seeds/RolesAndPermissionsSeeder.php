@@ -14,7 +14,7 @@ class RolesAndPermissionsSeeder extends Seeder
     {
         app()['cache']->forget('spatie.permission.cache');
 
-        collect(['administrator', 'user'])->each(function ($role) {
+        collect(config('acl.roles'))->each(function ($role) {
             Role::create(['name' => $role]);
         });
     }
