@@ -1,6 +1,6 @@
 <?php
 
-namespace OSI\Listeners;
+namespace App\Listeners;
 
 use Illuminate\Auth\Events\Logout;
 
@@ -24,6 +24,6 @@ class LogSuccessfulLogout
      */
     public function handle(Logout $event)
     {
-        userlog($event->user, 'User successfully logged out.');
+        audit($event->user, 'User successfully logged out.');
     }
 }

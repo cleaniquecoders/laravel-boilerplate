@@ -1,8 +1,8 @@
 <?php
 
-namespace OSI\Http\Controllers\User;
+namespace App\Http\Controllers\User;
 
-use OSI\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class AvatarController extends Controller
@@ -28,7 +28,7 @@ class AvatarController extends Controller
             ->usingFileName('avatar.png')
             ->toMediaCollection('avatar');
 
-        userlog(auth()->user(), 'Uploaded new avatar');
+        audit(auth()->user(), 'Uploaded new avatar');
 
         alert()->success('New Avatar Uploaded');
 
