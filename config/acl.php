@@ -1,5 +1,8 @@
 <?php
 
 return [
-    'administrator', 'user',
+    'roles' => [
+        'administrator',
+        'user',
+    ],
 ];
