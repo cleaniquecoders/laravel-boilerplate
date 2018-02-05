@@ -11,7 +11,7 @@
 
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input id="name" type="text" class="form-control"
+                                <input id="name" name="name" type="text" class="form-control"
                                     aria-describedby="nameHelp"
                                     name="name" value="{{ old('name') }}" required autofocus>
 
@@ -24,7 +24,7 @@
 
                             <div class="form-group">
                                 <label for="email">E-Mail Address</label>
-                                <input id="email" type="email" class="form-control"
+                                <input id="email" name="email" type="email" class="form-control"
                                     aria-describedby="emailHelp"
                                     name="email" value="{{ old('email') }}" required>
 

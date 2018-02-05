@@ -11,7 +11,8 @@
 
                             <div class="form-group">
                                 <label for="email">Email address</label>
-                                <input type="email" class="form-control" id="email"
+                                <input type="email" class="form-control"
+                                    id="email" name="email"
                                     aria-describedby="emailHelp"
                                     value="{{ old('email') }}"
                                     required autofocus>
@@ -24,7 +25,8 @@
 
                             <div class="form-group">
                                 <label for="password">Password</label>
-                                <input type="password" class="form-control" id="password"
+                                <input type="password" class="form-control"
+                                    id="password" name="password"
                                     aria-describedby="passwordHelp"
                                     value="{{ old('email') }}"
                                     required autofocus>
