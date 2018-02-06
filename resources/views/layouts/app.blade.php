@@ -19,15 +19,9 @@
 
     @include('components.navigations.navbar')
 
-    <main role="main" class="container">
-        <div class="starter-template">
-            @yield('content')
-        </div>
-    </main><!-- /.container -->
+    @yield('content')
 
-    <nav class="navbar navbar-light bg-light fixed-bottom text-center text-muted">
-        <span>{{ date('Y') }} Laravel Boilerplate by Cleanique Coders</span>
-    </nav>
+    @include('components.footer')
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
