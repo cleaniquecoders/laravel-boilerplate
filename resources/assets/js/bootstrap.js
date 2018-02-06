@@ -1,5 +1,8 @@
 
+
 window._ = require('lodash');
+
+window.Popper = require('popper.js/dist/umd/popper');
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -10,7 +13,7 @@ window._ = require('lodash');
 try {
     window.$ = window.jQuery = require('jquery');
 
-    require('bootstrap-sass');
+    require('bootstrap');
 } catch (e) {}
 
 /**
@@ -33,9 +36,24 @@ let token = document.head.querySelector('meta[name="csrf-token"]');
 
 if (token) {
     window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+    $.ajaxSetup({
+        headers : {
+            'X-CSRF-TOKEN' : token.content
+        }
+    });
 } else {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
+
+/**
+ * Fontawesome
+ */
+
+var fontawesome = require('@fortawesome/fontawesome');
+var solid       = require('@fortawesome/fontawesome-free-solid').default;
+
+// Adds all the icons from the Solid style into our library for easy lookup
+fontawesome.library.add(solid)
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
@@ -49,5 +67,7 @@ if (token) {
 
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
-//     key: 'your-pusher-key'
+//     key: 'your-pusher-key',
+//     cluster: 'mt1',
+//     encrypted: true
 // });
