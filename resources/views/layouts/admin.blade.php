@@ -13,13 +13,23 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
+
     @stack('styles')
 </head>
 <body>
 
-    @include('components.navigations.navbar')
-
-    @yield('content')
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                @include('components.navigations.sidebar')
+            </nav>
+            <div class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+                @include('components.navigations.navbar')
+                @yield('content')
+            </div>
+        </div>
+    </div><!-- /.container -->
 
     @include('components.footer')
 
