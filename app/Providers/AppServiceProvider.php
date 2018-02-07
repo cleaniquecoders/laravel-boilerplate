@@ -10,7 +10,9 @@ class AppServiceProvider extends ServiceProvider
      * List of providers for development
      * @var array
      */
-    protected $providers_dev = [];
+    protected $providers_dev = [
+        \Laravel\Dusk\DuskServiceProvider::class,
+    ];
 
     /**
      * Bootstrap any application services.
