@@ -13,6 +13,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet">
+
     <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
 
     @stack('styles')

@@ -46,16 +46,6 @@ if (token) {
 }
 
 /**
- * Fontawesome
- */
-
-var fontawesome = require('@fortawesome/fontawesome');
-var solid       = require('@fortawesome/fontawesome-free-solid').default;
-
-// Adds all the icons from the Solid style into our library for easy lookup
-fontawesome.library.add(solid)
-
-/**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
  * allows your team to easily build robust real-time web applications.
