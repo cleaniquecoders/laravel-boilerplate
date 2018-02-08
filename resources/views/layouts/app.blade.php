@@ -16,12 +16,13 @@
     @stack('styles')
 </head>
 <body>
-
-    @include('components.navigations.navbar')
-
-    @yield('content')
-
-    @include('components.footer')
+    <div id="app">
+        @include('components.navigations.navbar')
+        <main class="py-4">
+            @yield('content')
+        </main>
+        @include('components.footer')
+    </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
