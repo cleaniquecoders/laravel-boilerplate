@@ -4,6 +4,9 @@ php:
   - 7.1
   - 7.2
 
+env:
+  - APP_ENV=testing
+
 before_script:
   - travis_retry composer self-update
   - travis_retry composer update --prefer-source --no-interaction --dev
