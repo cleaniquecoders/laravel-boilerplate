@@ -2,18 +2,11 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * List of providers for development
-     * @var array
-     */
-    protected $providers_dev = [
-        \Laravel\Dusk\DuskServiceProvider::class,
-    ];
-
     /**
      * Bootstrap any application services.
      *
@@ -21,20 +14,20 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->bootDevProviders();
+        $this->bootProviders();
     }
 
     /**
-     * Boot Development Providers
+     * Boot Providers Based On Environments
      * @return void
      */
-    private function bootDevProviders()
+    private function bootProviders()
     {
-        if ($this->app->environment() !== 'production') {
-            foreach ($this->providers_dev as $provider) {
-                $this->app->register($provider);
-            }
-        }
+        $providers = Collection::make(config('providers.' . $this->app->environment()));
+
+        $providers->each(function ($provider) {
+            $this->app->register($provider);
+        });
     }
 
     /**
