@@ -9,9 +9,9 @@
         "cleaniquecoders/artisan-makers": "^1.0",
         "cleaniquecoders/blueprint-macro": "^1.0",
         "cleaniquecoders/profile": "^1.0",
-        "fideloper/proxy": "~3.3",
+        "fideloper/proxy": "~4.0",
         "hashids/hashids": "^2.0",
-        "laravel/framework": "5.5.*",
+        "laravel/framework": "5.6.*",
         "laravel/tinker": "~1.0",
         "spatie/image-optimizer": "^1.0",
         "spatie/laravel-activitylog": "^2.3",
@@ -30,9 +30,9 @@
     "require-dev": {
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
-        "laravel/dusk": "^2.0",
+        "laravel/dusk": "~3.0",
         "mockery/mockery": "~1.0",
-        "phpunit/phpunit": "~6.0",
+        "phpunit/phpunit": "~7.0",
         "sempro/phpunit-pretty-print": "^1.0"
     },
     "autoload": {
