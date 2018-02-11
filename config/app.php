@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -120,7 +119,6 @@ return [
      */
 
     'providers'       => [
-
         /*
          * Laravel Framework Service Providers...
          */
@@ -170,7 +168,6 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\MacroServiceProvider::class,
         App\Providers\ObserverServiceProvider::class,
-
     ],
 
     /*
@@ -185,7 +182,6 @@ return [
      */
 
     'aliases'         => [
-
         'App'            => Illuminate\Support\Facades\App::class,
         'Artisan'        => Illuminate\Support\Facades\Artisan::class,
         'Auth'           => Illuminate\Support\Facades\Auth::class,
@@ -226,5 +222,4 @@ return [
         'Link'           => Spatie\Menu\Laravel\Link::class,
         'Alert'          => UxWeb\SweetAlert\SweetAlert::class,
     ],
-
 ];

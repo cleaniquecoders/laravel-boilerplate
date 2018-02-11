@@ -5,20 +5,22 @@ namespace App\Traits;
 use Spatie\Activitylog\Traits\LogsActivity;
 
 /**
- * LogsActivityExtended Trait
+ * LogsActivityExtended Trait.
  */
 trait LogsActivityExtended
 {
     use LogsActivity;
 
     /**
-     * Logging only the changed attributes
+     * Logging only the changed attributes.
      */
     protected static $logOnlyDirty = true;
 
     /**
-     * Get Log Name to Use
-     * @param  string $eventName
+     * Get Log Name to Use.
+     *
+     * @param string $eventName
+     *
      * @return string
      */
     public function getLogNameToUse(string $eventName = ''): string
@@ -27,12 +29,14 @@ trait LogsActivityExtended
     }
 
     /**
-     * Set Standard Description
-     * @param  string $eventName
+     * Set Standard Description.
+     *
+     * @param string $eventName
+     *
      * @return string
      */
     public function getDescriptionForEvent(string $eventName): string
     {
-        return "This " . strtolower(class_basename($this)) . " has been {$eventName}";
+        return 'This ' . strtolower(class_basename($this)) . " has been {$eventName}";
     }
 }

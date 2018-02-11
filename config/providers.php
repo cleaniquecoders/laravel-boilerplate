@@ -5,9 +5,7 @@ return [
         \Laravel\Dusk\DuskServiceProvider::class,
     ],
     'testing'    => [
-
     ],
     'production' => [
-
     ],
 ];

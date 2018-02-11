@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * See events
+ * See events.
+ *
  * @href https://laravel.com/docs/5.5/eloquent#events
  * Available metthods: retrieved, creating, created, updating, updated,
  * saving, saved, deleting, deleted, restoring, restored
@@ -16,7 +17,8 @@ class HashidsObserver
     /**
      * Listen to the creating event.
      *
-     * @param  \Illuminate\Database\Eloquent\Model $model
+     * @param \Illuminate\Database\Eloquent\Model $model
+     *
      * @return void
      */
     public function creating(Model $model)

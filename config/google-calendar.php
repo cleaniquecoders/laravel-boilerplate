@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
      * Path to the json file containing the credentials.
      */

@@ -5,12 +5,13 @@ namespace App\Services;
 use Hashids\Hashids as HashidsProvider;
 
 /**
- * Hashids Service
+ * Hashids Service.
  */
 class Hashids
 {
     /**
-     * Hashids/Hashids
+     * Hashids/Hashids.
+     *
      * @var [type]
      */
     protected $hashids;
@@ -21,7 +22,7 @@ class Hashids
     }
 
     /**
-     * Create an instance of Hashids
+     * Create an instance of Hashids.
      *
      * @return App\Services\Hashids
      */
@@ -31,8 +32,10 @@ class Hashids
     }
 
     /**
-     * Encode
-     * @param  int    $value
+     * Encode.
+     *
+     * @param int $value
+     *
      * @return string
      */
     public function encode(int $value): string
@@ -41,8 +44,10 @@ class Hashids
     }
 
     /**
-     * Decode
+     * Decode.
+     *
      * @param  string
+     *
      * @return int|null
      */
     public function decode(string $value): int

@@ -2,13 +2,11 @@
 
 namespace App\Observers;
 
-/**
- *
- */
 class Kernel
 {
     /**
-     * Single one-on-one observer
+     * Single one-on-one observer.
+     *
      * @var array
      */
     protected $observers = [
@@ -16,12 +14,12 @@ class Kernel
     ];
 
     /**
-     * One observer observed by many models
+     * One observer observed by many models.
+     *
      * @var array
      */
     protected $observeBy = [
         \App\Observers\ReferenceObserver::class => [
-
         ],
         \App\Observers\HashidsObserver::class   => [
             \App\Models\User::class,
@@ -30,16 +28,18 @@ class Kernel
     ];
 
     /**
-     * Make this class
+     * Make this class.
+     *
      * @return \App\Observers\Kernel
      */
     public static function make()
     {
-        return (new self);
+        return new self();
     }
 
     /**
-     * Register observers
+     * Register observers.
+     *
      * @return void
      */
     public function observes()
@@ -49,7 +49,8 @@ class Kernel
     }
 
     /**
-     * Observe One-on-One Model-Observer
+     * Observe One-on-One Model-Observer.
+     *
      * @return void
      */
     private function observeSingle()
@@ -64,7 +65,8 @@ class Kernel
     }
 
     /**
-     * One observer observed by many models
+     * One observer observed by many models.
+     *
      * @return void
      */
     private function observeBy()

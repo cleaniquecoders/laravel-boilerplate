@@ -13,13 +13,13 @@ class LogPasswordReset
      */
     public function __construct()
     {
-        //
     }
 
     /**
      * Handle the event.
      *
-     * @param  PasswordReset  $event
+     * @param PasswordReset $event
+     *
      * @return void
      */
     public function handle(PasswordReset $event)

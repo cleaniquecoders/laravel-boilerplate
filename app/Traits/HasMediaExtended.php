@@ -5,7 +5,7 @@ namespace App\Traits;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
 /**
- * HasMediaExtended Trait
+ * HasMediaExtended Trait.
  */
 trait HasMediaExtended
 {
@@ -15,7 +15,7 @@ trait HasMediaExtended
      * Get the last media item of a media collection.
      *
      * @param string $collectionName
-     * @param array $filters
+     * @param array  $filters
      *
      * @return Media|null
      */
@@ -35,7 +35,7 @@ trait HasMediaExtended
     {
         $media = $this->getLastMedia($collectionName);
 
-        if (!$media) {
+        if (! $media) {
             return '';
         }
 

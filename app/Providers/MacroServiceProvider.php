@@ -13,7 +13,6 @@ class MacroServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
     }
 
     /**
@@ -23,6 +22,5 @@ class MacroServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
     }
 }

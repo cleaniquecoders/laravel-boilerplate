@@ -6,7 +6,7 @@ use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
 /**
- * HasSlugExtended Trait
+ * HasSlugExtended Trait.
  */
 trait HasSlugExtended
 {

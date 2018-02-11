@@ -5,7 +5,7 @@ namespace App\Traits;
 use Spatie\MediaLibrary\Media;
 
 /**
- * HasThumb Trait
+ * HasThumb Trait.
  */
 trait HasThumbnail
 {

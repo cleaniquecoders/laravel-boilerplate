@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
      * The filesystems on which to store added files and derived images by default. Choose
      * one or more of the filesystems you've configured in config/filesystems.php.
@@ -111,6 +110,6 @@ return [
      * thumbnails and have installed the php-ffmpeg/php-ffmpeg composer
      * dependency.
      */
-    'ffmpeg_binaries' => '/usr/bin/ffmpeg',
+    'ffmpeg_binaries'  => '/usr/bin/ffmpeg',
     'ffprobe_binaries' => '/usr/bin/ffprobe',
 ];

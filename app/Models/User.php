@@ -18,13 +18,15 @@ class User extends Authenticatable implements HasMediaConversions
     use HasProfile, HasMediaExtended, HasThumbnail, HasRoles, HasSlugExtended, LogsActivityExtended, Notifiable, SoftDeletes;
 
     /**
-     * Guarded Field
+     * Guarded Field.
+     *
      * @var array
      */
     protected $guarded = ['id'];
 
     /**
-     * Create Slug From
+     * Create Slug From.
+     *
      * @var array
      */
     protected $slug_from = ['name'];
@@ -53,5 +55,4 @@ class User extends Authenticatable implements HasMediaConversions
     protected $hidden = [
         'password', 'remember_token',
     ];
-
 }

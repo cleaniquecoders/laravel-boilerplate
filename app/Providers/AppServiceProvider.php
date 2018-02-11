@@ -18,7 +18,8 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
-     * Boot Providers Based On Environments
+     * Boot Providers Based On Environments.
+     *
      * @return void
      */
     private function bootProviders()
@@ -37,6 +38,5 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
     }
 }
