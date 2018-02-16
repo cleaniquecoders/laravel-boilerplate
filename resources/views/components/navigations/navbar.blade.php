@@ -1,10 +1,17 @@
 <nav class="navbar navbar-expand-md navbar-light sticky-top">
     <div class="container">
-        <a class="navbar-brand" 
+        <a class="nav-link text-primary" 
             href="@guest {{ route('welcome') }} @else {{ route('home') }} @endguest"
             @include('components.tooltip', ['tooltip' => 'Home', 'pos' => 'down'])>
             <i class="fas fa-home"></i>
         </a>
+        @auth
+            <a class="nav-link text-primary" 
+            href="{{ route('user.show') }}" 
+            @include('components.tooltip', ['tooltip' => 'Profile', 'pos' => 'down'])>
+                <i class="fas fa-user"></i>
+            </a>
+        @endauth
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -22,10 +29,6 @@
                     <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                     <li><a class="nav-link" href="{{ route('register') }}">Register</a></li>
                 @else
-                    <li><a href="{{ route('user.show') }}" 
-                        class="nav-link">
-                        {{ Auth::user()->name }}</a>
-                    </li>
                     <li>
                         <a href="{{ route('logout') }}" 
                         class="nav-link"
