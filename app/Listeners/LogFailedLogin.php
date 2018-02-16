@@ -20,8 +20,8 @@ class LogFailedLogin
      */
     public function handle(Failed $event)
     {
-        activity()
-            ->performedOn($event->user)
-            ->log('Failed log in attempt.');
+        // activity()
+        //     ->performedOn($event->user)
+        //     ->log('Failed log in attempt.');
     }
 }
