@@ -16,8 +16,12 @@
 							{{ html()->label('Password Confirmation')->attribute('for', 'password_confirmation') }}
 							{{ html()->password()->name('password_confirmation')->class('form-control') }}
 						</div>
-
-						{{ html()->button('Update', 'submit')->class('btn btn-primary float-right') }}
+							
+						<div class="btn-group float-right">
+                            {{ html()->a(route('user.show'), 'Cancel')->class('btn btn-danger') }}
+                            {{ html()->button('Update', 'submit')->class('btn btn-primary') }}    
+                        </div>
+                        
 					{{ html()->form()->close() }}
 				@endslot
             @endcomponent
