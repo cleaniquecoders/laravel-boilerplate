@@ -13,6 +13,7 @@
         "hashids/hashids": "^2.0",
         "laravel/framework": "5.6.*",
         "laravel/tinker": "~1.0",
+        "predis/predis": "^1.1",
         "spatie/image-optimizer": "^1.0",
         "spatie/laravel-activitylog": "^2.3",
         "spatie/laravel-analytics": "^3.3",
@@ -28,6 +29,7 @@
         "uxweb/sweet-alert": "^1.4"
     },
     "require-dev": {
+        "codedungeon/phpunit-result-printer": "^0.6.0",
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
         "laravel/dusk": "~3.0",
