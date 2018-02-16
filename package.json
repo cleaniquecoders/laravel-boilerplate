@@ -21,7 +21,7 @@
         "laravel-mix": "^1.0",
         "lodash": "^4.17.4",
         "popper.js": "^1.12.9",
-        "sweetalert": "^2.0.8",
+        "sweetalert2": "^7.12.3",
         "vue": "^2.5.7"
     },
     "dependencies": {}

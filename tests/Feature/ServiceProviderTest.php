@@ -41,7 +41,7 @@ class ServiceProviderTest extends TestCase
     {
         $config    = config('app.providers');
         $providers = [
-            \UxWeb\SweetAlert\SweetAlertServiceProvider::class,
+            \Softon\SweetAlert\SweetAlertServiceProvider::class,
         ];
         foreach ($providers as $provider) {
             $this->assertTrue(in_array($provider, $config));

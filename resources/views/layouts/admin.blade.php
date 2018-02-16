@@ -37,8 +37,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/sweetalert.min.js') }}"></script>
-    @include('sweet::alert')
+    @include('vendor.sweetalert.view')
     @stack('scripts')
 </body>
 </html>

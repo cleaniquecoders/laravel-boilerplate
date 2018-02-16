@@ -148,15 +148,15 @@ return [
         /*
          * Package Service Providers...
          */
+        CleaniqueCoders\Blueprint\Macro\BlueprintMacroServiceProvider::class,
+        CleaniqueCoders\Profile\ProfileServiceProvider::class,
+        CleaniqueCoders\ArtisanMakers\ArtisanMakersServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         Spatie\Analytics\AnalyticsServiceProvider::class,
         Spatie\Menu\Laravel\MenuServiceProvider::class,
         Spatie\GoogleCalendar\GoogleCalendarServiceProvider::class,
         Spatie\Html\HtmlServiceProvider::class,
-        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
-        CleaniqueCoders\Blueprint\Macro\BlueprintMacroServiceProvider::class,
-        CleaniqueCoders\Profile\ProfileServiceProvider::class,
-        CleaniqueCoders\ArtisanMakers\ArtisanMakersServiceProvider::class,
+        Softon\SweetAlert\SweetAlertServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -220,6 +220,5 @@ return [
         'GoogleCalendar' => Spatie\GoogleCalendar\GoogleCalendarFacade::class,
         'Html'           => Spatie\Html\Facades\Html::class,
         'Link'           => Spatie\Menu\Laravel\Link::class,
-        'Alert'          => UxWeb\SweetAlert\SweetAlert::class,
     ],
 ];
