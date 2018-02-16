@@ -13,8 +13,9 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        \App\Console\Commands\ReloadDbCommand::class,
+        \App\Console\Commands\ReloadAllCommand::class,
         \App\Console\Commands\ReloadCacheCommand::class,
+        \App\Console\Commands\ReloadDbCommand::class,
     ];
 
     /**
