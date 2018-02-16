@@ -157,6 +157,7 @@ return [
         Spatie\GoogleCalendar\GoogleCalendarServiceProvider::class,
         Spatie\Html\HtmlServiceProvider::class,
         Softon\SweetAlert\SweetAlertServiceProvider::class,
+        DaveJamesMiller\Breadcrumbs\BreadcrumbsServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -220,5 +221,6 @@ return [
         'GoogleCalendar' => Spatie\GoogleCalendar\GoogleCalendarFacade::class,
         'Html'           => Spatie\Html\Facades\Html::class,
         'Link'           => Spatie\Menu\Laravel\Link::class,
+        'Breadcrumbs'    => DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs::class,
     ],
 ];
