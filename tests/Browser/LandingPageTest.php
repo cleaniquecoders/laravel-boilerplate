@@ -12,7 +12,17 @@ class LandingPageTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
-                    ->assertSee('Laravel Boilerplate');
+                    ->assertSee('Laravel')
+                    ->assertSee('Laravel Boilerplate')
+                    ->assertSee('Ready with Bootstrap 4, Font Awesome 5')
+                    ->assertSeeLink('Bootstrap 4')
+                    ->assertSeeLink('Font Awesome 5')
+                    ->assertSeeLink('Spatie')
+                    ->assertSeeLink('Cleanique Coders')
+                    ->assertSeeLink('Documentation')
+                    ->assertSeeLink('GitHub')
+                    ->assertSeeLink('Login')
+                    ->assertSeeLink('Register');
         });
     }
 }
