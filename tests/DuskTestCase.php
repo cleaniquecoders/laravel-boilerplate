@@ -30,7 +30,7 @@ abstract class DuskTestCase extends BaseTestCase
     {
         $options = (new ChromeOptions())->addArguments([
             '--disable-gpu',
-            '--headless',
+            '--headless', // remove this to open up browser
         ]);
 
         return RemoteWebDriver::create(
@@ -38,5 +38,16 @@ abstract class DuskTestCase extends BaseTestCase
                 ChromeOptions::CAPABILITY, $options
             )
         );
+    }
+
+    /**
+     * Determine the application's base URL.
+     *
+     * @var string
+     */
+    protected function baseUrl()
+    {
+        // somehow baseUrl() always return http://localhost when use config('app.url')
+        return env('APP_URL'); 
     }
 }
