@@ -48,6 +48,6 @@ abstract class DuskTestCase extends BaseTestCase
     protected function baseUrl()
     {
         // somehow baseUrl() always return http://localhost when use config('app.url')
-        return env('APP_URL'); 
+        return env('APP_URL');
     }
 }

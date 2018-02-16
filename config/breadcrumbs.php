@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | View Name
@@ -66,5 +65,4 @@ return [
 
     // Generator
     'generator-class'                          => DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
-
 ];

@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 
 // Home
 Breadcrumbs::register('home', function ($breadcrumbs) {
