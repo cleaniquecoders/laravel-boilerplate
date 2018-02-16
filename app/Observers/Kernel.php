@@ -39,8 +39,6 @@ class Kernel
 
     /**
      * Register observers.
-     *
-     * @return void
      */
     public function observes()
     {
@@ -50,8 +48,6 @@ class Kernel
 
     /**
      * Observe One-on-One Model-Observer.
-     *
-     * @return void
      */
     private function observeSingle()
     {
@@ -66,8 +62,6 @@ class Kernel
 
     /**
      * One observer observed by many models.
-     *
-     * @return void
      */
     private function observeBy()
     {

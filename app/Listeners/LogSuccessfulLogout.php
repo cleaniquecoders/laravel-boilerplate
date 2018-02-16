@@ -8,8 +8,6 @@ class LogSuccessfulLogout
 {
     /**
      * Create the event listener.
-     *
-     * @return void
      */
     public function __construct()
     {
@@ -19,8 +17,6 @@ class LogSuccessfulLogout
      * Handle the event.
      *
      * @param Logout $event
-     *
-     * @return void
      */
     public function handle(Logout $event)
     {

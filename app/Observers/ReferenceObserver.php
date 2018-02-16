@@ -18,8 +18,6 @@ class ReferenceObserver
      * Listen to the creating event.
      *
      * @param \Illuminate\Database\Eloquent\Model $model
-     *
-     * @return void
      */
     public function creating(Model $model)
     {

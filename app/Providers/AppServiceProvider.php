@@ -9,8 +9,6 @@ class AppServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any application services.
-     *
-     * @return void
      */
     public function boot()
     {
@@ -19,8 +17,6 @@ class AppServiceProvider extends ServiceProvider
 
     /**
      * Boot Providers Based On Environments.
-     *
-     * @return void
      */
     private function bootProviders()
     {
@@ -33,8 +29,6 @@ class AppServiceProvider extends ServiceProvider
 
     /**
      * Register any application services.
-     *
-     * @return void
      */
     public function register()
     {

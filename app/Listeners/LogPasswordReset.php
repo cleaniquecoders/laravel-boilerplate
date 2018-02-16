@@ -8,8 +8,6 @@ class LogPasswordReset
 {
     /**
      * Create the event listener.
-     *
-     * @return void
      */
     public function __construct()
     {
@@ -19,8 +17,6 @@ class LogPasswordReset
      * Handle the event.
      *
      * @param PasswordReset $event
-     *
-     * @return void
      */
     public function handle(PasswordReset $event)
     {
