@@ -1,7 +1,9 @@
-<nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+<nav class="navbar navbar-expand-md navbar-light sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="@guest {{ route('welcome') }} @else {{ route('home') }} @endguest">
-            {{ config('app.name', 'Laravel') }}
+        <a class="navbar-brand" 
+            href="@guest {{ route('welcome') }} @else {{ route('home') }} @endguest"
+            @include('components.tooltip', ['tooltip' => 'Home', 'pos' => 'down'])>
+            <i class="fas fa-home"></i>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -20,22 +22,20 @@
                     <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                     <li><a class="nav-link" href="{{ route('register') }}">Register</a></li>
                 @else
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                Logout
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </div>
+                    <li><a href="{{ route('show.avatar') }}" 
+                        class="nav-link">
+                        {{ Auth::user()->name }}</a>
                     </li>
+                    <li>
+                        <a href="{{ route('logout') }}" 
+                        class="nav-link"
+                        title="Logout" 
+                        @include('components.tooltip', ['tooltip' => 'Logout', 'pos' => 'down'])
+                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                        <i class="fas fa-sign-out-alt"></i>
+                        </a>
+                    </li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
                 @endguest
             </ul>
         </div>
