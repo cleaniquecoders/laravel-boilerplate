@@ -22,13 +22,13 @@
         		@endslot
                 @slot('card_body')
                 	<div class="text-center">
-                    @if(auth()->user()->getLastMediaUrl('avatar','thumbnail_navbar'))
-		                <img src="{{ auth()->user()->getLastMediaUrl('avatar', 'thumbnail_navbar') }}"
-		                    alt="avatar"
-		                    class="img-rounded">
-		            @else
-		                <i class="fa fa-user-circle fa-7x"></i>
-		            @endif
+	                    @if(auth()->user()->getLastMediaUrl('avatar','thumbnail_navbar'))
+			                <img src="{{ auth()->user()->getLastMediaUrl('avatar', 'thumbnail_navbar') }}"
+			                    alt="avatar"
+			                    class="img-rounded">
+			            @else
+			                <i class="fa fa-user-circle fa-7x"></i>
+			            @endif
 		            </div>
 		            <hr>
 		            {{ html()->form('PUT', route('user.update'))->open() }}

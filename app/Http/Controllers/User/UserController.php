@@ -15,6 +15,14 @@ class UserController extends Controller
 
     public function update(Request $request)
     {
-    	
+    	$request->validate([
+    		'name' => 'required|min:3',
+    	]);
+
+    	auth()->user()->update(['name' => $request->name]);
+
+    	swal()->success('Profile updated.');
+
+    	return redirect()->route('user.show');
     }
 }
