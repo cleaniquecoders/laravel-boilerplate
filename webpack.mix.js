@@ -14,4 +14,5 @@ let mix = require('laravel-mix');
 mix.js('resources/assets/js/app.js', 'public/js')
 	.js('resources/assets/js/font-awesome.js', 'public/js')
 	.js('resources/assets/js/swal.js', 'public/js')
+	.sass('node_modules/balloon-css/src/balloon.scss', 'public/css')
    	.sass('resources/assets/sass/app.scss', 'public/css');
