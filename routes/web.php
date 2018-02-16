@@ -17,8 +17,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['namespace' => 'User', 'prefix' => 'user'], function () {
+Route::group([
+    'namespace' => 'User',
+    'prefix'    => 'user',
+    'as'        => 'user.',
+], function () {
+	Route::get('/', 'UserController@show')->name('show');
+	Route::put('/', 'UserController@update')->name('update');
     Route::get('/logs', 'LogController')->name('logs');
-    Route::get('/avatar', 'AvatarController@show')->name('show.avatar');
-    Route::post('/avatar', 'AvatarController@store')->name('store.avatar');
+    Route::get('/avatar', 'AvatarController@show')->name('avatar.show');
+    Route::post('/avatar', 'AvatarController@store')->name('avatar.store');
 });

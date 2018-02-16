@@ -32,6 +32,6 @@ class AvatarController extends Controller
 
         alert()->success('New Avatar Uploaded');
 
-        return redirect()->route('show.avatar');
+        return redirect()->route('user.show.avatar');
     }
 }

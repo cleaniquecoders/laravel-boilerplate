@@ -22,7 +22,7 @@
                     <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                     <li><a class="nav-link" href="{{ route('register') }}">Register</a></li>
                 @else
-                    <li><a href="{{ route('show.avatar') }}" 
+                    <li><a href="{{ route('user.show') }}" 
                         class="nav-link">
                         {{ Auth::user()->name }}</a>
                     </li>
