@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers\User;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class PasswordController extends Controller
 {
     public function show()
     {
-    	return view('users.password.show');
+        return view('users.password.show');
     }
 
     public function update(Request $request)
     {
-    	$request->validate([
+        $request->validate([
             'password' => 'required|confirmed|min:6',
         ]);
 
