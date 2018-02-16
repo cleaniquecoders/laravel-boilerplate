@@ -9,6 +9,7 @@
         "cleaniquecoders/artisan-makers": "^1.0",
         "cleaniquecoders/blueprint-macro": "^1.0",
         "cleaniquecoders/profile": "^1.0",
+        "davejamesmiller/laravel-breadcrumbs": "^5.0",
         "fideloper/proxy": "~4.0",
         "hashids/hashids": "^2.0",
         "laravel/framework": "5.6.*",
