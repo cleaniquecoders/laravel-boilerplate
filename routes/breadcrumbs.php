@@ -17,6 +17,12 @@ Breadcrumbs::register('user.avatar.show', function ($breadcrumbs) {
     $breadcrumbs->push('Avatar', route('user.avatar.show'));
 });
 
+// Home > Profile > Security
+Breadcrumbs::register('user.password.show', function ($breadcrumbs) {
+	$breadcrumbs->parent('user.show');
+    $breadcrumbs->push('Securty', route('user.password.show'));
+});
+
 // Home > Profile > Logs
 Breadcrumbs::register('user.logs', function ($breadcrumbs) {
 	$breadcrumbs->parent('user.show');

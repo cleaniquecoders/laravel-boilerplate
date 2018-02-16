@@ -10,12 +10,17 @@
 					<div class="btn-group float-right">
 						<a href="{{ route('user.avatar.show') }}" 
 		        			@include('components.tooltip', ['tooltip' => 'Upload Avatar'])
-		        			class="btn btn-default">
+		        			class="btn text-success">
 		        			<i class="fas fa-user-circle"></i>
+		        		</a>
+		        		<a href="{{ route('user.password.show') }}" 
+		        			@include('components.tooltip', ['tooltip' => 'Security'])
+		        			class="btn text-danger">
+		        			<i class="fas fa-lock"></i>
 		        		</a>
 		        		<a href="{{ route('user.logs') }}" 
 		        			@include('components.tooltip', ['tooltip' => 'Log'])
-		        			class="btn btn-default">
+		        			class="btn text-info">
 		        			<i class="fas fa-list"></i>
 		        		</a>
 		        	</div>
