@@ -12,9 +12,6 @@ trait CreatesApplication
     public function setUp()
     {
         parent::setUp();
-
-        $this->artisan('reload:cache');
-        $this->artisan('reload:db');
     }
 
     /**
