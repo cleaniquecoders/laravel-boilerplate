@@ -18,6 +18,8 @@
         "balloon-css": "^0.5.0",
         "bootstrap": "^4.0.0",
         "cross-env": "^5.1",
+        "datatables.net": "^1.10.16",
+        "datatables.net-bs4": "^1.10.16",
         "jquery": "^3.2",
         "laravel-mix": "^1.0",
         "lodash": "^4.17.4",
