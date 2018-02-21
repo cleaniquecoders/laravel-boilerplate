@@ -2,6 +2,10 @@
     "/js/app.js": "/js/app.js",
     "/css/balloon.css": "/css/balloon.css",
     "/css/app.css": "/css/app.css",
+    "/js/vue.js": "/js/vue.js",
+    "/js/swal.js": "/js/swal.js",
+    "/js/handler.js": "/js/handler.js",
     "/js/font-awesome.js": "/js/font-awesome.js",
-    "/js/swal.js": "/js/swal.js"
+    "/js/datatable.js": "/js/datatable.js",
+    "/css/datatable.css": "/css/datatable.css"
 }

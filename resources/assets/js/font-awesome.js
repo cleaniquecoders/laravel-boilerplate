@@ -1,11 +1,11 @@
 /**
  * Font Awesome 5
  */
-var fontawesome = require('@fortawesome/fontawesome');
-var solid       = require('@fortawesome/fontawesome-free-solid').default;
-var regular     = require('@fortawesome/fontawesome-free-regular');
-// var brands      = require('@fortawesome/fontawesome-free-brands');
+import fontawesome from '@fortawesome/fontawesome';
+import solid from '@fortawesome/fontawesome-free-solid';
+// import regular from '@fortawesome/fontawesome-free-regular';
+// import brands from '@fortawesome/fontawesome-free-brands';
 
 fontawesome.library.add(solid);
-fontawesome.library.add(regular);
+// fontawesome.library.add(regular);
 // fontawesome.library.add(brands);
