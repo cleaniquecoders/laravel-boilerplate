@@ -16,6 +16,9 @@ mix.js('resources/assets/js/app.js', 'public/js')
 	.js('resources/assets/js/swal.js', 'public/js')
 	.js('resources/assets/js/vue.js', 'public/js')
 	.js('resources/assets/js/handler.js', 'public/js')
+	.copy('node_modules/jquery-jeditable/dist/', 'public/js/')
+	.copy('node_modules/select2/dist/js/select2.full.min.js', 'public/js/select2.js')
+	.copy('node_modules/select2/dist/css/select2.min.css', 'public/css/select2.css')
 	.scripts([
 		'node_modules/datatables.net/js/jquery.dataTables.js',
 		'node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js'

@@ -6,6 +6,8 @@
     "/js/swal.js": "/js/swal.js",
     "/js/handler.js": "/js/handler.js",
     "/js/font-awesome.js": "/js/font-awesome.js",
+    "/js/select2.js": "/js/select2.js",
+    "/css/select2.css": "/css/select2.css",
     "/js/datatable.js": "/js/datatable.js",
     "/css/datatable.css": "/css/datatable.css"
 }
