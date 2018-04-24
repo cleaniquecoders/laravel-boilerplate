@@ -12,10 +12,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 use Spatie\Permission\Traits\HasRoles;
+use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable implements HasMediaConversions
 {
-    use HasProfile, HasMediaExtended, HasThumbnail, HasRoles, HasSlugExtended, LogsActivityExtended, Notifiable, SoftDeletes;
+    use HasApiTokens, HasProfile, HasMediaExtended, HasThumbnail, HasRoles, HasSlugExtended, LogsActivityExtended, Notifiable, SoftDeletes;
 
     /**
      * Guarded Field.
