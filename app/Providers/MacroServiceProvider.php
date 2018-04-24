@@ -11,6 +11,8 @@ class MacroServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        \App\Macros\Http\Response::registerMacros();
+        \App\Macros\Models\Model::registerMacros();
     }
 
     /**
@@ -18,5 +20,6 @@ class MacroServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        // \App\Macros\Routing\Route::registerMacros();
     }
 }
