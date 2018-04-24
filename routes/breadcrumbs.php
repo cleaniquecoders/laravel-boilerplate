@@ -11,6 +11,24 @@ Breadcrumbs::register('manage.passport', function ($breadcrumbs) {
     $breadcrumbs->push('Manage Passport', route('manage.passport'));
 });
 
+// Home > Manage Users
+Breadcrumbs::register('manage.users.index', function ($breadcrumbs) {
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push('Manage Users', route('manage.users.index'));
+});
+
+// Home > Manage Users > User Details
+Breadcrumbs::register('manage.users.show', function ($breadcrumbs, $id) {
+    $breadcrumbs->parent('manage.users.index');
+    $breadcrumbs->push('User Details', route('manage.users.show', $id));
+});
+
+// Home > Manage Users > Edit User
+Breadcrumbs::register('manage.users.edit', function ($breadcrumbs, $id) {
+    $breadcrumbs->parent('manage.users.index');
+    $breadcrumbs->push('Edit User', route('manage.users.edit', $id));
+});
+
 // Home > Profile
 Breadcrumbs::register('user.show', function ($breadcrumbs) {
     $breadcrumbs->parent('home');
