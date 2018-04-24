@@ -1,25 +1,12 @@
-<!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    @include('components.meta')
+@extends('layouts.base')
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    @stack('styles')
-</head>
-<body>
-    <div id="app">
-        @include('components.navigations.navbar')
-        <main class="py-4">
-            @yield('content')
-        </main>
-        @include('components.footer')
-    </div>
-
-    @include('components.scripts')
-    @stack('scripts')
-</body>
-</html>
+@section('body')
+    @include('components.navigations.navbar')
+    <div class="container">
+        <div class="row">
+            <div class="col mt-5">
+                @yield('content')
+            </div>
+        </div>
+    </div><!-- /.container -->
+@endsection
