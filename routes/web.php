@@ -36,5 +36,7 @@ Route::group([
     'prefix'    => 'manage',
     'as'        => 'manage.',
 ], function () {
-    Route::view('/passport', 'manage.passport.index')->name('passport');
+    Route::view('/passport', 'manage.passport.index')
+        ->middleware('role:developer')
+        ->name('passport');
 });
