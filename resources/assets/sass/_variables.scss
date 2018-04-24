@@ -2,6 +2,9 @@
 // Body
 $body-bg: #fff;
 
+// 50% transparent white
+$bg-semi-transparent: rgba(255, 255, 255, 0.5);
+
 // Borders
 $laravel-border-color: darken($body-bg, 10%);
 $list-group-border-color: $laravel-border-color;
