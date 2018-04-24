@@ -14,10 +14,7 @@
 <body>
     @include('layouts.admin-' . config('layouts.admin'))
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/font-awesome.js') }}"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
-    @include('vendor.sweetalert.view')
+    @include('components.scripts')
     @stack('scripts')
 </body>
 </html>

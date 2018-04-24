@@ -19,9 +19,7 @@
         @include('components.footer')
     </div>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    @include('vendor.sweetalert.view')
+    @include('components.scripts')
     @stack('scripts')
 </body>
 </html>
