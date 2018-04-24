@@ -10,3 +10,11 @@
 | is assigned the "api" middleware group. Enjoy building your API Datatable!
 |
  */
+
+Route::group([
+    'namespace' => 'Manage',
+    'prefix'    => 'manage',
+    'as'        => 'manage.',
+], function () {
+    Route::get('users', 'UserController')->name('user');
+});

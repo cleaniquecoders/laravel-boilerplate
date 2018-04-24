@@ -10,3 +10,11 @@
 | is assigned the "api" middleware group. Enjoy building your API!
 |
  */
+
+Route::group([
+    'namespace' => 'Manage',
+    'prefix'    => 'manage',
+    'as'        => 'manage.',
+], function () {
+    Route::resource('users', 'UserController')->except('create', 'edit');
+});
