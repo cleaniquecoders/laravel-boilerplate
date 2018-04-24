@@ -6,7 +6,7 @@
 	<script type="text/javascript" src="{{ asset('js/datatable.js') }}"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function($) {
-			var table = $('#{{ $table_id }}').DataTable({
+			var table_{{ str_slug($table_id, '_') }} = $('#{{ $table_id }}').DataTable({
 				@isset($lang)
 				language: {
 					url: '{{ asset($lang) }}'
@@ -15,16 +15,12 @@
 				processing: true,
 				serverSide: true,
 				responsive: true,
-				deferRender: true,
+				deferRender: false,
 				ajax: {
 					url:'{!! route($route_name, $param ?? null) !!}',
 					{{ $datatable_data or ''}}
 				},
-				columns: [
-					@foreach($columns as $column)
-						{!! json_encode($column) !!},
-					@endforeach
-				],
+				columns: @json($columns),
 				columnDefs: [
 					{
 						{{ $actions or '' }}
