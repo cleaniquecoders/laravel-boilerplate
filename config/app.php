@@ -12,7 +12,7 @@ return [
     |
      */
 
-    'name'            => env('APP_NAME', 'Web Application Boilerplate'),
+    'name' => env('APP_NAME', 'Web Application Boilerplate'),
 
     /*
     |--------------------------------------------------------------------------
@@ -25,7 +25,7 @@ return [
     |
      */
 
-    'env'             => env('APP_ENV', 'production'),
+    'env' => env('APP_ENV', 'production'),
 
     /*
     |--------------------------------------------------------------------------
@@ -38,7 +38,7 @@ return [
     |
      */
 
-    'debug'           => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -51,7 +51,7 @@ return [
     |
      */
 
-    'url'             => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://localhost'),
 
     /*
     |--------------------------------------------------------------------------
@@ -64,7 +64,7 @@ return [
     |
      */
 
-    'timezone'        => env('APP_TIMEZONE', 'UTC'),
+    'timezone' => env('APP_TIMEZONE', 'UTC'),
 
     /*
     |--------------------------------------------------------------------------
@@ -77,7 +77,7 @@ return [
     |
      */
 
-    'locale'          => env('APP_LOCALE', 'en'),
+    'locale' => env('APP_LOCALE', 'en'),
 
     /*
     |--------------------------------------------------------------------------
@@ -103,9 +103,9 @@ return [
     |
      */
 
-    'key'             => env('APP_KEY'),
+    'key' => env('APP_KEY'),
 
-    'cipher'          => 'AES-256-CBC',
+    'cipher' => 'AES-256-CBC',
 
     /*
     |--------------------------------------------------------------------------
@@ -118,7 +118,7 @@ return [
     |
      */
 
-    'providers'       => [
+    'providers' => [
         /*
          * Laravel Framework Service Providers...
          */
@@ -182,7 +182,7 @@ return [
     |
      */
 
-    'aliases'         => [
+    'aliases' => [
         'App'            => Illuminate\Support\Facades\App::class,
         'Artisan'        => Illuminate\Support\Facades\Artisan::class,
         'Auth'           => Illuminate\Support\Facades\Auth::class,

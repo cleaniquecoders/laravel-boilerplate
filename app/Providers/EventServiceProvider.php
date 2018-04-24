@@ -13,16 +13,16 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'Illuminate\Auth\Events\Registered'    => [
+        'Illuminate\Auth\Events\Registered' => [
             'App\Listeners\AssignDefaultRole',
         ],
-        'Illuminate\Auth\Events\Login'         => [
+        'Illuminate\Auth\Events\Login' => [
             'App\Listeners\LogSuccessfulLogin',
         ],
-        'Illuminate\Auth\Events\Failed'        => [
+        'Illuminate\Auth\Events\Failed' => [
             'App\Listeners\LogFailedLogin',
         ],
-        'Illuminate\Auth\Events\Logout'        => [
+        'Illuminate\Auth\Events\Logout' => [
             'App\Listeners\LogSuccessfulLogout',
         ],
         'Illuminate\Auth\Events\PasswordReset' => [

@@ -12,7 +12,7 @@ return [
     |
      */
 
-    'default'  => env('LOG_CHANNEL', 'stack'),
+    'default' => env('LOG_CHANNEL', 'stack'),
 
     /*
     |--------------------------------------------------------------------------
@@ -29,25 +29,25 @@ return [
      */
 
     'channels' => [
-        'stack'    => [
+        'stack' => [
             'driver'   => 'stack',
             'channels' => ['single'],
         ],
 
-        'single'   => [
+        'single' => [
             'driver' => 'single',
             'path'   => storage_path('logs/laravel.log'),
             'level'  => 'debug',
         ],
 
-        'daily'    => [
+        'daily' => [
             'driver' => 'daily',
             'path'   => storage_path('logs/laravel.log'),
             'level'  => 'debug',
             'days'   => 7,
         ],
 
-        'slack'    => [
+        'slack' => [
             'driver'   => 'slack',
             'url'      => env('LOG_SLACK_WEBHOOK_URL'),
             'username' => 'Laravel Log',
@@ -55,7 +55,7 @@ return [
             'level'    => 'critical',
         ],
 
-        'syslog'   => [
+        'syslog' => [
             'driver' => 'syslog',
             'level'  => 'debug',
         ],

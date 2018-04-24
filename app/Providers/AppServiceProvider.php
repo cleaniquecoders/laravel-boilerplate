@@ -16,6 +16,13 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
+     * Register any application services.
+     */
+    public function register()
+    {
+    }
+
+    /**
      * Boot Providers Based On Environments.
      */
     private function bootProviders()
@@ -25,12 +32,5 @@ class AppServiceProvider extends ServiceProvider
         $providers->each(function ($provider) {
             $this->app->register($provider);
         });
-    }
-
-    /**
-     * Register any application services.
-     */
-    public function register()
-    {
     }
 }

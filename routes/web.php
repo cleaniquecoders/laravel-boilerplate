@@ -30,3 +30,13 @@ Route::group([
     Route::get('/avatar', 'AvatarController@show')->name('avatar.show');
     Route::post('/avatar', 'AvatarController@store')->name('avatar.store');
 });
+
+Route::group([
+    'namespace' => 'Manage',
+    'prefix'    => 'manage',
+    'as'        => 'manage.',
+], function () {
+    Route::view('/passport', 'manage.passport.index')
+        ->middleware('role:developer')
+        ->name('passport');
+});

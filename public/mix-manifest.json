@@ -2,6 +2,13 @@
     "/js/app.js": "/js/app.js",
     "/css/balloon.css": "/css/balloon.css",
     "/css/app.css": "/css/app.css",
+    "/js/passport.js": "/js/passport.js",
+    "/js/vue.js": "/js/vue.js",
+    "/js/swal.js": "/js/swal.js",
+    "/js/handler.js": "/js/handler.js",
     "/js/font-awesome.js": "/js/font-awesome.js",
-    "/js/swal.js": "/js/swal.js"
+    "/js/select2.js": "/js/select2.js",
+    "/css/select2.css": "/css/select2.css",
+    "/js/datatable.js": "/js/datatable.js",
+    "/css/datatable.css": "/css/datatable.css"
 }

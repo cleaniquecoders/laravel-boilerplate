@@ -11,7 +11,8 @@ class ReloadAllCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'reload:all';
+    protected $signature = 'reload:all
+                                {--d|dev : Seed development data}';
 
     /**
      * The console command description.
@@ -37,5 +38,15 @@ class ReloadAllCommand extends Command
     {
         $this->call('reload:cache');
         $this->call('reload:db');
+        $this->call('storage:link');
+        $this->call('passport:install', [
+            '--force' => true,
+        ]);
+
+        if ($this->option('dev')) {
+            $this->call('db:seed', [
+                '--class' => 'DevelopmentSeeder',
+            ]);
+        }
     }
 }

@@ -5,6 +5,12 @@ Breadcrumbs::register('home', function ($breadcrumbs) {
     $breadcrumbs->push('Home', route('home'));
 });
 
+// Home > Manage Passport
+Breadcrumbs::register('manage.passport', function ($breadcrumbs) {
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push('Manage Passport', route('manage.passport'));
+});
+
 // Home > Profile
 Breadcrumbs::register('user.show', function ($breadcrumbs) {
     $breadcrumbs->parent('home');
