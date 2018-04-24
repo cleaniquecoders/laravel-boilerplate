@@ -34,13 +34,16 @@ let token = document.head.querySelector('meta[name="csrf-token"]');
 
 if (token) {
     window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
-    $.ajaxSetup({
-        headers : {
-            'X-CSRF-TOKEN' : token.content
-        }
-    });
 } else {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+}
+
+let api_header_accept = document.head.querySelector('meta[name="api-header-accept"]');
+
+if (api_header_accept) {
+    window.axios.defaults.headers.common['Accept'] = api_header_accept.content;
+} else {
+    console.error('API Header Accept Not Found');
 }
 
 /**
