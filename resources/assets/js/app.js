@@ -6,4 +6,4 @@
  */
 
 require('./bootstrap');
-require('./preloader');
+require('./axios');
