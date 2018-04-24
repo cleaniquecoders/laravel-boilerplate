@@ -70,7 +70,3 @@ axios.interceptors.response.use(function (response) {
 		return Promise.reject(error);
 	}
 );
-
-jQuery(document).ready(function($) {
-	$('.loader-container').hide();
-});

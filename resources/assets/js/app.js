@@ -7,3 +7,4 @@
 
 require('./bootstrap');
 require('./axios');
+require('./laravel-echo');
