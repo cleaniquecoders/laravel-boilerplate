@@ -21,7 +21,7 @@ class Kernel
     protected $observeBy = [
         \App\Observers\ReferenceObserver::class => [
         ],
-        \App\Observers\HashidsObserver::class   => [
+        \App\Observers\HashidsObserver::class => [
             \App\Models\User::class,
             \Spatie\MediaLibrary\Media::class,
         ],

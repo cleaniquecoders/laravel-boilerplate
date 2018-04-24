@@ -117,7 +117,7 @@ if (! function_exists('user')) {
     function user()
     {
         foreach (config('auth.guards') as $key => $value) {
-            if(Auth::guard($key)->check()) {
+            if (Auth::guard($key)->check()) {
                 return Auth::guard($key)->user();
             }
         }

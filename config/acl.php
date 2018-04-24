@@ -2,19 +2,19 @@
 
 return [
     'roles' => [
-    	'developer',
+        'developer',
         'administrator',
         'user',
     ],
     'permissions' => [
-    	'setting' => ['developer', 'administrator'],
-    	'passport' => ['developer'],
-    	'user' => ['developer', 'administrator']
+        'setting'  => ['developer', 'administrator'],
+        'passport' => ['developer'],
+        'user'     => ['developer', 'administrator'],
     ],
     'actions' => [
-    	'index', 'show', 
-    	'create', 'store', 
-    	'edit', 'update', 
-    	'destroy'
+        'index', 'show',
+        'create', 'store',
+        'edit', 'update',
+        'destroy',
     ],
 ];

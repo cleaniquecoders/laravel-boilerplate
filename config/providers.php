@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'local'      => [
+    'local' => [
         \Laravel\Dusk\DuskServiceProvider::class,
     ],
-    'testing'    => [
+    'testing' => [
     ],
     'production' => [
     ],
