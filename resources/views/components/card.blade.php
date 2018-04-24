@@ -3,7 +3,7 @@
 		<div class="card-header {{ $card_title_classes or 'text-dark border-light border bg-light' }}">
 			{{ $card_title }}
 		</div>
-	@endif
+	@endisset
 
 	@isset($card_body)
 		<div class="card-body {{ $card_body_classes or 'text-dark border-light border bg-white' }}">
