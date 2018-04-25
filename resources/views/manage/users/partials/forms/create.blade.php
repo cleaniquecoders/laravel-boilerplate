@@ -6,6 +6,7 @@
     ])
     @include('components.forms.input', [
     	'input_label' => 'E-mail',
+        'name' => 'email',
     	'type' => 'email'
     ])
     @include('components.forms.input', [

@@ -2,10 +2,11 @@
 
 @section('content')
 	@include('manage.users.partials.scripts', [
-		'table_id' => 'user-management-datatable',
+		'table_id' => 'user-management',
 		'primary_key' => 'hashslug',
 		'routes' => [
 			'show' => 'api.manage.users.show',
+			'store' => 'api.manage.users.store',
 			'update' => 'api.manage.users.update',
 			'destroy' => 'api.manage.users.destroy',
 		],
@@ -14,6 +15,10 @@
 			'email' => __('table.email'), 
 			'created_at' => __('table.created_at'),
 			'updated_at' => __('table.updated_at')
+		],
+		'forms' => [
+			'create' => 'create-user-form',
+			'edit' => 'edit-user-form',
 		]
 	])
 	@include('manage.users.partials.modals.create')
