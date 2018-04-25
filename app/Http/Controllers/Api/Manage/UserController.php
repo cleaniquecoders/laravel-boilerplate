@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\Manage;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered;
 
 class UserController extends Controller
 {
@@ -26,6 +27,20 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'name'     => 'required|string|max:255',
+            'email'    => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6|confirmed',
+        ]);
+        $data = $request->only('name', 'email', 'password');
+        $user = User::create([
+            'name'     => $data['name'],
+            'email'    => $data['email'],
+            'password' => bcrypt($data['password']),
+        ]);
+        event(new Registered($user));
+        $user->syncRoles([$request->role]);
+        return response()->api([], __('User successfully stored.'), true, 201);
     }
 
     /**
