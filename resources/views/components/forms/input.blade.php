@@ -5,9 +5,22 @@
     </label>
 
     <div class="{{ $input_container_class or 'col-md-6' }}">
-        <input id="{{ snake_case($input_label) }}" type="{{ $type or 'text' }}" 
+        <input 
+            type="{{ $type or 'text' }}" 
             class="form-control{{ $errors->has(snake_case($input_label)) ? ' is-invalid' : '' }}" 
-            name="{{ snake_case($input_label) }}" 
+            
+            @isset($id)
+                id="{{ $id }}" 
+            @else
+                id="{{ snake_case($input_label) }}" 
+            @endisset
+
+            @isset($name)
+                name="{{ $name }}" 
+            @else
+                name="{{ snake_case($input_label) }}" 
+            @endisset
+
             value="{{ old(snake_case($input_label)) }}" 
             @isset($required) required @endisset autofocus>
 
