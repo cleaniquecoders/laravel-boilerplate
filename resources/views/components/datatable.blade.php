@@ -6,7 +6,7 @@
 	<script type="text/javascript" src="{{ asset('js/datatable.js') }}"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function($) {
-			var table_{{ str_slug($table_id, '_') }} = $('#{{ $table_id }}').DataTable({
+			var datatable_{{ str_slug($table_id, '_') }} = $('#{{ $table_id }}').DataTable({
 				@isset($lang)
 				language: {
 					url: '{{ asset($lang) }}'
