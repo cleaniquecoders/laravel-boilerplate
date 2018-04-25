@@ -50,15 +50,10 @@
 							],
 							'headers' => [
 								__('table.name'), __('table.email'), __('table.action')
-							]
+							],
+							'actions' => minify(view('components.actions')->render())
 						]
 					)
-						@slot('actions')
-							"render": function ( data, type, row, meta ) {
-								return '{!! minify(view('components.actions')->render()) !!}';
-							},
-						@endslot
-
 					@endcomponent
 				@endslot
 			@endcomponent

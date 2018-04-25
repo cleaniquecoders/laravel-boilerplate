@@ -22,10 +22,14 @@
 				},
 				columns: @json($columns),
 				columnDefs: [
+					@isset($actions)
 					{
-						{{ $actions or '' }}
+						"render": function ( data, type, row, meta ) {
+							return '{!! $actions !!}';
+						},
 						"targets": -1
 					}
+					@endisset
 				]
 			});
 			{{ $datatable_handler or ''}}
