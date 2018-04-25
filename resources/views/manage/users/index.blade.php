@@ -1,18 +1,42 @@
 @extends('layouts.admin')
 
-@push('scripts')
-	@include('manage.users.partials.scripts')
-@endpush
-
 @section('content')
+	@include('manage.users.partials.scripts', [
+		'table_id' => 'user-management-datatable',
+		'primary_key' => 'hashslug',
+		'routes' => [
+			'show' => 'api.manage.users.show',
+			'update' => 'api.manage.users.update',
+			'destroy' => 'api.manage.users.destroy',
+		],
+		'columns' => [
+			'name' => __('table.name'), 
+			'email' => __('table.email'), 
+			'created_at' => __('table.created_at'),
+			'updated_at' => __('table.updated_at')
+		]
+	])
+	@include('manage.users.partials.modals.create')
 	@include('manage.users.partials.modals.show')
 	<div class="row justify-content-center">
 		<div class="col">
-			@component('components.card', ['card_title' => 'User Management'])
+			@component('components.card')
+				@slot('card_title')
+					<h4>
+						{{ __('User Management') }}
+						<div class="float-right">
+							@include('components.modals.button', [
+								'id' => 'create-user-modal',
+								'label' => __('New User'),
+								'icon' => 'fa fa-plus'
+							])
+						</div>
+					</h4>
+				@endslot
 				@slot('card_body')
 					@component('components.datatable', 
 						[
-							'table_id' => 'user-management-datatable',
+							'table_id' => 'user-management',
 							'route_name' => 'api.datatable.manage.user',
 							'columns' => [
 								['data' => 'name', 'title' => __('table.name'), 'defaultContent' => '-'],
@@ -20,37 +44,15 @@
 								['data' => null , 'name' => null, 'searchable' => false],
 							],
 							'headers' => [
-								__('table.name'), __('table.email'), __('table.actions')
+								__('table.name'), __('table.email'), __('table.action')
 							]
 						]
 					)
-					@slot('actions')
-						"render": function ( data, type, row, meta ) {
-							var params = {user : data.id};
-							var url = route('api.manage.users.show', params);
-							var edit = route('manage.users.edit', params);
-							var del = route('api.manage.users.destroy', params);
-							
-							return '<div class="btn btn-group">' +
-								'<div class="btn btn-sm btn-default border-primary"' +
-									'data-balloon="Details" data-balloon-pos="up"' +
-									'onclick="getData(\''+ url +'\')">' +
-									'<i class="fas fa-eye"></i>' +
-								'</div>' +
-								'<a class="btn btn-sm btn-primary"' +
-									'data-balloon="Edit" data-balloon-pos="up"' +
-									'href="' + edit + '">' +
-									'<i class="fas fa-edit"></i>' +
-								'</a>' +
-								'<div class="btn btn-sm btn-danger"' +
-									'data-balloon="Delete" data-balloon-pos="up"' +
-									'onclick="deleteRecord(\'' + del + '\',\'' + data.id + '\')">' +
-									'<i class="fas fa-trash"></i>' +
-								'</div>' +
-								'<input style="display:hidden;" type="hidden" id="delete-id' + data.id + '" value="' + data.id + '">' +
-							'</div>';
-						},
-					@endslot
+						@slot('actions')
+							"render": function ( data, type, row, meta ) {
+								return '{!! minify(view('components.actions')->render()) !!}';
+							},
+						@endslot
 
 					@endcomponent
 				@endslot
