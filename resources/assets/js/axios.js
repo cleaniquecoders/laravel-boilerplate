@@ -57,12 +57,17 @@ axios.interceptors.response.use(function (response) {
 			var errors = error.response.data.errors;
 			var error_message = '';
 
-	        $.each(errors, function(index, elem) {
-	            error_message += (Array.isArray(elem) ? elem[0] : elem) + '<br>';
-	        });
-	        
-	        if(error.response.hasOwnProperty('message')) {
-				title = error.response.message;
+			if(error.response.data.hasOwnProperty('errors')) {
+				$.each(errors, function(index, elem) {
+		            error_message += (Array.isArray(elem) ? elem[0] : elem) + '<br>';
+		        });	
+		        if(error.response.data.hasOwnProperty('message')) {
+					title = error.response.data.message;
+				}
+			} else {
+				if(error.response.data.hasOwnProperty('message')) {
+					error_message = error.response.data.message;
+				}
 			}
 
 	        swal({ title : title, html : error_message, type  : 'error' });
