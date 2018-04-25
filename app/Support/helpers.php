@@ -125,3 +125,52 @@ if (! function_exists('user')) {
         return null;
     }
 }
+
+/*
+ * roles() helper
+ */
+if (! function_exists('roles')) {
+    function roles()
+    {
+        return config('permission.models.role')::get();
+    }
+}
+
+/*
+ * permissions() helper
+ */
+if (! function_exists('permissions')) {
+    function permissions()
+    {
+        return config('permission.models.permission')::get();
+    }
+}
+
+if(! function_exists('minify'))
+{
+    function minify($value)
+    {
+        $replace = [
+            '/<!--[^\[](.*?)[^\]]-->/s' => '',
+            "/<\?php/"                  => '<?php ',
+            "/\n([\S])/"                => '$1',
+            "/\r/"                      => '',
+            "/\n/"                      => '',
+            "/\t/"                      => '',
+            '/ +/'                      => ' ',
+        ];
+
+        if (false !== strpos($value, '<pre>')) {
+            $replace = [
+                '/<!--[^\[](.*?)[^\]]-->/s' => '',
+                "/<\?php/"                  => '<?php ',
+                "/\r/"                      => '',
+                "/>\n</"                    => '><',
+                "/>\s+\n</"                 => '><',
+                "/>\n\s+</"                 => '><',
+            ];
+        }
+
+        return preg_replace(array_keys($replace), array_values($replace), $value);
+    }
+}
