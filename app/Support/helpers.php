@@ -146,8 +146,7 @@ if (! function_exists('permissions')) {
     }
 }
 
-if(! function_exists('minify'))
-{
+if (! function_exists('minify')) {
     function minify($value)
     {
         $replace = [

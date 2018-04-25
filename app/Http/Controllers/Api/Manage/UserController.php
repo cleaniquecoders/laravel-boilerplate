@@ -38,7 +38,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::findByHashSlug($id);
-        
+
         return response()->api($user->only('name', 'email'));
     }
 
@@ -46,7 +46,7 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param string                      $id
+     * @param string                   $id
      *
      * @return \Illuminate\Http\Response
      */
@@ -63,14 +63,15 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        if($id == user()->hashslug) {
+        if ($id == user()->hashslug) {
             return response()->api([], __('You cannot delete yourself!'), false, 401);
         }
         $user = User::findByHashSlug($id);
-        if($user->hasRole('developer')) {
+        if ($user->hasRole('developer')) {
             return response()->api([], __('Trust me, don\'t kill your developer!'), false, 401);
         }
         $user->delete();
+
         return response()->api([], __('You have successfully delete a user.'));
     }
 }
