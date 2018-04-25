@@ -3,7 +3,6 @@
 namespace App\Macros\Routing;
 
 // use Illuminate\Support\Facades\Route as DefaultRoute;
-use Illuminate\Support\Str;
 
 class Route
 {
@@ -11,7 +10,7 @@ class Route
     {
         // if (! DefaultRoute::hasMacro('name')) {
         //     DefaultRoute::macro('name', function ($modules) {
-                
+
         //     });
         // }
     }

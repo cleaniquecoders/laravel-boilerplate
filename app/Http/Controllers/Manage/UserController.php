@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Manage;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 
@@ -31,24 +30,28 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  string  $id
+     * @param string $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         $user = User::findByHashSlug($id);
+
         return view('manage.users.show', compact('user'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  string  $id
+     * @param string $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         $user = User::findByHashSlug($id);
+
         return view('manage.users.edit');
     }
 }
