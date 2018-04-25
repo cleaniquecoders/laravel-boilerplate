@@ -35,17 +35,37 @@
 					<li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
 					<li><a class="nav-link" href="{{ route('register') }}">Register</a></li>
 				@else
-					@if(user()->hasRole('developer'))
+					@can('passport_show')
 						<div class="dropdown show">
 							<a class="btn btn-transparent dropdown-toggle" href="#" role="button" id="developer-dropdown-links" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<i class="fas fa-wrench"></i>
+							Developer Tools
 							</a>
 
 							<div class="dropdown-menu" aria-labelledby="developer-dropdown-links">
-								<a class="dropdown-item" href="{{ route('manage.passport') }}">Passport</a>
+								<a class="dropdown-item" 
+									@include('components.tooltip', ['tooltip' => 'Manage API Access', 'pos' => 'down'])
+									href="{{ route('manage.passport') }}">
+									Passport
+								</a>
 							</div>
 						</div>
-					@endif
+					@endcan
+
+					@can('setting_show')
+						<div class="dropdown show">
+							<a class="btn btn-transparent dropdown-toggle" href="#" role="button" id="developer-dropdown-links" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Manage
+							</a>
+
+							<div class="dropdown-menu" aria-labelledby="developer-dropdown-links">
+								<a class="dropdown-item" 
+									@include('components.tooltip', ['tooltip' => 'Manage Users', 'pos' => 'down'])
+									href="{{ route('manage.users.index') }}">
+									User
+								</a>
+							</div>
+						</div>
+					@endcan
 					<li>
 						<a href="{{ route('logout') }}" 
 						class="nav-link"
