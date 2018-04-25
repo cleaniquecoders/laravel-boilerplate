@@ -32,20 +32,20 @@
 			<ul class="navbar-nav ml-auto">
 				<!-- Authentication Links -->
 				@guest
-					<li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
-					<li><a class="nav-link" href="{{ route('register') }}">Register</a></li>
+					<li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+					<li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
 				@else
 					@can('passport_show')
 						<div class="dropdown show">
 							<a class="btn btn-transparent dropdown-toggle" href="#" role="button" id="developer-dropdown-links" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Developer Tools
+							{{ __('Developer Tools') }}
 							</a>
 
 							<div class="dropdown-menu" aria-labelledby="developer-dropdown-links">
 								<a class="dropdown-item" 
 									@include('components.tooltip', ['tooltip' => 'Manage API Access', 'pos' => 'down'])
 									href="{{ route('manage.passport') }}">
-									Passport
+									{{ __('Passport') }}
 								</a>
 							</div>
 						</div>
@@ -54,14 +54,14 @@
 					@can('setting_show')
 						<div class="dropdown show">
 							<a class="btn btn-transparent dropdown-toggle" href="#" role="button" id="developer-dropdown-links" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Manage
+							{{ __('Manage') }}
 							</a>
 
 							<div class="dropdown-menu" aria-labelledby="developer-dropdown-links">
 								<a class="dropdown-item" 
 									@include('components.tooltip', ['tooltip' => 'Manage Users', 'pos' => 'down'])
 									href="{{ route('manage.users.index') }}">
-									User
+									{{ __('User') }}
 								</a>
 							</div>
 						</div>
@@ -75,7 +75,11 @@
 						<i class="fas fa-sign-out-alt"></i>
 						</a>
 					</li>
-					<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
+					<form id="logout-form" 
+						action="{{ route('logout') }}" 
+						method="POST" style="display: none;">
+						@csrf
+					</form>
 				@endguest
 			</ul>
 		</div>

@@ -4,8 +4,10 @@
         {
             axios.post(route('api.users.store'), $('#create-user-form').serialize())
                 .then(response => {
-                    swal('');
-                    $('#create-user-form').find('input[type=text], input[type=password], input[type=email], textarea').val('');
+                    swal('{!! __('New User') !!}', '{!! __('New user sucesssfully created.') !!}', 'success');
+                    $('#create-user-form')
+                        .find('input[type=text], input[type=password], input[type=email], textarea')
+                        .val('');
                 }).catch(error);
         }
     </script>
@@ -13,9 +15,9 @@
 
 @component('components.modal', [
     'id' => 'create-user-modal',
-    'tooltip' => 'Create New User',
+    'tooltip' => __('Create New User'),
     'icon' => 'fas fa-plus',
-    'modal_title' => 'Create New User',
+    'modal_title' => __('Create New User'),
     ])
     @slot('modal_body')
         {{ html()->form('POST', '#')
@@ -25,6 +27,7 @@
         {{ html()->form()->close() }}
     @endslot
     @slot('modal_footer')
-        <button id="button_create_user" class="btn btn-success" onclick="createUser();">Create User</button> 
+        <button id="button_create_user" class="btn btn-success" 
+            onclick="createUser();">{{ __('Create User') }}</button> 
     @endslot
 @endcomponent

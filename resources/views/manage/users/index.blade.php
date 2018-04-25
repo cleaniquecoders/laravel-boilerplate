@@ -15,12 +15,12 @@
 							'table_id' => 'user-management-datatable',
 							'route_name' => 'api.datatable.manage.user',
 							'columns' => [
-								['data' => 'name', 'title' => 'Name', 'defaultContent' => '-'],
-								['data' => 'email', 'title' => 'E-mail', 'defaultContent' => '-'],
+								['data' => 'name', 'title' => __('table.name'), 'defaultContent' => '-'],
+								['data' => 'email', 'title' => __('table.email'), 'defaultContent' => '-'],
 								['data' => null , 'name' => null, 'searchable' => false],
 							],
 							'headers' => [
-								'Name', 'E-mail', 'Action'
+								__('table.name'), __('table.email'), __('table.actions')
 							]
 						]
 					)
@@ -30,7 +30,7 @@
 							var url = route('api.manage.users.show', params);
 							var edit = route('manage.users.edit', params);
 							var del = route('api.manage.users.destroy', params);
-
+							
 							return '<div class="btn btn-group">' +
 								'<div class="btn btn-sm btn-default border-primary"' +
 									'data-balloon="Details" data-balloon-pos="up"' +

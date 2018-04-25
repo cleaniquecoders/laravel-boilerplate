@@ -7,6 +7,7 @@
 				$('#edit-user-link').attr('href', route('manage.users.edit', {user : data.id}));
 				$('#view-user-details').html('');
 				var content = '';
+				// map columns defined to be use, so we can generate table content dynamically.
 				
 				$('#view-user-details').html(content);
 				$('#delete-user-id').val(data.id);
@@ -18,12 +19,12 @@
 	function deleteRecord(url, id)
 	{
 		swal({
-		  title: 'Warning!',
-		  text: 'Are you sure want to delete this record?',
+		  title: '{!! __('Warning') !!}',
+		  text: '{!! __('Are you sure want to delete this record?') !!}',
 		  type: 'warning',
 		  showCancelButton: true,
-		  confirmButtonText: 'Yes',
-		  cancelButtonText: 'Cancel'
+		  confirmButtonText: '{!! __('Yes') !!}',
+		  cancelButtonText: '{!! __('Cancel') !!}'
 		}).then((result) => {
 		  if (result.value) {
 			var id = $('#delete-id' + id).val();

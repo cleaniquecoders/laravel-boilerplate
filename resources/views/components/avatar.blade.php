@@ -3,5 +3,5 @@
         alt="avatar"
         class="img-rounded">
 @else
-    <i class="fa fa-user-circle {{ isset($type) && $type == 'view' ? 'fa-7x' : '' }}"></i>
+    <i class="fa fa-user-circle text-primary {{ isset($type) && $type == 'view' ? 'fa-7x' : '' }}"></i>
 @endif

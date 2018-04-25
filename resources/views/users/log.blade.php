@@ -3,13 +3,13 @@
 @section('content')
     <div class="row justify-content-md-center mt-5">
         <div class="col">
-            @component('components.card', ['card_title' => 'Avatar'])
+            @component('components.card', ['card_title' => 'Log Access'])
                 @slot('card_body')
                     @component('components.table')
                         @slot('thead')
                             <tr>
-                                <th>Description</th>
-                                <th>Day, Date &amp; Time</th>
+                                <th>{{ __('Description') }}</th>
+                                <th>{{ __('Day, Date &amp; Time') }}</th>
                             </tr>
                         @endslot
                         @slot('tbody')

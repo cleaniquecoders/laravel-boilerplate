@@ -4,6 +4,9 @@
     ])
     @slot('modal_body')
         <div class="table-responsive">
+            {{-- 
+                @todo Either dynamically create the table content, or have custom content for each of the fields 
+            --}}
             <table class="table table-sm table-transparent table-hover" id="view-user-details"></table>
         </div>
     @endslot

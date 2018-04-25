@@ -1,5 +1,5 @@
-@component('layouts.app', ['title' => 'Internal Server Error'])
+@component('layouts.app', ['title' => __('Internal Server Error')])
 	@slot('body')
-		<p class="text-danger text-center">Ops! We are having issues right now. We will be right back. Thank you!</p>
+		<p class="text-danger text-center">{{ __('Ops! We are having issues right now. We will be right back. Thank you!') }}</p>
 	@endslot
 @endcomponent
