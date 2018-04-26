@@ -10,6 +10,14 @@
 | is assigned the "api" middleware group. Enjoy building your API!
 |
  */
+Route::group([
+    'namespace' => 'Auth',
+    'prefix'    => 'auth',
+    'as'        => 'auth.',
+], function () {
+    Route::post('login', 'LoginController')->name('login');
+    Route::post('register', 'RegisterController')->name('register');
+});
 
 Route::group([
     'namespace' => 'Manage',
