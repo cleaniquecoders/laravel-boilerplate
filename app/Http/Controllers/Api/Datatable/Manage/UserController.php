@@ -10,6 +10,6 @@ class UserController extends Controller
 {
     public function __invoke(Request $request)
     {
-        return app('datatables')->eloquent(User::query())->toJson();
+        return app('datatables')->eloquent(User::datatable())->toJson();
     }
 }

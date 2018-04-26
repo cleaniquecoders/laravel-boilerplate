@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\HasDatatable;
 use App\Traits\HasMediaExtended;
 use App\Traits\HasSlugExtended;
 use App\Traits\HasThumbnail;
@@ -16,7 +17,10 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements HasMediaConversions
 {
-    use HasApiTokens, HasProfile, HasMediaExtended, HasThumbnail, HasRoles, HasSlugExtended, LogsActivityExtended, Notifiable, SoftDeletes;
+    use HasApiTokens, HasProfile, HasMediaExtended, 
+        HasThumbnail, HasRoles, HasSlugExtended, 
+        LogsActivityExtended, Notifiable, SoftDeletes,
+        HasDatatable;
 
     /**
      * Guarded Field.
@@ -56,4 +60,33 @@ class User extends Authenticatable implements HasMediaConversions
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * The attributes that show in datatable.
+     *
+     * @var array
+     */
+    protected $datatable = [
+        'name', 'email'
+    ];
+
+    /**
+     * Get roles as string via method.
+     * 
+     * @return string
+     */
+    public function rolesToString()
+    {
+        return title_case(implode(', ', $this->roles->pluck('name')->toArray()));
+    }
+
+    /**
+     * Get roles as a string via accessor.
+     * 
+     * @return string
+     */
+    public function getRolesToStringAttribute()
+    {
+        return $this->rolesToString();
+    }
 }
