@@ -158,6 +158,7 @@ return [
         Spatie\Html\HtmlServiceProvider::class,
         Softon\SweetAlert\SweetAlertServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\BreadcrumbsServiceProvider::class,
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -222,5 +223,7 @@ return [
         'Html'           => Spatie\Html\Facades\Html::class,
         'Link'           => Spatie\Menu\Laravel\Link::class,
         'Breadcrumbs'    => DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs::class,
+        'JWTAuth'        => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'JWTFactory'     => Tymon\JWTAuth\Facades\JWTFactory::class,
     ],
 ];
