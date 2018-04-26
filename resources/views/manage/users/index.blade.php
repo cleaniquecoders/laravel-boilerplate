@@ -20,8 +20,11 @@
 			'updated_at' => __('table.updated_at')
 		],
 		'forms' => [
-			'create' => 'create-user-form',
-			'edit' => 'edit-user-form',
+			'create' => 'user-form',
+			'edit' => 'user-form',
+		], 
+		'disabled' => [
+			'email'
 		]
 	])
 	@include('manage.users.partials.modals.form')

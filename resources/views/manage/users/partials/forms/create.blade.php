@@ -1,3 +1,9 @@
+@include('components.forms.hidden', [
+	'id' => 'id',
+	'name' => 'id',
+	'value' => ''
+])
+
 @include('components.forms.input', [
 	'input_label' => 'Name',
 ])

@@ -6,6 +6,7 @@
 		var routes = @json($routes);
 		var columns = @json($columns);
 		var forms = @json($forms);
+		var disabled = @json($disabled);
 		jQuery(document).ready(function($) {
 			/* Initialisation */
 			$('.select2').select2();
@@ -15,7 +16,8 @@
 				event.preventDefault();
 				/* Can be refactor to determine to use post or put */
 				if($("[name='_method']").val() == 'PUT') {
-					axios.put(route(routes.store), $('#' + forms.create).serialize())
+					var id = $("[name='id']").val();
+					axios.put(route(routes.update, id), $('#' + forms.create).serialize())
 						.then(response => {
 							$(table_id).DataTable().ajax.reload();
 							swal('{!! __('User') !!}', response.data.message, 'success');
@@ -43,6 +45,10 @@
 				$("[name='_method']").val('POST');
 				/* Handle primary key */
 				$("[name='id']").val(null);
+				/* Enable disabled inputs defined */
+				$.each(disabled, function(index, val) {
+					 $("[name='" + val + "']").prop('readonly', false);
+				});
 				$('#user-modal').modal('show');
 			});
 
@@ -74,6 +80,10 @@
 						$("[name='_method']").val('PUT');
 						/* Handle primary key */
 						$("[name='id']").val(id);
+						/* Disable inputs defined */
+						$.each(disabled, function(index, val) {
+							 $("[name='" + val + "']").prop('readonly', true);
+						});
 						var data = response.data.data;
 						$.each(columns, function(index, val) {
 							if(data[index] != null) {

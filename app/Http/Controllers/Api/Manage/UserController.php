@@ -76,6 +76,24 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'name'     => 'required|string|max:255',
+        ]);
+
+        $fields = $request->only('name');
+
+        if(!empty($request->input('password'))) {
+            $this->validate($request, [
+                'password' => 'required|string|min:6|confirmed',
+            ]);
+            $fields['password'] = bcrypt($request->input('password'));
+        }
+
+        $user = User::findByHashSlug($id);
+        $user->update($fields);
+        $user->syncRoles($request->input('roles'));
+
+        return response()->api([], __('User successfully updated.'), true, 201);
     }
 
     /**
