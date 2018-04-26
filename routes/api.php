@@ -10,6 +10,7 @@
 | is assigned the "api" middleware group. Enjoy building your API!
 |
  */
+
 Route::group([
     'namespace' => 'Auth',
     'prefix'    => 'auth',
@@ -19,6 +20,18 @@ Route::group([
     Route::post('register', 'RegisterController')->name('register');
 });
 
+Route::group([
+    'namespace' => 'User',
+    'prefix'    => 'user',
+    'as'        => 'user.',
+    'middleware' => ['jwt.auth']
+], function () {
+    Route::get('profile', 'ProfileController@show')->name('profile.show');
+});
+
+/**
+ * @todo protect routes, allow for self-consume API
+ */
 Route::group([
     'namespace' => 'Manage',
     'prefix'    => 'manage',
