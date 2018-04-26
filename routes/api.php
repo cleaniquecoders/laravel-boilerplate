@@ -17,6 +17,7 @@ Route::group([
     'as'        => 'auth.',
 ], function () {
     Route::post('login', 'LoginController')->name('login');
+    Route::post('logout', 'LogoutController')->name('logout');
     Route::post('register', 'RegisterController')->name('register');
 });
 
