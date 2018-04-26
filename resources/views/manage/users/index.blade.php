@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+	@include('manage.users.partials.styles')
 	@include('manage.users.partials.scripts', [
 		'table_id' => 'user-management',
 		'primary_key' => 'hashslug',
@@ -13,6 +14,7 @@
 		'columns' => [
 			'name' => __('table.name'), 
 			'email' => __('table.email'), 
+			'roles_to_string' => __('table.role'), 
 			'created_at' => __('table.created_at'),
 			'updated_at' => __('table.updated_at')
 		],
@@ -21,7 +23,7 @@
 			'edit' => 'edit-user-form',
 		]
 	])
-	@include('manage.users.partials.modals.create')
+	@include('manage.users.partials.modals.form')
 	@include('manage.users.partials.modals.show')
 	<div class="row justify-content-center">
 		<div class="col">

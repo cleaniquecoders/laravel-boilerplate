@@ -52,9 +52,18 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::findByHashSlug($id);
+        $user = User::details()->findByHashSlug($id);
+        
+        /**
+         * @todo should have a transformer to do this.
+         */
+        $user = collect($user->only('name', 'email', 'roles_to_string', 'roles'));
+        $roles = $user->get('roles')->mapWithKeys(function($role){
+            return [$role->id => $role->name];
+        });
+        $user->put('roles', $roles);
 
-        return response()->api($user->only('name', 'email', 'roles_to_string'));
+        return response()->api($user);
     }
 
     /**

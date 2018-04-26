@@ -1,4 +1,5 @@
 @push('scripts')
+	<script src="{{ asset('js/select2.js') }}"></script>
 	<script type="text/javascript">
 		var table_id = '#{{ $table_id }}';
 		var primary_key = '{{ $primary_key or 'hashslug' }}';
@@ -6,18 +7,22 @@
 		var columns = @json($columns);
 		var forms = @json($forms);
 		jQuery(document).ready(function($) {
-			$(document).on('click', '.create-action-btn', function(event) {
+			$('.select2').select2();
+			/* Form Submission */
+			$(document).on('click', '.form-btn', function(event) {
 				event.preventDefault();
 				axios.post(route(routes.store), $('#' + forms.create).serialize())
 					.then(response => {
 						$(table_id).DataTable().ajax.reload();
-						swal('{!! __('New User') !!}', response.data.message, 'success');
+						swal('{!! __('User') !!}', response.data.message, 'success');
 						$('#' + forms.create)
 							.find('input, textarea, select')
 							.val('');
-						$('#create-user-modal').modal('hide');
+						$('#user-modal').modal('hide');
 					}).catch(error => console.error(error));
 			});
+
+			/* Actions */
 			$(document).on('click', '.show-action-btn', function(event) {
 				event.preventDefault();
 				var id = $(this).data(primary_key);
@@ -38,18 +43,23 @@
 					.catch(error => console.error(error));
 				
 			});
+
 			$(document).on('click', '.edit-action-btn', function(event) {
-				event.preventDefault();
 				var id = $(this).data(primary_key);
-				axios.put(route(routes.store), $('#' + forms.edit).serialize())
+				axios.get(route(routes.show, id))
 					.then(response => {
-						$(table_id).DataTable().ajax.reload();
-						swal('{!! __('Update User') !!}', response.data.message, 'success');
-						$('#' + forms.edit)
-							.find('input, textarea, select')
-							.val('');
-					}).catch(error => console.error(error));
+						var data = response.data.data;
+						
+						$.each(columns, function(index, val) {
+							if(data[index] != null) {
+								$("[name='" + index + "']").val(data[index]);
+							}
+						});
+						$('#user-modal').modal('show');
+					})
+					.catch(error => console.error(error));
 			});
+			
 			$(document).on('click', '.destroy-action-btn', function(event) {
 				event.preventDefault();
 				var id = $(this).data(primary_key);
