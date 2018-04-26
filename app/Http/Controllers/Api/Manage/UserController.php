@@ -54,7 +54,7 @@ class UserController extends Controller
     {
         $user = User::findByHashSlug($id);
 
-        return response()->api($user->only('name', 'email'));
+        return response()->api($user->only('name', 'email', 'roles_to_string'));
     }
 
     /**
