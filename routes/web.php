@@ -39,4 +39,6 @@ Route::group([
     Route::view('/passport', 'manage.passport.index')
         ->middleware('role:developer')
         ->name('passport');
+
+    Route::resource('users', 'UserController')->except('store', 'update', 'destroy');
 });

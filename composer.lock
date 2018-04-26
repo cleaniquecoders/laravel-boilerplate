@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d47758d17e46281d6341d2125c170b71",
+    "content-hash": "c12588dbb03a72e1f7a9cc557fcfa5eb",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -55,6 +55,61 @@
                 "toolkit"
             ],
             "time": "2015-05-16T19:24:58+00:00"
+        },
+        {
+            "name": "andywer/js-localization",
+            "version": "dev-laravel-5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/andywer/laravel-js-localization.git",
+                "reference": "2ca47feb8c341bbaae5280fdc8aa16e8232627b2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/andywer/laravel-js-localization/zipball/2ca47feb8c341bbaae5280fdc8aa16e8232627b2",
+                "reference": "2ca47feb8c341bbaae5280fdc8aa16e8232627b2",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.x",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.4",
+                "orchestra/testbench": "3.0.*",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "extra": {
+                "component": "package",
+                "frameworks": [
+                    "Laravel 5"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "JsLocalization\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andy Wermke",
+                    "email": "andy@dev.next-step-software.com"
+                }
+            ],
+            "description": "Laravel package to provide localizations to the Javascript code.",
+            "keywords": [
+                "javascript",
+                "laravel",
+                "localization",
+                "messages",
+                "translation"
+            ],
+            "time": "2018-04-16T15:26:46+00:00"
         },
         {
             "name": "cleaniquecoders/artisan-makers",
@@ -5620,6 +5675,106 @@
             "time": "2018-04-04T05:10:37+00:00"
         },
         {
+            "name": "thepinecode/i18n",
+            "version": "v0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thepinecode/i18n.git",
+                "reference": "de7587fa07c90f40bf470886a43141310d339f3f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thepinecode/i18n/zipball/de7587fa07c90f40bf470886a43141310d339f3f",
+                "reference": "de7587fa07c90f40bf470886a43141310d339f3f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.5.0"
+            },
+            "type": "project",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Pine\\I18n\\I18nServiceProvider"
+                    ]
+                },
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pine\\I18n\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gergo D. Nagy",
+                    "email": "dngege@gmail.com"
+                }
+            ],
+            "description": "Push your translations to the front-end.",
+            "time": "2017-11-11T10:42:11+00:00"
+        },
+        {
+            "name": "tightenco/ziggy",
+            "version": "0.6.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tightenco/ziggy.git",
+                "reference": "52eedae2f63e731ec90f71286d7e08625c0af745"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tightenco/ziggy/zipball/52eedae2f63e731ec90f71286d7e08625c0af745",
+                "reference": "52eedae2f63e731ec90f71286d7e08625c0af745",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.6.7"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "^1.6",
+                "orchestra/testbench": "~3.6"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Tightenco\\Ziggy\\ZiggyServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Tightenco\\Ziggy\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Stauffer",
+                    "email": "matt@tighten.co"
+                },
+                {
+                    "name": "Daniel Coulbourne",
+                    "email": "daniel@tighten.co"
+                }
+            ],
+            "description": "Generates a Blade directive exporting all of your named Laravel routes. Also provides a nice route() helper function in JavaScript.",
+            "time": "2018-04-21T09:11:52+00:00"
+        },
+        {
             "name": "tijsverkoyen/css-to-inline-styles",
             "version": "2.2.1",
             "source": {
@@ -8347,7 +8502,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "andywer/js-localization": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

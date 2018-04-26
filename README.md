@@ -61,7 +61,7 @@ Login details for default users:
 
 1. E-mail : **developer@app.com** Password: `developer`
 2. E-mail : **administrator@app.com** Password: `administrator`
-3. 1. E-mail : **user@app.com** Password: `user`
+3. E-mail : **user@app.com** Password: `user`
 
 By default, all newly registered user will be assign role as `user`.
 

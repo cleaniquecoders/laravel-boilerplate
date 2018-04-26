@@ -32,20 +32,40 @@
 			<ul class="navbar-nav ml-auto">
 				<!-- Authentication Links -->
 				@guest
-					<li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
-					<li><a class="nav-link" href="{{ route('register') }}">Register</a></li>
+					<li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+					<li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
 				@else
-					@if(user()->hasRole('developer'))
+					@can('passport_show')
 						<div class="dropdown show">
 							<a class="btn btn-transparent dropdown-toggle" href="#" role="button" id="developer-dropdown-links" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<i class="fas fa-wrench"></i>
+							{{ __('Developer Tools') }}
 							</a>
 
 							<div class="dropdown-menu" aria-labelledby="developer-dropdown-links">
-								<a class="dropdown-item" href="{{ route('manage.passport') }}">Passport</a>
+								<a class="dropdown-item" 
+									@include('components.tooltip', ['tooltip' => 'Manage API Access', 'pos' => 'down'])
+									href="{{ route('manage.passport') }}">
+									{{ __('Passport') }}
+								</a>
 							</div>
 						</div>
-					@endif
+					@endcan
+
+					@can('setting_show')
+						<div class="dropdown show">
+							<a class="btn btn-transparent dropdown-toggle" href="#" role="button" id="developer-dropdown-links" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							{{ __('Manage') }}
+							</a>
+
+							<div class="dropdown-menu" aria-labelledby="developer-dropdown-links">
+								<a class="dropdown-item" 
+									@include('components.tooltip', ['tooltip' => 'Manage Users', 'pos' => 'down'])
+									href="{{ route('manage.users.index') }}">
+									{{ __('User') }}
+								</a>
+							</div>
+						</div>
+					@endcan
 					<li>
 						<a href="{{ route('logout') }}" 
 						class="nav-link"
@@ -55,7 +75,11 @@
 						<i class="fas fa-sign-out-alt"></i>
 						</a>
 					</li>
-					<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
+					<form id="logout-form" 
+						action="{{ route('logout') }}" 
+						method="POST" style="display: none;">
+						@csrf
+					</form>
 				@endguest
 			</ul>
 		</div>

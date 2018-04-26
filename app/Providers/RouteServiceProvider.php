@@ -30,7 +30,7 @@ class RouteServiceProvider extends ServiceProvider
     public function map()
     {
         $this->mapApiRoutes();
-
+        $this->mapDatatableRoutes();
         $this->mapWebRoutes();
     }
 
@@ -55,6 +55,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::prefix('api')
              ->middleware('api')
+             ->as('api.')
              ->namespace($this->namespace . '\Api')
              ->group(base_path('routes/api.php'));
     }
@@ -66,8 +67,9 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapDatatableRoutes()
     {
-        Route::prefix('datatable')
-             ->middleware('api')
+        Route::prefix('api/datatable')
+             ->middleware('datatable')
+             ->as('api.datatable.')
              ->namespace($this->namespace . '\Api\Datatable')
              ->group(base_path('routes/datatable.php'));
     }
