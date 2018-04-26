@@ -58,7 +58,7 @@ class User extends Authenticatable implements HasMediaConversions
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token'
     ];
 
     /**
@@ -67,7 +67,7 @@ class User extends Authenticatable implements HasMediaConversions
      * @var array
      */
     protected $datatable = [
-        'name', 'email'
+        'name', 'email', 'hashslug'
     ];
 
     /**
@@ -88,5 +88,12 @@ class User extends Authenticatable implements HasMediaConversions
     public function getRolesToStringAttribute()
     {
         return $this->rolesToString();
+    }
+
+    public function scopeDetails($query)
+    {
+        return $query->with(['roles' => function($query){
+            return $query->select('id', 'name');
+        }]);
     }
 }
