@@ -1,6 +1,6 @@
-<button type="button" class="btn btn-sm btn-primary" 
+<button type="button" class="btn btn-sm btn-primary {{ $modal_btn_classes or '' }}" 
 	@include('components.tooltip', ['tooltip' => __($label)])
-  data-toggle="modal" data-target="#{{ $id }}">
+  @isset($id) data-toggle="modal" data-target="#{{ $id }}" @endisset>
   @isset($icon) <i class="{{ $icon }}"></i> @endisset
   @isset($label) {{ __($label) }} @endisset
 </button>
