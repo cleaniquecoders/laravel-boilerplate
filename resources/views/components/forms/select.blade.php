@@ -8,8 +8,8 @@
         {{
             html()->select()
                 ->class('select2 form-control ' . ($errors->has(snake_case($input_label)) ? ' is-invalid' : ''))
-                ->name(snake_case($input_label))
-                ->id(snake_case($input_label))
+                ->name((isset($name) ? $name : snake_case($input_label)))
+                ->id((isset($id) ? $id : snake_case($input_label)))
                 ->options($options)
                 ->value(old(snake_case($input_label)))
                 ->attribute('autofocus', true)
