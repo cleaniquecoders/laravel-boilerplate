@@ -15,6 +15,7 @@
 			'name' => __('table.name'), 
 			'email' => __('table.email'), 
 			'roles_to_string' => __('table.role'), 
+			'roles' => __('table.role'), 
 			'created_at' => __('table.created_at'),
 			'updated_at' => __('table.updated_at')
 		],
@@ -33,7 +34,7 @@
 						{{ __('User Management') }}
 						<div class="float-right">
 							@include('components.modals.button', [
-								'id' => 'create-user-modal',
+								'modal_btn_classes' => 'create-action-btn',
 								'label' => __('New User'),
 								'icon' => 'fa fa-plus'
 							])

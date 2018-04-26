@@ -16,5 +16,6 @@
 ])
 @include('components.forms.select-multiple', [
 	'input_label' => 'Role',
+	'name' => 'roles',
 	'options' => roles()->where('guard_name', 'web')->pluck('name', 'id'),
 ])

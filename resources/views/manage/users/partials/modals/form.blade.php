@@ -5,6 +5,7 @@
 	])
 	@slot('modal_body')
 		{{ html()->form('POST', '#')->id('user-form')->open() }}
+			@method('POST')
 			@include('manage.users.partials.forms.create')
 		{{ html()->form()->close() }}
 	@endslot
