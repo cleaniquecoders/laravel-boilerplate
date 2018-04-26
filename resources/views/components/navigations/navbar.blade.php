@@ -35,22 +35,6 @@
 					<li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
 					<li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
 				@else
-					@can('passport_show')
-						<div class="dropdown show">
-							<a class="btn btn-transparent dropdown-toggle" href="#" role="button" id="developer-dropdown-links" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							{{ __('Developer Tools') }}
-							</a>
-
-							<div class="dropdown-menu" aria-labelledby="developer-dropdown-links">
-								<a class="dropdown-item" 
-									@include('components.tooltip', ['tooltip' => 'Manage API Access', 'pos' => 'down'])
-									href="{{ route('manage.passport') }}">
-									{{ __('Passport') }}
-								</a>
-							</div>
-						</div>
-					@endcan
-
 					@can('setting_show')
 						<div class="dropdown show">
 							<a class="btn btn-transparent dropdown-toggle" href="#" role="button" id="developer-dropdown-links" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
