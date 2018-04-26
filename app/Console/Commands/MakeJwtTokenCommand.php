@@ -23,8 +23,6 @@ class MakeJwtTokenCommand extends Command
 
     /**
      * Create a new command instance.
-     *
-     * @return void
      */
     public function __construct()
     {
@@ -56,7 +54,7 @@ class MakeJwtTokenCommand extends Command
      */
     protected function keyReplacementPattern()
     {
-        $escaped = preg_quote('='.$this->laravel['config']['jwt.secret'], '/');
+        $escaped = preg_quote('=' . $this->laravel['config']['jwt.secret'], '/');
 
         return "/^JWT_SECRET{$escaped}/m";
     }
