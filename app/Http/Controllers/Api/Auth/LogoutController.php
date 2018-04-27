@@ -8,10 +8,10 @@ use JWTAuth;
 
 class LogoutController extends Controller
 {
-	public function __invoke(Request $request)
-	{
-		JWTAuth::invalidate(JWTAuth::getToken());
+    public function __invoke(Request $request)
+    {
+        JWTAuth::invalidate(JWTAuth::getToken());
 
-		return response()->api([], 'You have sucessfully logout.');
-	}
+        return response()->api([], 'You have sucessfully logout.');
+    }
 }

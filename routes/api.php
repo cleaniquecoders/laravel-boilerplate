@@ -19,18 +19,19 @@ Route::group([
     Route::post('login', 'LoginController')->name('login');
     Route::post('logout', 'LogoutController')->name('logout');
     Route::post('register', 'RegisterController')->name('register');
+    Route::post('forgot/password', 'ForgotPasswordController')->name('forgot.password');
 });
 
 Route::group([
-    'namespace' => 'User',
-    'prefix'    => 'user',
-    'as'        => 'user.',
-    'middleware' => ['jwt.auth']
+    'namespace'  => 'User',
+    'prefix'     => 'user',
+    'as'         => 'user.',
+    'middleware' => ['jwt.auth'],
 ], function () {
     Route::get('profile', 'ProfileController@show')->name('profile.show');
 });
 
-/**
+/*
  * @todo protect routes, allow for self-consume API
  */
 Route::group([
