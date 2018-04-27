@@ -15,7 +15,6 @@
         "fideloper/proxy": "~4.0",
         "hashids/hashids": "^2.0",
         "laravel/framework": "5.6.*",
-        "laravel/passport": "^6.0",
         "laravel/tinker": "~1.0",
         "predis/predis": "^1.1",
         "softon/sweetalert": "^1.0",
@@ -33,6 +32,7 @@
         "spatie/laravel-sluggable": "^2.1",
         "thepinecode/i18n": "^0.2.0",
         "tightenco/ziggy": "^0.6.6",
+        "tymon/jwt-auth": "^0.5.12",
         "yajra/laravel-datatables": "^1.0"
     },
     "require-dev": {

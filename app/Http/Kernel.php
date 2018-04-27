@@ -36,7 +36,6 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \Spatie\Referer\CaptureReferer::class,
-            \Laravel\Passport\Http\Middleware\CreateFreshApiToken::class,
         ],
 
         'api' => [
@@ -59,14 +58,16 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth'       => \Illuminate\Auth\Middleware\Authenticate::class,
-        'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'bindings'   => \Illuminate\Routing\Middleware\SubstituteBindings::class,
-        'can'        => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest'      => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'throttle'   => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'role'       => \Spatie\Permission\Middlewares\RoleMiddleware::class,
-        'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
-        'minify'     => \App\Http\Middleware\MinifyHtml::class,
+        'auth'        => \Illuminate\Auth\Middleware\Authenticate::class,
+        'auth.basic'  => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'bindings'    => \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        'can'         => \Illuminate\Auth\Middleware\Authorize::class,
+        'guest'       => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'throttle'    => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'role'        => \Spatie\Permission\Middlewares\RoleMiddleware::class,
+        'permission'  => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
+        'minify'      => \App\Http\Middleware\MinifyHtml::class,
+        'jwt.auth'    => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
+        'jwt.refresh' => \Tymon\JWTAuth\Middleware\RefreshToken::class,
     ];
 }

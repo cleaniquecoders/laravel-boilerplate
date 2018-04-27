@@ -11,14 +11,13 @@ use CleaniqueCoders\Profile\Traits\HasProfile;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Passport\HasApiTokens;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements HasMediaConversions
 {
-    use HasApiTokens, HasProfile, HasMediaExtended, 
-        HasThumbnail, HasRoles, HasSlugExtended, 
+    use HasProfile, HasMediaExtended,
+        HasThumbnail, HasRoles, HasSlugExtended,
         LogsActivityExtended, Notifiable, SoftDeletes,
         HasDatatable;
 
@@ -58,7 +57,7 @@ class User extends Authenticatable implements HasMediaConversions
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token'
+        'password', 'remember_token',
     ];
 
     /**
@@ -67,12 +66,12 @@ class User extends Authenticatable implements HasMediaConversions
      * @var array
      */
     protected $datatable = [
-        'name', 'email', 'hashslug'
+        'name', 'email', 'hashslug',
     ];
 
     /**
      * Get roles as string via method.
-     * 
+     *
      * @return string
      */
     public function rolesToString()
@@ -82,7 +81,7 @@ class User extends Authenticatable implements HasMediaConversions
 
     /**
      * Get roles as a string via accessor.
-     * 
+     *
      * @return string
      */
     public function getRolesToStringAttribute()
@@ -92,7 +91,7 @@ class User extends Authenticatable implements HasMediaConversions
 
     public function scopeDetails($query)
     {
-        return $query->with(['roles' => function($query){
+        return $query->with(['roles' => function ($query) {
             return $query->select('id', 'name');
         }]);
     }

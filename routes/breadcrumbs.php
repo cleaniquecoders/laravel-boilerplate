@@ -5,12 +5,6 @@ Breadcrumbs::register('home', function ($breadcrumbs) {
     $breadcrumbs->push(__('Home'), route('home'));
 });
 
-// Home > Manage Passport
-Breadcrumbs::register('manage.passport', function ($breadcrumbs) {
-    $breadcrumbs->parent('home');
-    $breadcrumbs->push(__('Manage Passport'), route('manage.passport'));
-});
-
 // Home > Manage Users
 Breadcrumbs::register('manage.users.index', function ($breadcrumbs) {
     $breadcrumbs->parent('home');

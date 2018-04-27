@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Api\Manage;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -39,7 +39,8 @@ class UserController extends Controller
             'password' => bcrypt($data['password']),
         ]);
         event(new Registered($user));
-        $user->syncRoles([$request->role]);
+        $user->syncRoles($request->roles);
+
         return response()->api([], __('User successfully stored.'), true, 201);
     }
 
@@ -53,12 +54,12 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::details()->findByHashSlug($id);
-        
+
         /**
          * @todo should have a transformer to do this.
          */
-        $user = collect($user->only('name', 'email', 'roles_to_string', 'roles'));
-        $roles = $user->get('roles')->mapWithKeys(function($role){
+        $user  = collect($user->only('name', 'email', 'roles_to_string', 'roles'));
+        $roles = $user->get('roles')->mapWithKeys(function ($role) {
             return [$role->id => $role->name];
         });
         $user->put('roles', $roles);
@@ -77,12 +78,12 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name'     => 'required|string|max:255',
+            'name' => 'required|string|max:255',
         ]);
 
         $fields = $request->only('name');
 
-        if(!empty($request->input('password'))) {
+        if (! empty($request->input('password'))) {
             $this->validate($request, [
                 'password' => 'required|string|min:6|confirmed',
             ]);
