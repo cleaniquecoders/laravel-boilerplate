@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "80078da390c1c9ff99d702dde3649c4b",
+    "content-hash": "ec153670f2d712f425237ccb3e91ef90",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -250,6 +250,67 @@
             ],
             "description": "Common Profile Information",
             "time": "2018-02-14T09:56:07+00:00"
+        },
+        {
+            "name": "cleaniquecoders/themer",
+            "version": "v2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cleaniquecoders/themer.git",
+                "reference": "74bac61ea3f4a5d5d4de4d8483af42c17ace43b3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cleaniquecoders/themer/zipball/74bac61ea3f4a5d5d4de4d8483af42c17ace43b3",
+                "reference": "74bac61ea3f4a5d5d4de4d8483af42c17ace43b3",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/filesystem": "^5.6",
+                "illuminate/http": "^5.6",
+                "illuminate/support": "^5.6"
+            },
+            "require-dev": {
+                "orchestra/testbench": "3.6.*",
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "CleaniqueCoders\\Themer\\ThemerServiceProvider"
+                    ],
+                    "aliases": {
+                        "Themer": "CleaniqueCoders\\Themer\\ThemerFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "CleaniqueCoders\\Themer\\": "src/"
+                },
+                "files": [
+                    "src/Support/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nasrul Hazim",
+                    "email": "nasrulhazim.m@gmail.com"
+                }
+            ],
+            "description": "Laravel Theme",
+            "keywords": [
+                "laravel",
+                "make",
+                "package",
+                "theme"
+            ],
+            "time": "2018-05-02T19:41:52+00:00"
         },
         {
             "name": "davejamesmiller/laravel-breadcrumbs",
