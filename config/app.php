@@ -80,6 +80,11 @@ return [
     'locale' => env('APP_LOCALE', 'en'),
 
     /*
+    | Locales contained enable locale
+     */
+    'locales' => env('APP_LOCALES', 'en,ms'),
+
+    /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
     |--------------------------------------------------------------------------
