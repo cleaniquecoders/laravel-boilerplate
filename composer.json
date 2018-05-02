@@ -5,7 +5,7 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=7.0.0",
+        "php": ">=7.1.3",
         "andywer/js-localization": "dev-laravel-5",
         "cleaniquecoders/artisan-makers": "^1.0",
         "cleaniquecoders/blueprint-macro": "^1.0",
