@@ -13,7 +13,9 @@
 
 Route::get('/', 'WelcomeController')->name('welcome');
 
-Auth::routes();
+Route::group(['middleware' => 'theme:tabler'], function(){
+    Auth::routes();
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/language/{language}', 'LanguageController')->name('language');
