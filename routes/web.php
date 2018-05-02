@@ -16,6 +16,7 @@ Route::get('/', 'WelcomeController')->name('welcome');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/language/{language}', 'LanguageController')->name('language');
 
 Route::group([
     'namespace' => 'User',

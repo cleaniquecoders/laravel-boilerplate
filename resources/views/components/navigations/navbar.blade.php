@@ -8,13 +8,13 @@
 			</a>
 			<a class="nav-link text-primary" 
 			href="{{ route('user.show') }}" 
-			@include('components.tooltip', ['tooltip' => 'Profile', 'pos' => 'down'])>
+			@include('components.tooltip', ['tooltip' => __('Profile'), 'pos' => 'down'])>
 				<i class="fas fa-user"></i>
 			</a>
 		@else
 			<a class="nav-link" 
 				href="{{ route('welcome') }}"
-				@include('components.tooltip', ['tooltip' => 'Home', 'pos' => 'down'])>
+				@include('components.tooltip', ['tooltip' => __('Home'), 'pos' => 'down'])>
 				{{ config('app.name') }}
 			</a>
 		@endauth
@@ -30,7 +30,7 @@
 
 			<!-- Right Side Of Navbar -->
 			<ul class="navbar-nav ml-auto">
-				<!-- Authentication Links -->
+				@include('components.language')
 				@guest
 					<li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
 					<li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
