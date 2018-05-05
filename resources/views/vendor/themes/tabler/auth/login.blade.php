@@ -7,7 +7,7 @@
 		  <hr>
 		  <div class="form-group">
 			<label class="form-label">Email address</label>
-			<input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+			<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
 			@if ($errors->has('email'))
 				<span class="invalid-feedback">
 					<strong>{{ $errors->first('email') }}</strong>
@@ -19,7 +19,7 @@
 			  Password
 			  <a href="{{ route('password.request') }}" class="float-right small">I forgot password</a>
 			</label>
-			<input type="password" class="form-control" id="password" placeholder="Password">
+			<input type="password" class="form-control" id="password" name="password" placeholder="Password">
 			@if ($errors->has('password'))
 				<span class="invalid-feedback">
 					<strong>{{ $errors->first('password') }}</strong>
