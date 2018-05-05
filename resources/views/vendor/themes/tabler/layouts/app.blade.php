@@ -28,6 +28,9 @@
       });
     </script>
     <script src="{{ asset('js/font-awesome.js') }}"></script>
+    @include('vendor.sweetalert.view')
+    @routes
+    @translations
     @stack('scripts')
 </body>
 </html>
