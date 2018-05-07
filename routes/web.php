@@ -13,12 +13,8 @@
 
 Route::get('/', 'WelcomeController')->name('welcome');
 
-Route::group(['middleware' => 'theme:tabler'], function(){
-    Auth::routes();
-    Route::get('/home', 'HomeController@index')->name('home');
-});
-
-Route::get('/language/{language}', 'LanguageController')->name('language');
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group([
     'namespace' => 'User',
@@ -33,6 +29,10 @@ Route::group([
     Route::get('/avatar', 'AvatarController@show')->name('avatar.show');
     Route::post('/avatar', 'AvatarController@store')->name('avatar.store');
 });
+
+Route::get('/language/{language}', 'LanguageController')->name('language');
+
+
 
 Route::group([
     'namespace' => 'Manage',
