@@ -19,8 +19,8 @@
 						</div>
 							
 						<div class="btn-group float-right">
-                            {{ html()->a(route('user.show'), __('Cancel'))->class('btn btn-danger') }}
-                            {{ html()->button(__('Update'), 'submit')->class('btn btn-primary') }}    
+                            {{ html()->a(route('user.show'), __('Cancel'))->class('btn btn-outline-danger') }}
+                            {{ html()->button(__('Update'), 'submit')->class('btn btn-outline-primary') }}    
                         </div>
                         
 					{{ html()->form()->close() }}
