@@ -25,7 +25,7 @@
 		        			</div>
 
 	        			    <div class="btn-group float-right">
-	                            {{ html()->button(__('Update'), 'submit')->class('btn btn-success') }}    
+	                            {{ html()->button(__('Update'), 'submit')->class('btn btn-outline-success') }}    
 	                        </div>
 						{{ html()->form()->close() }}
 					</div>
