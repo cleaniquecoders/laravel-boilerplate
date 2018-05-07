@@ -12,7 +12,7 @@ return [
     |
      */
 
-    'name' => env('APP_NAME', 'Web Application Boilerplate'),
+    'name' => env('APP_NAME', 'boilerplate.app'),
 
     /*
     |--------------------------------------------------------------------------
