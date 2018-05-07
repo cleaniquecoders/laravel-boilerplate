@@ -1,1 +1,0 @@
-@extends('vendor.themes.' . session('theme', config('theme.default'))  . '.layouts.' . $layout)

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
-    @include('vendor.themes.tabler.components.meta')
     @include('components.meta')
 
     <title>{{ config('app.name', 'Laravel') }}</title>
