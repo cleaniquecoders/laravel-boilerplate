@@ -104,7 +104,7 @@ if (! function_exists('audit')) {
         } else {
             activity()
                 ->performedOn($model)
-                ->causedBy(auth()->user())
+                ->causedBy(user())
                 ->log($message);
         }
     }
