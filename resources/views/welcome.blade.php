@@ -1,10 +1,12 @@
-@extends('layouts.tabler-app')
+@extends('layouts.app')
 
 @section('content')
     <div class="container">
         <div class="row justify-content-md-center mt-5">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                 <h1 class="text-center">
+                    @include('components.logo', ['height' => '128px'])
+                    <br>
                     {{ config('app.name') }}
                 </h1>
                 <hr>
