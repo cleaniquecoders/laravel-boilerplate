@@ -1,15 +1,18 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="row justify-content-center">
-	<div class="col">
-		@component('components.card', [
-			'card_title' => __('Dashboard'),
-		])
-			@slot('card_body')
-				<p class="text-center">{{ __('You are logged in! Welcome back!') }}</p>
-			@endslot
-		@endcomponent
-    </div>
+<div class="row">
+	<div class="col-6 col-sm-4 col-lg-2">
+	<div class="card">
+		<div class="card-body p-3 text-center">
+			<div class="text-right text-green">
+			{{ date('Y') }}
+			<i class="fe fe-calendar"></i>
+			</div>
+			<div class="h1 m-0">{{ date('d') }}</div>
+			<div class="text-muted mb-4">{{ date('M') }}</div>
+		</div>
+		</div>
+	</div>
 </div>
 @endsection
