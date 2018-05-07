@@ -2,7 +2,7 @@
     <div class="container">
         <div class="d-flex">
             {{-- Header Brand --}}
-            <a class="header-brand" href="{{ url('/') }}">
+            <a class="header-brand" href="@auth {{ route('home') }} @else {{ url('/') }} @endauth">
                 @include('components.logo')
             </a>
             {{-- Right Navigation --}}
