@@ -28,7 +28,7 @@ class AvatarController extends Controller
             ->usingFileName('avatar.png')
             ->toMediaCollection('avatar');
 
-        audit(auth()->user(), 'Uploaded new avatar');
+        audit(user(), 'Uploaded new avatar');
 
         alert()->success('New Avatar Uploaded');
 
