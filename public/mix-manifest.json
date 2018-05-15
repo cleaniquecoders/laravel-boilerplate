@@ -1,8 +1,11 @@
 {
     "/js/app.js": "/js/app.js",
+    "/js/axios.js": "/js/axios.js",
+    "/js/bootstrap.js": "/js/bootstrap.js",
+    "/js/vue.js": "/js/vue.js",
+    "/js/jquery.js": "/js/jquery.js",
     "/css/balloon.css": "/css/balloon.css",
     "/css/app.css": "/css/app.css",
-    "/js/vue.js": "/js/vue.js",
     "/js/swal.js": "/js/swal.js",
     "/js/font-awesome.js": "/js/font-awesome.js",
     "/js/select2.js": "/js/select2.js",

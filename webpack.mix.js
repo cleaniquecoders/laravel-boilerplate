@@ -11,7 +11,10 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
+mix.js('resources/assets/js/jquery.js', 'public/js')
+	.js('resources/assets/js/bootstrap.js', 'public/js')
+	.js('resources/assets/js/axios.js', 'public/js')
+	.js('resources/assets/js/app.js', 'public/js')
 	.js('resources/assets/js/font-awesome.js', 'public/js')
 	.js('resources/assets/js/swal.js', 'public/js')
 	.js('resources/assets/js/vue.js', 'public/js')
