@@ -9,7 +9,8 @@ class Icon
 	public static function register()
 	{
 		Blade::directive('icon', function ($icon) {
-			return '<i class="<?php echo $icon; ?>"></i>';
+			$icon = str_replace('\'', '"', $icon);
+			return "<i class={$icon}></i>";
         });
 	}
 }
