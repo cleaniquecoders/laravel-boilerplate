@@ -32,8 +32,6 @@ Route::group([
 
 Route::get('/language/{language}', 'LanguageController')->name('language');
 
-
-
 Route::group([
     'namespace' => 'Manage',
     'prefix'    => 'manage',
