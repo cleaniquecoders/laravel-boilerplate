@@ -9,7 +9,7 @@
                         @slot('thead')
                             <tr>
                                 <th>{{ __('Description') }}</th>
-                                <th>{{ __('Day, Date &amp; Time') }}</th>
+                                <th>{{ __('Day, Date & Time') }}</th>
                             </tr>
                         @endslot
                         @slot('tbody')

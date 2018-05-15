@@ -38,7 +38,7 @@ Breadcrumbs::register('user.avatar.show', function ($breadcrumbs) {
 // Home > Profile > Security
 Breadcrumbs::register('user.password.show', function ($breadcrumbs) {
     $breadcrumbs->parent('user.show');
-    $breadcrumbs->push(__('Securty'), route('user.password.show'));
+    $breadcrumbs->push(__('Security'), route('user.password.show'));
 });
 
 // Home > Profile > Logs

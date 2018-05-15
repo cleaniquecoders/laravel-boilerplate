@@ -12,7 +12,7 @@ return [
     |
      */
 
-    'name' => env('APP_NAME', 'Web Application Boilerplate'),
+    'name' => env('APP_NAME', 'boilerplate.app'),
 
     /*
     |--------------------------------------------------------------------------
@@ -78,6 +78,11 @@ return [
      */
 
     'locale' => env('APP_LOCALE', 'en'),
+
+    /*
+    | Locales contained enable locale
+     */
+    'locales' => env('APP_LOCALES', 'en,ms'),
 
     /*
     |--------------------------------------------------------------------------
@@ -165,11 +170,13 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
+        App\Providers\BladeServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\MacroServiceProvider::class,
         App\Providers\ObserverServiceProvider::class,
+        App\Providers\ThemeServiceProvider::class,
     ],
 
     /*

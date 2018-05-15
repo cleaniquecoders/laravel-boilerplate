@@ -100,11 +100,12 @@ if (! function_exists('audit')) {
         if (is_null($causedBy)) {
             activity()
                 ->performedOn($model)
+                ->causedBy(user())
                 ->log($message);
         } else {
             activity()
                 ->performedOn($model)
-                ->causedBy(auth()->user())
+                ->causedBy($causedBy)
                 ->log($message);
         }
     }
@@ -146,6 +147,9 @@ if (! function_exists('permissions')) {
     }
 }
 
+/*
+ * Minify given HTML Content
+ */
 if (! function_exists('minify')) {
     function minify($value)
     {
@@ -171,5 +175,17 @@ if (! function_exists('minify')) {
         }
 
         return preg_replace(array_keys($replace), array_values($replace), $value);
+    }
+}
+
+/*
+ * Get Available Locales
+ */
+if (! function_exists('locales')) {
+    function locales()
+    {
+        return collect(explode(',', config('app.locales')))->reject(function ($locale) {
+            return ! file_exists(resource_path('lang/' . $locale));
+        });
     }
 }

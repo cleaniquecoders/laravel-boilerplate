@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
 @section('body')
-	@include('layouts.admin-' . config('layouts.admin'))
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				{{ Breadcrumbs::render() }}
+				@yield('content')
+			</div>
+		</div>
+	</div><!-- /.container -->
 @endsection

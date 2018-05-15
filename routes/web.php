@@ -14,7 +14,6 @@
 Route::get('/', 'WelcomeController')->name('welcome');
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group([
@@ -30,6 +29,8 @@ Route::group([
     Route::get('/avatar', 'AvatarController@show')->name('avatar.show');
     Route::post('/avatar', 'AvatarController@store')->name('avatar.store');
 });
+
+Route::get('/language/{language}', 'LanguageController')->name('language');
 
 Route::group([
     'namespace' => 'Manage',

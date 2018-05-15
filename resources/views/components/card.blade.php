@@ -1,7 +1,13 @@
 <div class="card border-0">
 	@isset($card_title)
 		<div class="card-header {{ $card_title_classes or 'font-weight-bold text-dark bg-white border-0' }}">
-			{{ $card_title }}
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						{{ $card_title }}
+					</div>
+				</div>
+			</div>
 			<hr>
 		</div>
 	@endisset
