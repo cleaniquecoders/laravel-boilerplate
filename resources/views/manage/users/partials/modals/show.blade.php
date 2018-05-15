@@ -9,7 +9,7 @@
         <a href="#" id="edit-user-link"
             @include('components.tooltip', ['tooltip' => 'Edit'])
             class="float-right btn btn-primary">
-            <i class="fas fa-edit"></i> Edit
+            <i class="fe fe-edit"></i> Edit
         </a>
     @endslot
 @endcomponent

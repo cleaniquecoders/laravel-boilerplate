@@ -1,9 +1,9 @@
 <div class="form-group row">
     <label for="{{ snake_case($input_label) }}" 
-        class="{{ $input_label_class or 'col-sm-4 col-form-label text-md-right' }}">
+        class="{{ $input_label_class or 'col col-form-label' }}">
         {{ __($input_label) }}
     </label>
-    <div class="{{ $input_container_class or 'col-md-6' }}">
+    <div class="{{ $input_container_class or 'col' }}">
         {{
             html()->select()
                 ->class('select2 w-100 form-control ' . ($errors->has(snake_case($input_label)) ? ' is-invalid' : ''))

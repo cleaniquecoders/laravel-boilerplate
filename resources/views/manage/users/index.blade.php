@@ -33,16 +33,11 @@
 		<div class="col">
 			@component('components.card')
 				@slot('card_title')
-					<h4>
-						{{ __('User Management') }}
-						<div class="float-right">
-							@include('components.modals.button', [
-								'modal_btn_classes' => 'create-action-btn',
-								'label' => __('New User'),
-								'icon' => 'fa fa-plus'
-							])
-						</div>
-					</h4>
+					@include('components.modals.button', [
+						'modal_btn_classes' => 'create-action-btn float-right',
+						'label' => __('New User'),
+						'icon' => 'fe fe-plus'
+					])
 				@endslot
 				@slot('card_body')
 					@component('components.datatable', 
