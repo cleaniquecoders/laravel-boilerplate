@@ -100,11 +100,12 @@ if (! function_exists('audit')) {
         if (is_null($causedBy)) {
             activity()
                 ->performedOn($model)
+                ->causedBy(user())
                 ->log($message);
         } else {
             activity()
                 ->performedOn($model)
-                ->causedBy(user())
+                ->causedBy($causedBy)
                 ->log($message);
         }
     }
