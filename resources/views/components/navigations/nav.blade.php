@@ -1,2 +1,2 @@
 @include('components.navigations.nav-header')
-@include('components.navigations.nav-menus')
+@includeWhen(user(), 'components.navigations.nav-menus')
