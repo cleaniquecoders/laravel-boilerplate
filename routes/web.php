@@ -12,30 +12,10 @@
  */
 
 Route::get('/', 'WelcomeController')->name('welcome');
-
-Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::group([
-    'namespace' => 'User',
-    'prefix'    => 'user',
-    'as'        => 'user.',
-], function () {
-    Route::get('/', 'UserController@show')->name('show');
-    Route::put('/', 'UserController@update')->name('update');
-    Route::get('/password', 'PasswordController@show')->name('password.show');
-    Route::put('/password', 'PasswordController@update')->name('password.update');
-    Route::get('/logs', 'LogController')->name('logs');
-    Route::get('/avatar', 'AvatarController@show')->name('avatar.show');
-    Route::post('/avatar', 'AvatarController@store')->name('avatar.store');
-});
-
 Route::get('/language/{language}', 'LanguageController')->name('language');
 
-Route::group([
-    'namespace' => 'Manage',
-    'prefix'    => 'manage',
-    'as'        => 'manage.',
-], function () {
-    Route::resource('users', 'UserController')->except('store', 'update', 'destroy');
-});
+collect(glob(base_path('/routes/web/*.php')))
+    ->each(function ($path) {
+        require $path;
+    });
