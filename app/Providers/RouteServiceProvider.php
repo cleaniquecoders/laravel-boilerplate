@@ -68,7 +68,7 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapDatatableRoutes()
     {
         Route::prefix('api/datatable')
-             ->middleware('datatable')
+             ->middleware('api')
              ->as('api.datatable.')
              ->namespace($this->namespace . '\Api\Datatable')
              ->group(base_path('routes/datatable.php'));

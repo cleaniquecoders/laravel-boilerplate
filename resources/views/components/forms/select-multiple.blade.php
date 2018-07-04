@@ -1,24 +1,24 @@
 <div class="form-group row">
-    <label for="{{ snake_case($input_label) }}" 
-        class="{{ $input_label_class or 'col col-form-label' }}">
-        {{ __($input_label) }}
+    <label for="{{ snake_case($label) }}" 
+        class="{{ $label_class or 'col col-form-label' }}">
+        {{ __($label) }}
     </label>
     <div class="{{ $input_container_class or 'col' }}">
         {{
             html()->select()
-                ->class('select2 w-100 form-control ' . ($errors->has(snake_case($input_label)) ? ' is-invalid' : ''))
-                ->name((isset($name) ? $name : snake_case($input_label)) . '[]')
-                ->id((isset($id) ? $id : snake_case($input_label)) . '[]')
+                ->class('select2 w-100 form-control ' . ($errors->has(snake_case($label)) ? ' is-invalid' : ''))
+                ->name((isset($name) ? $name : snake_case($label)) . '[]')
+                ->id((isset($id) ? $id : snake_case($label)))
                 ->options($options)
-                ->value(old(snake_case($input_label)))
+                ->value(old(snake_case($label)))
                 ->attribute('autofocus', true)
-                ->attribute('multiple', true)
+                ->attribute('multiple', 'multiple')
                 ->attribute('style', 'width:100%')
         }}
 
-        @if ($errors->has(snake_case($input_label)))
+        @if ($errors->has(snake_case($label)))
             <span class="invalid-feedback">
-                <strong>{{ $errors->first(snake_case($input_label)) }}</strong>
+                <strong>{{ $errors->first(snake_case($label)) }}</strong>
             </span>
         @endif
     </div>

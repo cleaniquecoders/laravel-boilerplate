@@ -4,12 +4,12 @@
         {{ __($label) }}
     </label>
 
-    <div class="{{ $input_container_class or 'col' }}">
+    <div class="{{ $input_container_class or 'col-md-12' }}">
         <input 
             @isset($readonly)
             readonly="true" 
             @endisset
-            type="{{ $type or 'text' }}" 
+            type="{{ $type or 'file' }}" 
             placeholder="@isset($placeholder) {{ __($placeholder) }} @else {{ __($label) }} @endisset" 
             class="form-control{{ $errors->has(snake_case($label)) ? ' is-invalid' : '' }} {{ $input_classes or '' }}" 
             
@@ -24,25 +24,18 @@
             @else
                 name="{{ snake_case($label) }}" 
             @endisset
-            
-            @isset($onkeyup)
-                onkeyup="{{$onkeyup}}"
-            @endisset
-            
-            @isset($step)
-                step="{{$step}}"
-            @endisset
 
-            @isset($value)
-                value="{{$value}}"
-            @endisset
-
-            @isset($readonly)
-                readonly="{{$readonly}}"
-            @endisset
-            
             value="{{ old(snake_case($label)) }}" 
+            
+            @isset($accept)
+                accept="{{ $accept }}"
+            @endisset
+            
             @isset($required) required @endisset autofocus>
+
+            @isset($multiple)
+                <div class="btn btn-danger btn-sm float-right" onclick="$(this).parent().parent().remove()">{{ __('Batal') }}</div>
+            @endisset
 
         @if ($errors->has(snake_case($label)))
             <span class="invalid-feedback">

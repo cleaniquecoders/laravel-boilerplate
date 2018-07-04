@@ -70,13 +70,8 @@ if (! function_exists('generate_reference')) {
  * Hashids Helper
  */
 if (! function_exists('hashids')) {
-    function hashids($salt = null, $length = null, $alphabet = null)
+    function hashids(?string $salt = null, ?int $length = null, ?string $alphabet = null): \App\Services\Hashids
     {
-        $salt     = is_null($salt) ? config('hashids.salt') : config('hashids.salt') . $salt;
-        $length   = is_null($length) ? config('hashids.length') : $length;
-        $alphabet = is_null($alphabet) ? config('hashids.alphabet') : $alphabet;
-        $salt     = \Illuminate\Support\Facades\Hash::make($salt);
-
         return \App\Services\Hashids::make($salt, $length, $alphabet);
     }
 }

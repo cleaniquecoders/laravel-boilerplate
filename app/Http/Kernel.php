@@ -43,11 +43,6 @@ class Kernel extends HttpKernel
             'throttle:60,1',
             'bindings',
         ],
-
-        'datatable' => [
-            'throttle:60,1',
-            'bindings',
-        ],
     ];
 
     /**
@@ -69,6 +64,6 @@ class Kernel extends HttpKernel
         'minify'      => \App\Http\Middleware\MinifyHtml::class,
         'jwt.auth'    => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
         'jwt.refresh' => \Tymon\JWTAuth\Middleware\RefreshToken::class,
-        'theme' => \CleaniqueCoders\Themer\Http\Middleware\ThemeLoader::class,
+        'theme'       => \CleaniqueCoders\Themer\Http\Middleware\ThemeLoader::class,
     ];
 }
