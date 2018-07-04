@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 
 Route::group([
     'namespace' => 'Manage',

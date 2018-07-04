@@ -2,10 +2,9 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\View\Compilers\Concerns\CompilesLayouts;
 use Illuminate\Support\Str;
+use Illuminate\View\Compilers\Concerns\CompilesLayouts;
 
 class ThemeServiceProvider extends ServiceProvider
 {
@@ -13,8 +12,6 @@ class ThemeServiceProvider extends ServiceProvider
 
     /**
      * Bootstrap services.
-     *
-     * @return void
      */
     public function boot()
     {
@@ -23,18 +20,16 @@ class ThemeServiceProvider extends ServiceProvider
 
     /**
      * Register services.
-     *
-     * @return void
      */
     public function register()
     {
-        //
     }
 
     /**
      * Strip the parentheses from the given expression.
      *
-     * @param  string  $expression
+     * @param string $expression
+     *
      * @return string
      */
     public function stripParentheses($expression)

@@ -11,10 +11,10 @@ return [
     | has failed, such as for an invalid token or invalid new password.
     |
     */
-   
+
     'password' => 'Katalaluan hendaklah sekurang-kurangnya enam aksara dan mesti sama dengan katalaluan pengesahan.',
     'reset'    => 'Katalaluan telah ditetapkan semula.',
     'sent'     => 'Kami telah menghantar emel untuk tetapan katalaluan.',
     'token'    => 'Token tetapan semula katalaluan tidak sah.',
-    'user'     => "Kami tidak menjumpai pengguna dengan emel yang diberikan.",
+    'user'     => 'Kami tidak menjumpai pengguna dengan emel yang diberikan.',
 ];

@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 
 /*
  * @todo protect routes, allow for self-consume API

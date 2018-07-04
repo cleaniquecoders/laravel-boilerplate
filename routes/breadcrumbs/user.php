@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 
 // Home > Manage Users
 Breadcrumbs::register('manage.users.index', function ($breadcrumbs) {
