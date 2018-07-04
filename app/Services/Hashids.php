@@ -16,7 +16,7 @@ class Hashids
      */
     protected $hashids;
 
-    public function __construct($salt, $length, $alphabet)
+    public function __construct(string $salt, int $length, string $alphabet)
     {
         $this->hashids = new HashidsProvider($salt, $length, $alphabet);
     }
@@ -24,10 +24,15 @@ class Hashids
     /**
      * Create an instance of Hashids.
      *
-     * @return App\Services\Hashids
+     * @return static
      */
-    public static function make($salt, $length, $alphabet)
+    public static function make(?string $salt, ?int $length, ?string $alphabet)
     {
+        $salt     = is_null($salt) ? config('hashids.salt') : config('hashids.salt') . $salt;
+        $length   = $length   ?? config('hashids.length');
+        $alphabet = $alphabet ?? config('hashids.alphabet');
+        $salt     = \Illuminate\Support\Facades\Hash::make($salt);
+
         return new self($salt, $length, $alphabet);
     }
 
@@ -50,11 +55,11 @@ class Hashids
      *
      * @return int|null
      */
-    public function decode(string $value): int
+    public function decode(string $value): ?int
     {
         $value = $this->hashids->decode($value);
 
-        if (is_array($value)) {
+        if (is_array($value) && sizeof($value) > 0) {
             return $value[0];
         } else {
             return null;
