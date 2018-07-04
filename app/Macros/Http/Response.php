@@ -8,7 +8,7 @@ class Response
 {
     public static function registerMacros()
     {
-        HttpResponse::macro('api', function ($data, $message = null, $status = true, $code = 200) {
+        HttpResponse::macro('api', function ($data = null, $message = null, $status = true, $code = 200) {
             return response()->json([
                 'data'    => $data,
                 'message' => $message,
