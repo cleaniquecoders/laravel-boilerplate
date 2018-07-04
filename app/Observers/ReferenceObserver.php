@@ -21,14 +21,14 @@ class ReferenceObserver
      */
     public function creating(Model $model)
     {
-        if (Schema::hasColumn($model->getTable(), 'reference') && is_null($model->reference)) {
-            $count = $model::count();
+        $count = method_exists($model, 'getCounter') ? $model->getCounter() : ($model::count() ?? 0);
 
-            $reference = isset($model->reference_prefix) ?
-            generate_reference($model->reference_prefix, $count) :
-            generate_reference(config('document.prefix'), $count);
+        $column = method_exists($model, 'getReferenceColumn') ? $model->getReferenceColumn() : 'reference';
 
-            $model->reference = $reference;
+        $prefix = method_exists($model, 'referencePrefix') ? $model->referencePrefix() : config('document.prefix');
+
+        if (Schema::hasColumn($model->getTable(), $column) && is_null($model->$column)) {
+            $model->$column = generate_reference($prefix, $count);
         }
     }
 }
