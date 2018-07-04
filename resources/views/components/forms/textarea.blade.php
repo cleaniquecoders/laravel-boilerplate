@@ -5,13 +5,10 @@
     </label>
 
     <div class="{{ $input_container_class or 'col' }}">
-        <input 
-            @isset($readonly)
-            readonly="true" 
-            @endisset
-            type="{{ $type or 'text' }}" 
+        <textarea 
+            @isset($style) style="{{ $style }}" @endisset
             placeholder="@isset($placeholder) {{ __($placeholder) }} @else {{ __($label) }} @endisset" 
-            class="form-control{{ $errors->has(snake_case($label)) ? ' is-invalid' : '' }} {{ $input_classes or '' }}" 
+            class="form-control{{ $errors->has(snake_case($label)) ? ' is-invalid' : '' }}" 
             
             @isset($id)
                 id="{{ $id }}" 
@@ -24,25 +21,9 @@
             @else
                 name="{{ snake_case($label) }}" 
             @endisset
-            
-            @isset($onkeyup)
-                onkeyup="{{$onkeyup}}"
-            @endisset
-            
-            @isset($step)
-                step="{{$step}}"
-            @endisset
 
-            @isset($value)
-                value="{{$value}}"
-            @endisset
-
-            @isset($readonly)
-                readonly="{{$readonly}}"
-            @endisset
-            
             value="{{ old(snake_case($label)) }}" 
-            @isset($required) required @endisset autofocus>
+            @isset($required) required @endisset autofocus></textarea>
 
         @if ($errors->has(snake_case($label)))
             <span class="invalid-feedback">
