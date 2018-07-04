@@ -7,6 +7,10 @@ php:
 env:
   - APP_ENV=testing
 
+cache:
+  directories:
+    - vendor
+
 before_script:
   - travis_retry composer self-update
   - travis_retry composer update --prefer-source --no-interaction --dev
