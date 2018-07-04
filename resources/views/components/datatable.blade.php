@@ -18,6 +18,10 @@
 				deferRender: false,
 				ajax: {
 					url:'{!! route($route_name, $param ?? null) !!}',
+					beforeSend: function (request) {
+				        request.setRequestHeader("Accept", '{{ config('api.header.accept') }}');
+				        request.setRequestHeader("X-CSRF-TOKEN", '{{ csrf_token() }}');
+				    },
 					{{ $datatable_data or ''}}
 				},
 				columns: @json($columns),
