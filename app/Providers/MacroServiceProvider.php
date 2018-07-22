@@ -13,6 +13,7 @@ class MacroServiceProvider extends ServiceProvider
     {
         \App\Macros\Http\Response::registerMacros();
         \App\Macros\Models\Model::registerMacros();
+        \App\Macros\Routing\Breadcrumb::registerMacros();
     }
 
     /**

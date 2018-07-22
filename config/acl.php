@@ -10,6 +10,7 @@ return [
         'setting'  => ['developer', 'administrator'],
         'passport' => ['developer'],
         'user'     => ['developer', 'administrator'],
+        'acl'      => ['developer', 'administrator'],
     ],
     'actions' => [
         'index', 'show',

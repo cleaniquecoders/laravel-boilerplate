@@ -14,8 +14,3 @@
 Route::get('/', 'WelcomeController')->name('welcome');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/language/{language}', 'LanguageController')->name('language');
-
-collect(glob(base_path('/routes/web/*.php')))
-    ->each(function ($path) {
-        require $path;
-    });

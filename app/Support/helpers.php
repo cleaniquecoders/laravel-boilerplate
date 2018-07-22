@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Cache;
+
 /*
  * generate sequence
  * @return sequence based on length supplied
@@ -181,6 +183,30 @@ if (! function_exists('locales')) {
     {
         return collect(explode(',', config('app.locales')))->reject(function ($locale) {
             return ! file_exists(resource_path('lang/' . $locale));
+        });
+    }
+}
+
+/*
+ * Get Role by Name
+ */
+if (! function_exists('role')) {
+    function role($name)
+    {
+        return Cache::remember('role_' . $name, 10, function () use ($name) {
+            return config('permission.models.role')::findByName($name);
+        });
+    }
+}
+
+/*
+ * Get Permission by Name
+ */
+if (! function_exists('permission')) {
+    function permission($name)
+    {
+        return Cache::remember('permission_' . $name, 10, function () use ($name) {
+            return config('permission.models.permission')::findByName($name);
         });
     }
 }
