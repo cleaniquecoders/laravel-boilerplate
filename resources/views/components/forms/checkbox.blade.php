@@ -17,6 +17,6 @@
 		@isset($data) 
 			@foreach($data as $key => $value) data-{{ $key }}="{{ $value }}" @endforeach
 		@endisset
-		{{ isset($checked) ? 'checked' : '' }}>
+		{{ isset($checked) && ($checked) ? 'checked' : '' }}>
 	<span class="custom-control-label">{{ __($label) }}</span>
 </label>
