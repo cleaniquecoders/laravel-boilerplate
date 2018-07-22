@@ -21,6 +21,10 @@
 							@can('user_index')
 								<a href="{{ route('manage.users.index') }}" class="dropdown-item ">Users</a>
 							@endcan
+
+							@can('acl_index')
+								<a href="{{ route('manage.acl.index') }}" class="dropdown-item ">ACL</a>
+							@endcan
 						</div>
 					</li>
 					<li class="nav-item dropdown">

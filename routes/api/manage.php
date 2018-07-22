@@ -10,4 +10,5 @@ Route::group([
     'as'        => 'manage.',
 ], function () {
     Route::resource('users', 'UserController')->except('create', 'edit');
+    Route::put('acl', 'AclController')->name('acl.update');
 });
