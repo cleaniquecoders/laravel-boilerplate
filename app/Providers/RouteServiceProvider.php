@@ -68,7 +68,7 @@ class RouteServiceProvider extends ServiceProvider
                     });
 
                  Route::prefix('datatable')
-                         ->as('.datatable.')
+                         ->as('datatable.')
                          ->namespace('\Datatable')
                          ->group(function () {
                              collect(glob(base_path('/routes/datatable/*.php')))
