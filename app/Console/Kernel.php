@@ -17,6 +17,7 @@ class Kernel extends ConsoleKernel
         Commands\ReloadAllCommand::class,
         Commands\ReloadCacheCommand::class,
         Commands\ReloadDbCommand::class,
+        Commands\SeedDevelopmentDataCommand::class,
     ];
 
     /**
