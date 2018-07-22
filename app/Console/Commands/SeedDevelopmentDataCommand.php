@@ -4,25 +4,26 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class ReloadAllCommand extends Command
+class SeedDevelopmentDataCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'reload:all
-                                {--d|dev : Seed development data}';
+    protected $signature = 'seed:dev';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Reload all caches and database.';
+    protected $description = 'Seed Development Data';
 
     /**
      * Create a new command instance.
+     *
+     * @return void
      */
     public function __construct()
     {
@@ -36,13 +37,6 @@ class ReloadAllCommand extends Command
      */
     public function handle()
     {
-        $this->call('reload:cache');
-        $this->call('reload:db');
-        $this->call('storage:link');
-        $this->call('make:jwt');
-
-        if ($this->option('dev')) {
-            $this->call('seed:dev');
-        }
+        $this->call('db:seed', ['--class' => 'DevelopmentSeeder']);
     }
 }

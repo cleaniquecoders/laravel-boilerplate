@@ -11,7 +11,8 @@ class ReloadDbCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'reload:db';
+    protected $signature = 'reload:db
+                                {--d|dev : Seed development data}';
 
     /**
      * The console command description.
@@ -38,5 +39,9 @@ class ReloadDbCommand extends Command
         $this->call('migrate:fresh', ['--seed' => true]);
         $this->info('Seeding Profile Dependencies');
         $this->call('profile:seed');
+
+        if ($this->option('dev')) {
+            $this->call('seed:dev');
+        }
     }
 }
