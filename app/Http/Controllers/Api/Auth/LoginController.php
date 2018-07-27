@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Transformers\ApiTokenTransformer as Transformer;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
@@ -29,12 +30,8 @@ class LoginController extends Controller
         $token = $tokenResult->token;
         $token->save();
 
-        return response()->api([
-            'access_token' => $tokenResult->accessToken,
-            'token_type' => 'Bearer',
-            'expires_at' => \Carbon\Carbon::parse(
-                $tokenResult->token->expires_at
-            )->toDateTimeString()
-        ]);
+        $data = (new Transformer())->transform($tokenResult);
+
+        return response()->api($data);
     }
 }
