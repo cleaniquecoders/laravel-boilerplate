@@ -39,7 +39,7 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
-            \App\Http\Middleware\ApiHeader::class,
+            'api.header',
             'throttle:60,1',
             'bindings',
         ],
@@ -62,8 +62,6 @@ class Kernel extends HttpKernel
         'role'        => \Spatie\Permission\Middlewares\RoleMiddleware::class,
         'permission'  => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
         'minify'      => \App\Http\Middleware\MinifyHtml::class,
-        'jwt.auth'    => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
-        'jwt.refresh' => \Tymon\JWTAuth\Middleware\RefreshToken::class,
-        'theme'       => \CleaniqueCoders\Themer\Http\Middleware\ThemeLoader::class,
+        'api.header'  => \App\Http\Middleware\ApiHeader::class,
     ];
 }
