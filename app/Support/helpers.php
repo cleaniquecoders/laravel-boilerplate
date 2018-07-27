@@ -210,3 +210,10 @@ if (! function_exists('permission')) {
         });
     }
 }
+
+collect(glob(__DIR__ . '/*.php'))
+    ->each(function ($path) {
+        if (basename($path) !== basename(__FILE__)) {
+            require $path;
+        }
+    });
