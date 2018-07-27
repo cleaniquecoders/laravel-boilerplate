@@ -2,25 +2,39 @@
 
 namespace App\Http\Controllers\Api\Auth;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use JWTAuth;
-use Tymon\JWTAuth\Exceptions\JWTException;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
     public function __invoke(Request $request)
     {
+    	$this->validate($request, [
+            'email' => 'required|string',
+            'password' => 'required|string',
+        ]);
+
         $credentials = $request->only('email', 'password');
 
-        try {
-            if (! $token = JWTAuth::attempt($credentials)) {
-                return response()->api([], 'Invalid Credentials.', false, 401);
-            }
-        } catch (JWTException $e) {
-            return response()->api([], 'Could not create token.', false, 500);
+        if(! Auth::attempt($credentials)) {
+        	return response()->json([
+                'message' => 'Unauthorized'
+            ], 401);
         }
 
-        return response()->api($token);
+        $user = $request->user();
+
+        $tokenResult = $user->createToken('Personal Access Token');
+        $token = $tokenResult->token;
+        $token->save();
+
+        return response()->api([
+            'access_token' => $tokenResult->accessToken,
+            'token_type' => 'Bearer',
+            'expires_at' => \Carbon\Carbon::parse(
+                $tokenResult->token->expires_at
+            )->toDateTimeString()
+        ]);
     }
 }

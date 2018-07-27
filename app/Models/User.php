@@ -11,12 +11,13 @@ use CleaniqueCoders\Profile\Traits\HasProfile;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Passport\HasApiTokens;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements HasMediaConversions
 {
-    use HasProfile, HasMediaExtended,
+    use HasProfile, HasMediaExtended, HasApiTokens,
         HasThumbnail, HasRoles, HasSlugExtended,
         LogsActivityExtended, Notifiable, SoftDeletes,
         HasDatatable;

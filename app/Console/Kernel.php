@@ -13,7 +13,6 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        Commands\MakeJwtTokenCommand::class,
         Commands\ReloadAllCommand::class,
         Commands\ReloadCacheCommand::class,
         Commands\ReloadDbCommand::class,

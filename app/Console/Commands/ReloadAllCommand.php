@@ -39,7 +39,9 @@ class ReloadAllCommand extends Command
         $this->call('reload:cache');
         $this->call('reload:db');
         $this->call('storage:link');
-        $this->call('make:jwt');
+        $this->call('passport:install', [
+            '--force' => true,
+        ]);
 
         if ($this->option('dev')) {
             $this->call('seed:dev');
