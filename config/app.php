@@ -163,7 +163,6 @@ return [
         Spatie\Html\HtmlServiceProvider::class,
         Softon\SweetAlert\SweetAlertServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\BreadcrumbsServiceProvider::class,
-        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
 
         /*
          * Application Service Providers...
