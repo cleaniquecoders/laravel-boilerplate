@@ -12,7 +12,7 @@ class LanguageController extends Controller
 
         swal()->success(
             __('Language'),
-            __('Current application language has been set to ' . __(strtoupper($language)) . '.')
+            __('Current application language has been set to ') . __(strtoupper($language))
         );
 
         return redirect()->back();
