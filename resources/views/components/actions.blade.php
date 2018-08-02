@@ -6,20 +6,22 @@
 	  <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" 
 	  	style="position: absolute; transform: translate3d(-181px, 20px, 0px); top: 0px; left: 0px; will-change: transform;">
 	  	{{ $prepend_action or '' }}
-	    <a class="dropdown-item show-action-btn"
+	    <a class="dropdown-item show-action-btn" style="cursor: pointer;"
 			data-{{ $primary_key or 'hashslug' }}="' + data.{{ $primary_key or 'hashslug' }} + '">
-			<i class="fe fe-eye"></i> {{ __('Details') }}
+			<i class="fe fe-eye"></i>
 		</a>
-		<a class="dropdown-item edit-action-btn"
+		<a class="dropdown-item edit-action-btn" style="cursor: pointer;"
 			data-{{ $primary_key or 'hashslug' }}="' + data.{{ $primary_key or 'hashslug' }} + '">
-			<i class="fas fa-edit"></i> {{ __('Edit') }}
-		</a>
-	    <div class="dropdown-divider"></div>
-	    <a class="dropdown-item destroy-action-btn"
-			data-{{ $primary_key or 'hashslug' }}="' + data.{{ $primary_key or 'hashslug' }} + '">
-			<i class="fas fa-trash text-danger"></i> {{ __('Delete') }}
+			<i class="fe fe-edit"></i>
 		</a>
 		{{ $append_action or '' }}
+	    <div class="dropdown-divider " ></div>
+	    {{ $prepend_footer_action or '' }}
+	    <a class="dropdown-item destroy-action-btn"  style="cursor: pointer;"
+			data-{{ $primary_key or 'hashslug' }}="' + data.{{ $primary_key or 'hashslug' }} + '">
+			<i class="fe fe-trash"></i>
+		</a>
+		{{ $append_footer_action or '' }}
 	  </div>
 	</div>
 </div>

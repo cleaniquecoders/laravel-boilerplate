@@ -32,7 +32,10 @@
 							return '{!! $actions !!}';
 						},
 						"targets": -1
-					}
+					},
+					@endisset
+					@isset($columnDefs)
+						{!! $columnDefs !!}
 					@endisset
 				]
 			});
