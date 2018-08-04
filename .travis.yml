@@ -12,7 +12,7 @@ cache:
     - vendor
 
 before_script:
-  - composer install
+  - travis_retry composer install --prefer-dist --no-interaction
   - touch database/database.sqlite
   - cp .env.example .env
   - php artisan key:generate
@@ -20,4 +20,4 @@ before_script:
   - php artisan passport:install
 
 script:
-  - vendor/bin/phpunit
+  - vendor/bin/phpunit  --testdox --verbose
