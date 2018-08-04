@@ -7,6 +7,20 @@ use Tests\TestCase;
 class ServiceProviderTest extends TestCase
 {
     /** @test */
+    public function it_has_app_service_provider()
+    {
+        $config    = config('app.providers');
+        $providers = [
+            \App\Providers\MacroServiceProvider::class,
+            \App\Providers\ObserverServiceProvider::class,
+            \App\Providers\ThemeServiceProvider::class,
+        ];
+        foreach ($providers as $provider) {
+            $this->assertTrue(in_array($provider, $config));
+        }
+    }
+
+    /** @test */
     public function it_has_cleanique_coders_packages()
     {
         $config    = config('app.providers');
@@ -42,6 +56,7 @@ class ServiceProviderTest extends TestCase
         $config    = config('app.providers');
         $providers = [
             \Softon\SweetAlert\SweetAlertServiceProvider::class,
+            \DaveJamesMiller\Breadcrumbs\BreadcrumbsServiceProvider::class,
         ];
         foreach ($providers as $provider) {
             $this->assertTrue(in_array($provider, $config));
