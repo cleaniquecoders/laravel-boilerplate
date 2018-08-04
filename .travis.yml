@@ -6,7 +6,6 @@ php:
 
 env:
   - APP_ENV=testing
-  - DB_DATABASE=database/database.sqlite
 
 cache:
   directories:
@@ -17,7 +16,8 @@ before_script:
   - travis_retry composer update --prefer-source --no-interaction --dev
 
 script:
-  - cp .env.example .env
+  - composer install
   - touch database/database.sqlite
+  - cp .env.example .env
   - php artisan key:generate
   - vendor/bin/phpunit
