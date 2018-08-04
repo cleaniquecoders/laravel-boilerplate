@@ -5,7 +5,7 @@ php:
   - 7.2
 
 env:
-  - APP_ENV=testing
+  - APP_ENV=testing DB_CONNECTION=sqlite DB_DATABASE="database/database.sqlite"
 
 cache:
   directories:
