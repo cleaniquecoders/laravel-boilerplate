@@ -20,4 +20,4 @@ before_script:
   - php artisan passport:install
 
 script:
-  - vendor/bin/phpunit
+  - vendor/bin/phpunit  --testdox --verbose
