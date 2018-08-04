@@ -6,6 +6,7 @@ php:
 
 env:
   - APP_ENV=testing
+  - DB_DATABASE=database/database.sqlite
 
 cache:
   directories:
@@ -17,5 +18,6 @@ before_script:
 
 script:
   - cp .env.example .env
+  - touch database/database.sqlite
   - php artisan key:generate
   - vendor/bin/phpunit

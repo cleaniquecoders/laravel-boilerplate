@@ -25,6 +25,10 @@
 							@can('acl_index')
 								<a href="{{ route('manage.acl.index') }}" class="dropdown-item ">ACL</a>
 							@endcan
+
+							@can('passport_index')
+								<a href="{{ route('manage.oauth.passport') }}" class="dropdown-item ">OAuth</a>
+							@endcan
 						</div>
 					</li>
 					<li class="nav-item dropdown">

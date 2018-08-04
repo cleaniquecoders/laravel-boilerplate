@@ -20,6 +20,7 @@
 					url:'{!! route($route_name, $param ?? null) !!}',
 					beforeSend: function (request) {
 				        request.setRequestHeader("Accept", '{{ config('api.header.accept') }}');
+				        request.setRequestHeader("Version", '{{ config('api.version') }}');
 				        request.setRequestHeader("X-CSRF-TOKEN", '{{ csrf_token() }}');
 				    },
 					{{ $datatable_data or ''}}
@@ -32,7 +33,10 @@
 							return '{!! $actions !!}';
 						},
 						"targets": -1
-					}
+					},
+					@endisset
+					@isset($columnDefs)
+						{!! $columnDefs !!}
 					@endisset
 				]
 			});
