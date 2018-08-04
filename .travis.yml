@@ -12,12 +12,11 @@ cache:
     - vendor
 
 before_script:
-  - travis_retry composer self-update
-  - travis_retry composer update --prefer-source --no-interaction --dev
-
-script:
   - composer install
   - touch database/database.sqlite
   - cp .env.example .env
   - php artisan key:generate
+  - php artisan reload:all
+
+script:
   - vendor/bin/phpunit
