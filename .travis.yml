@@ -16,7 +16,7 @@ before_script:
   - touch database/database.sqlite
   - cp .env.example .env
   - php artisan key:generate
-  - php artisan reload:all
+  - php artisan reload:cache
 
 script:
   - vendor/bin/phpunit
