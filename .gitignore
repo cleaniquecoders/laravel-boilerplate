@@ -12,3 +12,4 @@ yarn-error.log
 .env
 *.md
 !README.md
+.phpunit.result.cache
