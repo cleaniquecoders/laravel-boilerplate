@@ -16,7 +16,7 @@ before_script:
   - touch database/database.sqlite
   - cp .env.example .env
   - php artisan key:generate
-  - php artisan reload:cache
+  - php artisan passport:install
 
 script:
   - vendor/bin/phpunit
