@@ -1,6 +1,7 @@
 <!-- CSRF Token -->
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <meta name="api-header-accept" content="{{ config('api.header.accept') }}">
+<meta name="api-version" content="{{ config('api.version') }}">
 
 {{-- Tabler Meta --}}
 <meta charset="UTF-8">
