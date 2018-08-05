@@ -7,7 +7,12 @@ use App\Http\Controllers\Controller;
 
 class AclController extends Controller
 {
-    public function __invoke(Request $request)
+    public function index()
+    {
+        return response()->api(roles());
+    }
+    
+    public function update(Request $request)
     {
     	switch ($request->type) {
     		case 'create':

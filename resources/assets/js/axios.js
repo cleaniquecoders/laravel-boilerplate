@@ -30,6 +30,14 @@ if (api_header_accept) {
 	console.error('API Header Accept Not Found');
 }
 
+let api_version = document.head.querySelector('meta[name="api-version"]');
+
+if (api_header_accept) {
+	window.axios.defaults.headers.common['Version'] = api_version.content;
+} else {
+	console.error('API Version Not Found');
+}
+
 /**
  * Add a request interceptor
  */
