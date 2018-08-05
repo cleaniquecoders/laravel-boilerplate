@@ -18,17 +18,13 @@ class RolesAndPermissionsSeeder extends Seeder
         $guards      = collect(config('auth.guards'));
 
         $roles->each(function ($role) use ($guards) {
-            $guards->each(function ($guard, $guard_name) use ($role) {
-                config('permission.models.role')::updateOrCreate(['name' => $role, 'guard_name' => $guard_name]);
-            });
+            config('permission.models.role')::updateOrCreate(['name' => $role]);
         });
 
         $permissions->each(function ($roles, $permission) use ($actions, $guards) {
             $actions->each(function ($action) use ($roles, $permission, $guards) {
-                $name = $permission . '_' . $action;
-                $guards->each(function ($guard, $guard_name) use ($name, $roles) {
-                    config('permission.models.permission')::updateOrCreate(['name' => $name, 'guard_name' => $guard_name])->syncRoles($roles);
-                });
+                $name = kebab_case($permission . '-' . $action);
+                config('permission.models.permission')::updateOrCreate(['name' => $name])->syncRoles($roles);
             });
         });
     }

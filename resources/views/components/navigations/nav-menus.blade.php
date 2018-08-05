@@ -18,15 +18,15 @@
 						<a href="javascript:void(0)" class="nav-link" data-toggle="dropdown">
 							@icon('fe fe-grid') Manage</a>
 						<div class="dropdown-menu dropdown-menu-arrow">
-							@can('user_index')
+							@can('user-index')
 								<a href="{{ route('manage.users.index') }}" class="dropdown-item ">Users</a>
 							@endcan
 
-							@can('acl_index')
+							@can('acl-index')
 								<a href="{{ route('manage.acl.index') }}" class="dropdown-item ">ACL</a>
 							@endcan
 
-							@can('passport_index')
+							@can('passport-index')
 								<a href="{{ route('manage.oauth.passport') }}" class="dropdown-item ">OAuth</a>
 							@endcan
 						</div>
