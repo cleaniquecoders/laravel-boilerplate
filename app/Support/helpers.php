@@ -128,9 +128,11 @@ if (! function_exists('user')) {
  * roles() helper
  */
 if (! function_exists('roles')) {
-    function roles()
+    function roles($guard = 'web')
     {
-        return config('permission.models.role')::get();
+        return Cache::remember('roles.' . $guard, 10, function () use ($guard) {
+            return config('permission.models.role')::with('permissions')->where('guard_name', $guard)->get();
+        });
     }
 }
 
@@ -138,9 +140,11 @@ if (! function_exists('roles')) {
  * permissions() helper
  */
 if (! function_exists('permissions')) {
-    function permissions()
+    function permissions($guard)
     {
-        return config('permission.models.permission')::get();
+        return Cache::remember('permissions.' . $guard, 10, function () use ($guard) {
+            return config('permission.models.permission')::with('roles')->where('guard_name', $guard)->get();
+        });
     }
 }
 
