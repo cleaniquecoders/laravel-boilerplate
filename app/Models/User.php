@@ -5,20 +5,19 @@ namespace App\Models;
 use App\Traits\HasDatatable;
 use App\Traits\HasMediaExtended;
 use App\Traits\HasSlugExtended;
-use App\Traits\HasThumbnail;
 use App\Traits\LogsActivityExtended;
 use CleaniqueCoders\Profile\Traits\HasProfile;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
-use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable implements HasMediaConversions
+class User extends Authenticatable implements HasMedia
 {
     use HasProfile, HasMediaExtended, HasApiTokens,
-        HasThumbnail, HasRoles, HasSlugExtended,
+        HasRoles, HasSlugExtended,
         LogsActivityExtended, Notifiable, SoftDeletes,
         HasDatatable;
 
