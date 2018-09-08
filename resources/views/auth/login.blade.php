@@ -6,8 +6,8 @@
 		  <div class="card-title text-center">Login to your account</div>
 		  <hr>
 		  <div class="form-group">
-			<label class="form-label">Email address</label>
-			<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+			<label class="form-label">E-mail</label>
+			<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="E-mail">
 			@if ($errors->has('email'))
 				<span class="invalid-feedback">
 					<strong>{{ $errors->first('email') }}</strong>
@@ -17,7 +17,6 @@
 		  <div class="form-group">
 			<label class="form-label">
 			  Password
-			  <a href="{{ route('password.request') }}" class="float-right small">I forgot password</a>
 			</label>
 			<input type="password" class="form-control" id="password" name="password" placeholder="Password">
 			@if ($errors->has('password'))
@@ -30,6 +29,7 @@
 			<label class="custom-control custom-checkbox">
 			  <input type="checkbox" class="custom-control-input" name="remember" {{ old('remember') ? 'checked' : '' }} />
 			  <span class="custom-control-label">Remember me</span>
+			  <a href="{{ route('password.request') }}" class="float-right small">I forgot password</a>
 			</label>
 		  </div>
 		  <div class="form-footer">

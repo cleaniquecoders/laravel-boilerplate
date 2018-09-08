@@ -1,5 +1,5 @@
 <label class="custom-control custom-checkbox">
-	<input type="checkbox" class="custom-control-input {{ $class or '' }}" 
+	<input type="checkbox" class="custom-control-input {{ $class ?? '' }}" 
 		@isset($id)
             id="{{ $id }}" 
         @else
@@ -12,7 +12,7 @@
             name="{{ snake_case($label) }}" 
         @endisset
 
-		value="{{ $value or 1 }}"
+		value="{{ $value ?? 1 }}"
 
 		@isset($data) 
 			@foreach($data as $key => $value) data-{{ $key }}="{{ $value }}" @endforeach

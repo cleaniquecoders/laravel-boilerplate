@@ -2,7 +2,7 @@
 	<script src="{{ asset('js/select2.js') }}"></script>
 	<script type="text/javascript">
 		var table_id = '#{{ $table_id }}';
-		var primary_key = '{{ $primary_key or 'hashslug' }}';
+		var primary_key = '{{ $primary_key ?? 'hashslug' }}';
 		var routes = @json($routes);
 		var columns = @json($columns);
 		var forms = @json($forms);
@@ -14,7 +14,7 @@
 			/* Form Submission */
 			$(document).on('click', '.form-btn', function(event) {
 				event.preventDefault();
-				/* Can be refactor to determine to use post or put */
+				/* Can be refactor to determine to use post ?? put */
 				if($("[name='_method']").val() == 'PUT') {
 					var id = $("[name='id']").val();
 					axios.put(route(routes.update, id), $('#' + forms.create).serialize())

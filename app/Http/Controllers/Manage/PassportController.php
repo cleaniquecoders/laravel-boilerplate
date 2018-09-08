@@ -9,6 +9,6 @@ class PassportController extends Controller
 {
     public function __invoke(Request $request)
     {
-    	return view('manage.passport.index');
+        return view('manage.passport.index');
     }
 }

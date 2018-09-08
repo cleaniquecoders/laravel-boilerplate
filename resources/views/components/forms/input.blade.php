@@ -1,17 +1,17 @@
 <div class="form-group row">
     <label for="{{ snake_case($label) }}" 
-        class="{{ $label_class or 'col col-form-label' }}">
+        class="{{ $label_class ?? 'col col-form-label' }}">
         {{ __($label) }}
     </label>
 
-    <div class="{{ $input_container_class or 'col' }}">
+    <div class="{{ $input_container_class ?? 'col' }}">
         <input 
             @isset($readonly)
             readonly="true" 
             @endisset
-            type="{{ $type or 'text' }}" 
+            type="{{ $type ?? 'text' }}" 
             placeholder="@isset($placeholder) {{ __($placeholder) }} @else {{ __($label) }} @endisset" 
-            class="form-control{{ $errors->has(snake_case($label)) ? ' is-invalid' : '' }} {{ $input_classes or '' }}" 
+            class="form-control{{ $errors->has(snake_case($label)) ? ' is-invalid' : '' }} {{ $input_classes ?? '' }}" 
             
             @isset($id)
                 id="{{ $id }}" 

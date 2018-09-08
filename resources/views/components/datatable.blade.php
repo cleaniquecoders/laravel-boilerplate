@@ -23,7 +23,7 @@
 				        request.setRequestHeader("Version", '{{ config('api.version') }}');
 				        request.setRequestHeader("X-CSRF-TOKEN", '{{ csrf_token() }}');
 				    },
-					{{ $datatable_data or ''}}
+					{{ $datatable_data ?? ''}}
 				},
 				columns: @json($columns),
 				columnDefs: [
@@ -40,7 +40,7 @@
 					@endisset
 				]
 			});
-			{{ $datatable_handler or ''}}
+			{{ $datatable_handler ?? ''}}
 		});
 	</script>
 @endpush

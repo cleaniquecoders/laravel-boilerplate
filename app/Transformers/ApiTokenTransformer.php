@@ -16,10 +16,10 @@ class ApiTokenTransformer extends TransformerAbstract
     {
         return [
             'access_token' => $pat->accessToken,
-            'token_type' => 'Bearer',
-            'expires_at' => \Carbon\Carbon::parse(
+            'token_type'   => 'Bearer',
+            'expires_at'   => \Carbon\Carbon::parse(
                 $pat->token->expires_at
-            )->toDateTimeString()
+            )->toDateTimeString(),
         ];
     }
 }
