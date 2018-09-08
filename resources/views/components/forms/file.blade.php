@@ -1,17 +1,17 @@
 <div class="form-group row">
     <label for="{{ snake_case($label) }}" 
-        class="{{ $label_class or 'col col-form-label' }}">
+        class="{{ $label_class ?? 'col col-form-label' }}">
         {{ __($label) }}
     </label>
 
-    <div class="{{ $input_container_class or 'col-md-12' }}">
+    <div class="{{ $input_container_class ?? 'col-md-12' }}">
         <input 
             @isset($readonly)
             readonly="true" 
             @endisset
-            type="{{ $type or 'file' }}" 
+            type="{{ $type ?? 'file' }}" 
             placeholder="@isset($placeholder) {{ __($placeholder) }} @else {{ __($label) }} @endisset" 
-            class="form-control{{ $errors->has(snake_case($label)) ? ' is-invalid' : '' }} {{ $input_classes or '' }}" 
+            class="form-control{{ $errors->has(snake_case($label)) ? ' is-invalid' : '' }} {{ $input_classes ?? '' }}" 
             
             @isset($id)
                 id="{{ $id }}" 

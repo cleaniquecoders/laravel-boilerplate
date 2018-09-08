@@ -1,7 +1,7 @@
-<form id="{{ $id or 'id-hidden-form'}}" 
+<form id="{{ $id ?? 'id-hidden-form'}}" 
 	action="{{ $action }}" 
-	method="{{ $method or 'POST' }}" 
+	method="{{ $method ?? 'POST' }}" 
 	style="display: none;">
     @csrf
-    {{ $inputs or '' }}
+    {{ $inputs ?? '' }}
 </form>

@@ -6,7 +6,7 @@
 	<div class="container">
 	  <div class="row">
 		<div class="col col-login mx-auto">
-		  {{ $auth_content or '' }}
+		  {{ $auth_content ?? '' }}
 		</div>
 	  </div>
 	</div>

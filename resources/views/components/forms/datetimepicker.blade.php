@@ -8,15 +8,15 @@
 
 <div class="form-group row">
     <label for="{{ snake_case($label) }}" 
-        class="{{ $label_class or 'col col-form-label' }}">
+        class="{{ $label_class ?? 'col col-form-label' }}">
         {{ __($label) }}
     </label>
-    <div class="input-group date {{ $input_container_class or 'col' }}" id="datetimepicker-{{ $id }}" data-target-input="nearest">
+    <div class="input-group date {{ $input_container_class ?? 'col' }}" id="datetimepicker-{{ $id }}" data-target-input="nearest">
         <input type="text" 
             @isset($readonly)
             readonly="true" 
             @endisset
-            class=" datetimepicker-input form-control{{ $errors->has(snake_case($label)) ? ' is-invalid' : '' }} {{ $input_classes or '' }}"
+            class=" datetimepicker-input form-control{{ $errors->has(snake_case($label)) ? ' is-invalid' : '' }} {{ $input_classes ?? '' }}"
             data-target="#datetimepicker-{{ $id }}"
             @isset($required) required @endisset 
             @isset($name)

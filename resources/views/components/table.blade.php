@@ -1,7 +1,7 @@
 <div class="table-responsive">
 	<table 
-		class="table {{ $table_classes or 'table-sm table-transparent table-hover' }}" 
-		id="{{ $table_id or 'table-id' }}">
+		class="table {{ $table_classes ?? 'table-sm table-transparent table-hover' }}" 
+		id="{{ $table_id ?? 'table-id' }}">
 		@isset($thead)
 			<thead>
 				{{ $thead ?? '' }}
