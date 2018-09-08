@@ -153,16 +153,6 @@ return [
         /*
          * Package Service Providers...
          */
-        CleaniqueCoders\Blueprint\Macro\BlueprintMacroServiceProvider::class,
-        CleaniqueCoders\Profile\ProfileServiceProvider::class,
-        CleaniqueCoders\ArtisanMakers\ArtisanMakersServiceProvider::class,
-        Spatie\Permission\PermissionServiceProvider::class,
-        Spatie\Analytics\AnalyticsServiceProvider::class,
-        Spatie\Menu\Laravel\MenuServiceProvider::class,
-        Spatie\GoogleCalendar\GoogleCalendarServiceProvider::class,
-        Spatie\Html\HtmlServiceProvider::class,
-        Softon\SweetAlert\SweetAlertServiceProvider::class,
-        DaveJamesMiller\Breadcrumbs\BreadcrumbsServiceProvider::class,
 
         /*
          * Application Service Providers...
