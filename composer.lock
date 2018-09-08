@@ -209,16 +209,16 @@
         },
         {
             "name": "cleaniquecoders/laravel-helper",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cleaniquecoders/laravel-helper.git",
-                "reference": "204ad0d90f1e2f692f2e2469d554666506308866"
+                "reference": "5e0009d8c513e4ee1111d38ba1d4cd3f3d64f43b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cleaniquecoders/laravel-helper/zipball/204ad0d90f1e2f692f2e2469d554666506308866",
-                "reference": "204ad0d90f1e2f692f2e2469d554666506308866",
+                "url": "https://api.github.com/repos/cleaniquecoders/laravel-helper/zipball/5e0009d8c513e4ee1111d38ba1d4cd3f3d64f43b",
+                "reference": "5e0009d8c513e4ee1111d38ba1d4cd3f3d64f43b",
                 "shasum": ""
             },
             "require": {
@@ -261,7 +261,7 @@
                 "laravel",
                 "package"
             ],
-            "time": "2018-09-06T06:47:31+00:00"
+            "time": "2018-09-08T09:43:42+00:00"
         },
         {
             "name": "cleaniquecoders/laravel-observers",
