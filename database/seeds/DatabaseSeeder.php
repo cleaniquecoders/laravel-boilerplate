@@ -4,11 +4,9 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run()
-    {
-        $this->call(RolesAndPermissionsSeeder::class);
-    }
+	use \App\Traits\SeedingProgressBar;
+
+	public $seeders = [
+		RolesAndPermissionsSeeder::class => true,
+	];
 }

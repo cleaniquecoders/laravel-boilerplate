@@ -5,10 +5,16 @@ use Illuminate\Database\Seeder;
 
 class DevelopmentSeeder extends Seeder
 {
+    use \App\Traits\SeedingProgressBar;
+
+    public $seeders = [
+        'seedUsers' => false,
+    ];
+
     /**
-     * Run the database seeds.
+     * Seed Users.
      */
-    public function run()
+    public function seedUsers()
     {
         $roles = collect(config('acl.roles'));
 
