@@ -38,14 +38,14 @@ class MakeViewCommand extends GeneratorCommand
     {
         $name = Str::kebab($this->getNameInput());
 
-        if($this->hasOption('setting')) {
+        if ($this->hasOption('setting')) {
             $view_root_path = resource_path('views/settings');
         } else {
             $view_root_path = resource_path('views/modules');
         }
 
         $path = $view_root_path . '/' . $name;
-        
+
         if (! $this->files->isDirectory($view_root_path)) {
             $this->files->makeDirectory($view_root_path, 0777, true, true);
         }

@@ -2,8 +2,8 @@
 
 namespace App\Traits;
 
-use Spatie\MediaLibrary\Models\Media;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\Models\Media;
 
 /**
  * HasMediaExtended Trait.
