@@ -15,10 +15,9 @@ class BladeServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        \App\Blade\Directives\Icon::register();
-
-        // @todo to figure out, how to pass data to the custom component
-        Blade::component('components.cards.figure', 'figure');
+        \App\Blade\Components::make()->register();
+        \App\Blade\Directives::make()->register();
+        \App\Blade\Includes::make()->register();
     }
 
     /**
