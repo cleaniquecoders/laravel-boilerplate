@@ -41,7 +41,6 @@ class Includes
     {
         Blade::include('components.app-name', 'appName');
         Blade::include('components.logo');
-        Blade::include('components.actions');
         Blade::include('components.avatar');
         Blade::include('components.datatable');
         Blade::include('components.popover');

@@ -23,7 +23,7 @@ class Components
     private function cards()
     {
         Blade::component('components.card');
-        Blade::component('components.cards.figure', 'card-figure');
+        Blade::component('components.cards.figure', 'cardFigure');
     }
 
     private function collapse()
@@ -47,5 +47,6 @@ class Components
     {
         Blade::component('components.tab.content', 'tabContent');
         Blade::component('components.tab.navigation', 'tabNavigation');
+        Blade::component('components.actions');
     }
 }
