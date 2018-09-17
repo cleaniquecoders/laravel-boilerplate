@@ -165,7 +165,6 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\MacroServiceProvider::class,
         App\Providers\ObserverServiceProvider::class,
-        App\Providers\ThemeServiceProvider::class,
     ],
 
     /*

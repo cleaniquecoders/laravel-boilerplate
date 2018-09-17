@@ -13,7 +13,6 @@ class ServiceProviderTest extends TestCase
         $providers = [
             \App\Providers\MacroServiceProvider::class,
             \App\Providers\ObserverServiceProvider::class,
-            \App\Providers\ThemeServiceProvider::class,
         ];
         foreach ($providers as $provider) {
             $this->assertTrue(in_array($provider, $config));

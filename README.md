@@ -6,31 +6,21 @@ A boilerplate based on Laravel Framework to speed up web application development
 
 ## Packages
 
-1. [Cleanique Coders](https://github.com/cleaniquecoders)
-
-	- Artisan Makers
-	- Blueprint Macro
-	- Profile
-
-2. [Laravel Proxy Package](https://github.com/fideloper/TrustedProxy)
-3. [Spatie](https://github.com/spatie)
-
-	- Image Optimizer
-	- Laravel Activitylog
-	- Laravel Analytics
-	- Laravel Collection Macros
-	- Laravel Google Calendar
-	- Laravel Html
-	- Laravel Medialibrary
-	- Laravel Menu
-	- Laravel Permission
-	- Laravel Referer
-	- Laravel Responsecache
-	- Laravel Sluggable
-
-4. [Hashids](https://github.com/ivanakimov/hashids.php)
-5. [Sweet Alert](https://github.com/uxweb/sweet-alert)
-6. [Sempro PHPUnit Pretty Printer](https://github.com/Sempro/phpunit-pretty-print)
+- [Cleanique Coders - Artisan Makers](https://github.com/cleaniquecoders/artisan-makers)
+- [Cleanique Coders - Blueprint Macro](https://github.com/cleaniquecoders/blueprint-macro)
+- [Cleanique Coders - Laravel Helper](https://github.com/cleaniquecoders/laravel-helper)
+- [Cleanique Coders - Laravel Observers](https://github.com/cleaniquecoders/laravel-helpers)
+- [Cleanique Coders - Money Wrapper](https://github.com/cleaniquecoders/money-wrapper)
+- [Cleanique Coders - Profile](https://github.com/cleaniquecoders/profile)
+- [Spatie - Image Optimizer](https://github.com/spatie/image-optimizer)
+- [Spatie - Laravel Activitylog](https://github.com/spatie/)
+- [Spatie - Laravel Html](https://github.com/spatie/laravel-html)
+- [Spatie - Laravel Medialibrary](https://github.com/spatie/laravel-medialibrary)
+- [Spatie - Laravel Permission](https://github.com/spatie/laravel-permission)
+- [Spatie - Laravel Responsecache](https://github.com/spatie/laravel-responsecache)
+- [Spatie - Laravel Sluggable](https://github.com/spatie/laravel-sluggable)
+- [Softon - Sweet Alert](https://github.com/softon/sweetalert)
+- [Tighten.Co - Ziggy](https://github.com/tightenco/ziggy)
 
 ## Installation
 
@@ -41,15 +31,8 @@ $ composer create-project cleaniquecoders/laravel-boilerplate
 Configure your `.env`, then:
 
 ```
-$ php artisan reload:db
+$ php artisan reload:all -d
 ```
-
-### Google API
-
-Create [Google Service Account Credentials](https://console.developers.google.com/apis/dashboard?project=karnival-usahawan-desa) for:
-
-1. [Google Calendar](https://github.com/spatie/laravel-google-calendar#how-to-obtain-the-credentials-to-communicate-with-google-calendar)
-2. [Google Analytic](https://github.com/spatie/laravel-analytics#how-to-obtain-the-credentials-to-communicate-with-google-analytics)
 
 ## Usage
 
@@ -79,165 +62,44 @@ There's some commands area ready built-in. Others, may refer to respective packa
 - `reload:cache` - Recache everything
 - `reload:all` - Run above two commands. Passing `-d` will seed `DevelopementSeeder` - useful for development setup.
 
-### API
+### Routes
 
-This boilerplate make use of Laravel Passport. Managing passport only allowed in for role developer. You can overwrite this behaviour in `routes/web.php`.
+Routes has been organised so that you can manage it properly, keep it clean and well organised.
 
-### Helpers
+1. API Routes - `routes/api`
+2. Breadcrumbs Routes - `routes/breadcrumbs`
+3. Datatable Routes - `routes/datatable`
+4. Web Routes - `routes/web`
 
-**generate_sequence($count)** 
-
-Generate sequence with leading zero like `000001`, `000002` and so on.
-
-Length for the leading zero can be configure in `.env` file - `DOCUMENT_SEQUENCE_LENGTH`.
-
-**abbrv($word, $unique_characters)**
-
-A helper to create abbreviation by removing non-alphanumeric, vowels.
-
-Passing second argument as false will return non-unique characters - means that you will see repeatative characters. 
-
-Following are the sample usage and output:
-
-```
->>> abbrv("Cleanique Coders")
-=> "CLNQDRS"
->>> abbrv("Cleanique Coders", false)
-=> "CLNQCDRS"
-```
-
-**generate_reference($prefix, $count)**
-
-Generate document reference string. Usually a document have their own reference on the particular date event.
-
-For instance a payslip document have a reference number / string like `CCR/PYSL/2018/01/000001`.
-
-The format generate is `abbrv/Year/Month/Date/reference_id`.
-
-You can use in two ways:
-
-```
->>> generate_reference("Cleanique Coders Payroll")
-=> "CLNQ/CDRS/PYRL/2018/02/04/TBIPOU"
->>> generate_reference("Cleanique Coders Payroll", 10)
-=> "CLNQ/CDRS/PYRL/2018/02/04/000010"
-```
-
-The length of the `TBIPOU` or `000010` is depends on `DOCUMENT_SEQUENCE_LENGTH` in `.env` file.
-
-**hashids($salt, $length, $alphabet)**
-
-It's essential to have important resources to use other than just incremental id. One of the option is to use [Hashids](https://github.com/ivanakimov/hashids.php).
-
-Following are an example how to use the helper.
-
-```
->>> hashids()->encode(1)
-=> "yR5ajG4DBwlz"
->>> hashids('random-salt')->encode(1)
-=> "WZvoOMBr19YN"
->>> hashids('random-salt', 24)->encode(1)
-=> "GPz1W4mLavAeqAwB2XZbOgQn"
->>> hashids('random-salt', 6)->encode(1)
-=> "5qy0lP"
->>> hashids('random-salt', 6, 'qwertyuiopasdfghjkl')->encode(1)
-=> "orgpqe"
->>> hashids('random-salt', 6, ',./;<>?:"{}|[]\-=`~!@#$%^&*()')->encode(1)
-=> "{&(^&-"
->>> hashids('random-salt', 12, ',./;<>?:"{}|[]\-=`~!@#$%^&*()')->encode(1)
-=> "~-!\`-&(*[{)"
-```
-
-For `$salt`, by default it will use `APP_KEY`, but you may override it by passing the salt name at the first argument.
-
-For `$length`, you can pass any length of hashids you want to create. By default it's 12 characters.
-
-For `$alphabet`, you can put any characters as per example above. But remember, the alphabets need to be minimum of **16 characters**.
-
-**str_slug_fqcn($object)**
-
-Return slug name for given object.
-
-```
->>> $user = \App\Models\User::first();
-=> App\Models\User {#1013
-     id: 1,
-     hashslug: "krOErpkv6EVR",
-     slug: "elza-bins",
-     name: "Elza Bins",
-     email: "kautzer.polly@example.com",
-     deleted_at: null,
-     created_at: "2018-02-04 03:11:07",
-     updated_at: "2018-02-04 03:11:07",
-   }
->>> str_slug_fqcn($user)
-=> "app-models-user"
-```
-
-**audit($model, $message, $causedBy)**
-
-Simply record audit trail on given `$model`, with proper `$message`. You can optionally passed the third argument - `$causedBy`.
-
-```
->>> auth()->loginUsingId(1)
->>> $user = \App\Models\User::first();
->>> audit($user, 'access via terminal')
->>> auth()->user()->activity->toArray()
-=> [
-     [
-       "id" => 4,
-       "log_name" => "default",
-       "description" => "User successfully logged in.",
-       "subject_id" => 1,
-       "subject_type" => "App\Models\User",
-       "causer_id" => 1,
-       "causer_type" => "App\Models\User",
-       "properties" => Illuminate\Support\Collection {#971
-         all: [],
-       },
-       "created_at" => "2018-02-04 03:18:50",
-       "updated_at" => "2018-02-04 03:18:50",
-     ],
-     [
-       "id" => 5,
-       "log_name" => "default",
-       "description" => "access via terminal",
-       "subject_id" => 1,
-       "subject_type" => "App\Models\User",
-       "causer_id" => 1,
-       "causer_type" => "App\Models\User",
-       "properties" => Illuminate\Support\Collection {#980
-         all: [],
-       },
-       "created_at" => "2018-02-04 03:19:16",
-       "updated_at" => "2018-02-04 03:19:16",
-     ],
-   ]
-```
-
-**user()**
-
-The `user()` helper simply return the current logged in user object. The helper will take care your guard.
-
-## Test
-
-To run the test, type `vendor/bin/phpunit` in your terminal.
-
-To have codes coverage, please ensure to install PHP XDebug then run the following command:
-
-```
-$ vendor/bin/phpunit -v --coverage-text --colors=never --stderr
-```
+You may add unlimited files in respective directories above, based on it's concern.
 
 ## Contributions
 
-Everyone are welcome to contribute to this package. However, it's a good practice to provide:
+Contributions are **welcome** and will be fully **credited**.
 
-1. The problem you solved
-2. Provide test
-3. Documentation
+We accept contributions via Pull Requests on [Github](https://github.com/spatie/laravel-permission).
 
-Without these 3, you may add extra work for the maintainer.
+## Pull Requests
+
+- **[PSR-2 Coding Standard](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md)** - The easiest way to apply the conventions is to install [PHP Code Sniffer](http://pear.php.net/package/PHP_CodeSniffer).
+
+- **Add tests!** - Your patch won't be accepted if it doesn't have tests.
+
+- **Document any change in behaviour** - Make sure the `README.md` and any other relevant documentation are kept up-to-date.
+
+- **Consider our release cycle** - We try to follow [SemVer v2.0.0](http://semver.org/). Randomly breaking public APIs is not an option.
+
+- **Create feature branches** - Don't ask us to pull from your master branch.
+
+- **One pull request per feature** - If you want to do more than one thing, send multiple pull requests.
+
+- **Send coherent history** - Make sure each individual commit in your pull request is meaningful. If you had to make multiple intermediate commits while developing, please [squash them](http://www.git-scm.com/book/en/v2/Git-Tools-Rewriting-History#Changing-Multiple-Commit-Messages) before submitting.
+
+## Running Test
+
+```
+$ vendor/bin/phpunit
+```
 
 ## License
 
