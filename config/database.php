@@ -39,7 +39,7 @@ return [
 
         'tracker' => [
             'driver'   => 'sqlite',
-            'database' => env('DB_DATABASE_TRACKER', database_path('tracker.sqlite')),
+            'database' => env('TRACKER_DB_DATABASE', database_path('tracker.sqlite')),
             'prefix'   => '',
         ],
 
