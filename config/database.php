@@ -37,6 +37,12 @@ return [
             'prefix'   => '',
         ],
 
+        'tracker' => [
+            'driver'   => 'sqlite',
+            'database' => env('DB_DATABASE_TRACKER', database_path('tracker.sqlite')),
+            'prefix'   => '',
+        ],
+
         'mysql' => [
             'driver'      => 'mysql',
             'host'        => env('DB_HOST', '127.0.0.1'),
