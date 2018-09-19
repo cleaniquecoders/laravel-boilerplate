@@ -11,8 +11,8 @@ class UserController extends Controller
 {
     public function __invoke(Request $request)
     {
-        return app('datatables')
-            ->eloquent(User::datatable())
+        return resolve('Datatables')
+        	->eloquent(User::datatable())
             ->setTransformer(new UserTransformer())
             ->toJson();
     }
