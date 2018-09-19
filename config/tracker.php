@@ -124,7 +124,7 @@ return [
      *
      */
 
-    'geoip_database_path' => __DIR__.'/geoip', //storage_path('geoip'),
+    'geoip_database_path' => storage_path('geoip'),
 
     /*
      * Also log SQL query bindings?
@@ -353,12 +353,12 @@ return [
      *    http://wwww.mysite.com/stats
      *
      */
-    'stats_base_uri' => 'stats',
+    'stats_base_uri' => env('TRACKER_BASE_URI', 'stats'),
 
     /*
      * Stats Panel layout view
      */
-    'stats_layout' => 'pragmarx/tracker::layout',
+    'stats_layout' => env('TRACKER_STATS_LAYOUT', 'pragmarx/tracker::layout'),
 
     /*
      * Stats Panel controllers namespace
