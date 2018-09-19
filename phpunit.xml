@@ -30,5 +30,6 @@
         <env name="QUEUE_DRIVER" value="sync"/>
         <env name="DB_CONNECTION" value="sqlite"/>
         <env name="DB_DATABASE" value="database/database.sqlite"/>
+        <env name="TRACKER_DB_DATABASE" value="database/tracker.sqlite"/>
     </php>
 </phpunit>
