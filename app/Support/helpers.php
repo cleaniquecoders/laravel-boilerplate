@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Cache;
 
 /*
  * Audit Trail
@@ -34,7 +33,7 @@ if (! function_exists('locales')) {
     }
 }
 
-/**
+/*
  * Check if current route is active navigation
  */
 if (! function_exists('is_active_nav')) {

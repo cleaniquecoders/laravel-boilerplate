@@ -98,6 +98,6 @@ class User extends Authenticatable implements HasMedia
 
     public function getIsAdminAttribute()
     {
-        return user()->hasAnyRole(['developer','administrator']);
+        return user()->hasAnyRole(['developer', 'administrator']);
     }
 }
