@@ -11,6 +11,14 @@ trait CreatesApplication
      */
     public function setUp()
     {
+        if (! file_exists('database/tracker.sqlite')) {
+            touch('database/tracker.sqlite');
+        }
+
+        if (! file_exists('database/database.sqlite')) {
+            touch('database/database.sqlite');
+        }
+
         parent::setUp();
     }
 
