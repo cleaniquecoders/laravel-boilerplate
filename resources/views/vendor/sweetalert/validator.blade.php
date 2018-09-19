@@ -1,4 +1,4 @@
-@if($errors->any())
+@if(isset($errors) && $errors->any())
 	<script>
 		swal({
 		  title: 'Validation Error',
