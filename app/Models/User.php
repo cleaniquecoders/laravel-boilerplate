@@ -95,4 +95,9 @@ class User extends Authenticatable implements HasMedia
             return $query->select('id', 'name');
         }]);
     }
+
+    public function getIsAdminAttribute()
+    {
+        return user()->hasAnyRole(['developer','administrator']);
+    }
 }
