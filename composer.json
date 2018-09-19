@@ -32,7 +32,7 @@
         "spatie/laravel-sluggable": "^2.1",
         "thepinecode/i18n": "^0.2.0",
         "tightenco/ziggy": "^0.6.6",
-        "yajra/laravel-datatables": "^1.0"
+        "yajra/laravel-datatables": "^1.1"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.1",
