@@ -37,25 +37,6 @@ return [
             'prefix'   => '',
         ],
 
-        'tracker' => [
-            // 'driver'   => 'sqlite',
-            // 'database' => env('TRACKER_DB_DATABASE', database_path('tracker.sqlite')),
-            // 'prefix'   => '',
-
-            'driver'      => 'mysql',
-            'host'        => env('TRACKER_DB_HOST', '127.0.0.1'),
-            'port'        => env('TRACKER_DB_PORT', '3306'),
-            'database'    => env('TRACKER_DB_DATABASE', 'forge'),
-            'username'    => env('TRACKER_DB_USERNAME', 'forge'),
-            'password'    => env('TRACKER_DB_PASSWORD', ''),
-            'unix_socket' => env('TRACKER_DB_SOCKET', ''),
-            'charset'     => 'utf8mb4',
-            'collation'   => 'utf8mb4_unicode_ci',
-            'prefix'      => '',
-            'strict'      => true,
-            'engine'      => null,
-        ],
-
         'mysql' => [
             'driver'      => 'mysql',
             'host'        => env('DB_HOST', '127.0.0.1'),

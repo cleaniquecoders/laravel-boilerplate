@@ -96,8 +96,18 @@ class User extends Authenticatable implements HasMedia
         }]);
     }
 
-    public function getIsAdminAttribute()
+    public function getIsDeveloperAttribute()
     {
-        return user()->hasAnyRole(['developer', 'administrator']);
+        return $this->hasRole('developer');
+    }
+
+    public function getIsAdministratorAttribute()
+    {
+        return $this->hasRole('administrator');
+    }
+
+    public function getIsUserAttribute()
+    {
+        return $this->hasRole('user');
     }
 }

@@ -37,10 +37,10 @@
 							@endcan
 						</div>
 					</li>
-					@if(user()->is_admin)
+					@if(user()->is_developer)
 						<li class="nav-item">
-							<a href="{{ route('tracker.stats.index') }}" 
-								class="nav-link {{ is_active_nav('tracker.stats.index') ? 'active' : '' }}">
+							<a href="#" 
+								class="nav-link">
 									<i class="fe fe-activity"></i> Stats Tracker
 							</a>
 						</li>
