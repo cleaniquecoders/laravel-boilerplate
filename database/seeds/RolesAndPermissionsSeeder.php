@@ -15,14 +15,13 @@ class RolesAndPermissionsSeeder extends Seeder
         $actions     = collect($acl->get('actions'));
         $roles       = collect($acl->get('roles'));
         $permissions = collect($acl->get('permissions'));
-        $guards      = collect(config('auth.guards'));
 
-        $roles->each(function ($role) use ($guards) {
+        $roles->each(function ($role) {
             config('permission.models.role')::updateOrCreate(['name' => $role]);
         });
 
-        $permissions->each(function ($roles, $permission) use ($actions, $guards) {
-            $actions->each(function ($action) use ($roles, $permission, $guards) {
+        $permissions->each(function ($roles, $permission) use ($actions) {
+            $actions->each(function ($action) use ($roles, $permission) {
                 $name = kebab_case($permission . '-' . $action);
                 config('permission.models.permission')::updateOrCreate(['name' => $name])->syncRoles($roles);
             });
