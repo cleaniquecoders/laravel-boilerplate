@@ -26,31 +26,52 @@ A boilerplate based on Laravel Framework to speed up web application development
 
 ```
 $ composer create-project cleaniquecoders/laravel-boilerplate
+$ bin/init.sh
 ```
 
-Configure your `.env`, then:
+Update your database connection in `.env` then run:
 
 ```
-$ php artisan reload:all -d
+$ bin/db.sh 
 ```
 
 ## Usage
 
+### Bin Scripts
+
+|           Command          |              Description              |
+|----------------------------|---------------------------------------|
+| bin/init.sh                | Install dependencies and setup `.env` |
+| bin/update.sh              | Update dependencies.                  |
+| bin/reload-db.sh           | Remigrate and reseed database.        |
+| bin/deploy.sh              | Deploy to target server. (WIP)        |
+
 ### User Accounts
 
-By default, there's no users created. But you can run `php artisan db:seed DevelopmentSeeder` to run create 3 main users - Developer, Administrator and User.
 
-Login details for default users:
+By default, there's no users created. But you can run to create 3 main users - Developer, Administrator and User: 
 
-1. E-mail : **developer@app.com** Password: `developer`
-2. E-mail : **administrator@app.com** Password: `administrator`
-3. E-mail : **user@app.com** Password: `user`
+```
+$ php artisan seed:pre
+```
 
-By default, all newly registered user will be assign role as `user`.
+|      Name     |         E-mail        |    Password   |      Role     |
+|---------------|-----------------------|---------------|---------------|
+| Developer     | developer@app.com     | developer     | Developer     |
+| Administrator | administrator@app.com | administrator | Administrator |
+| User          | user@app.com          | user          | User          |
+
+You may overwrite the `database/seeds/PreSeedSeeder.php` as necessary.
 
 ### Access Control
 
-Access control for the application can be configure from `config/acl.php`. It consist of `roles`, `permissions` and `actions`. Default seeder for ACL is in `database/seeds/RolesAndPermissionsSeeder.php`. You may overwrite this as you please.
+Access control for the application can be configure from `config/acl.php`. 
+
+It consist of `roles`, `permissions` and `actions`. 
+
+Default seeder for ACL is in `database/seeds/RolesAndPermissionsSeeder.php`. 
+
+You may overwrite this as you please.
 
 Seeded roles and permissions based on `database/seeds/RolesAndPermissionsSeeder.php` will have all guards specify in `config/auth.php`.
 
@@ -58,9 +79,15 @@ Seeded roles and permissions based on `database/seeds/RolesAndPermissionsSeeder.
 
 There's some commands area ready built-in. Others, may refer to respective packages.
 
-- `reload:db` - Run `migrate:fresh --seed` with `profile:seed`. You may extend the usage.
-- `reload:cache` - Recache everything
-- `reload:all` - Run above two commands. Passing `-d` will seed `DevelopementSeeder` - useful for development setup.
+|           Command          |                                                 Description                                                 |
+|----------------------------|-------------------------------------------------------------------------------------------------------------|
+| `php artisan reload:db`    | Remigrate table and seed the data.                                                                          |
+| `php artisan reload:cache` | Reload all related caches.                                                                                  |
+| `php artisan reload:all`   | This will run `reload:cache` and `reload:db` command.                                                       |
+| `php artisan seed:dev`     | This will seed development data for your application in development environment.                            |
+| `php artisan seed:staging` | This will seed staging data for your application in staging environment.                                    |
+| `php artisan seed:prod`    | This will seed production data for your application in production environment.                              |
+| `php artisan seed:pre`     | This will pre-seed data for your application. The data is global scope, which is usable in all environment. |
 
 ### Routes
 
