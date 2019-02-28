@@ -9,7 +9,7 @@ trait CreatesApplication
     /**
      * Setup the test environment.
      */
-    public function setUp()
+    public function setUp(): void
     {
         if (! file_exists('database/tracker.sqlite')) {
             touch('database/tracker.sqlite');
