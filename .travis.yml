@@ -13,8 +13,10 @@ cache:
 before_script:
   - travis_retry composer install --prefer-dist --no-interaction
   - touch database/database.sqlite
-  - bin/install.sh
-  - bin/reload-db.sh
+  - cp .env.example .env
+  - php artisan key:generate
+  - php artisan migrate
+  - php artisan passport:install
 
 script:
   - vendor/bin/phpunit  --testdox --verbose
