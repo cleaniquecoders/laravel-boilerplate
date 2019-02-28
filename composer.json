@@ -16,13 +16,13 @@
         "davejamesmiller/laravel-breadcrumbs": "^5.0",
         "doctrine/dbal": "^2.7",
         "fideloper/proxy": "~4.0",
-        "laravel/framework": "5.7.*",
+        "laravel/framework": "5.8.*",
         "laravel/passport": "^6.0",
         "laravel/tinker": "~1.0",
         "predis/predis": "^1.1",
         "softon/sweetalert": "^1.0",
         "spatie/image-optimizer": "^1.0",
-        "spatie/laravel-activitylog": "^2.3",
+        "spatie/laravel-activitylog": "^3.2",
         "spatie/laravel-html": "^2.10",
         "spatie/laravel-medialibrary": "^7.4",
         "spatie/laravel-permission": "^2.7",
@@ -30,7 +30,7 @@
         "spatie/laravel-sluggable": "^2.1",
         "thepinecode/i18n": "^0.2.0",
         "tightenco/ziggy": "^0.6.6",
-        "yajra/laravel-datatables": "^1.1"
+        "yajra/laravel-datatables-oracle": "^9.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.1",
