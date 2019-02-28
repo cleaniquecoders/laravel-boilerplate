@@ -1,6 +1,5 @@
 <?php
 
-
 // Home > Manage ACL
 Breadcrumbs::register('manage.acl.index', function ($breadcrumbs) {
     $breadcrumbs->parent('home');

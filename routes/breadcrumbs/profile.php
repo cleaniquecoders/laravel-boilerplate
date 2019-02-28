@@ -1,6 +1,5 @@
 <?php
 
-
 // Home > Profile
 Breadcrumbs::register('user.show', function ($breadcrumbs) {
     $breadcrumbs->parent('home');

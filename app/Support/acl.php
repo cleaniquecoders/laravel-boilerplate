@@ -1,6 +1,5 @@
 <?php
 
-
 /*
  * roles() helper
  */

@@ -1,6 +1,5 @@
 <?php
 
-
 Route::group([
     'namespace'  => 'User',
     'prefix'     => 'user',

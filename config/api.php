@@ -1,6 +1,5 @@
 <?php
 
-
 return [
     'header' => [
         'prefix' => env('API_HEADER_PREFIX', 'CleaniqueCoders'),

@@ -4,9 +4,9 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-	use \App\Traits\SeedingProgressBar;
+    use \App\Traits\SeedingProgressBar;
 
-	public $seeders = [
-		RolesAndPermissionsSeeder::class => true,
-	];
+    public $seeders = [
+        RolesAndPermissionsSeeder::class => true,
+    ];
 }
